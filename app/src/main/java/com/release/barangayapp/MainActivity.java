@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
+        System.out.println("asda");
         return super.onOptionsItemSelected(item);
+
     }
 }
