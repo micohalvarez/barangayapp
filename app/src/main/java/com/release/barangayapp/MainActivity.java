@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-        System.out.println("tester");
 
         return super.onOptionsItemSelected(item);
 
