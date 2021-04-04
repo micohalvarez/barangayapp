@@ -11,5 +11,5 @@ import androidx.navigation.fragment.NavHostFragment;
 
 public class SecondFragment extends Fragment {
 
-   
+
 }
