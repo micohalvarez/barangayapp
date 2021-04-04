@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 Intent homeIntent = new Intent(MainActivity.this, MainMenu.this);
                 startActivity(homeIntent);
+                finish();
 
             }
         },SPLASH_TIME_OUT);
