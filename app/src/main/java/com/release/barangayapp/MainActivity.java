@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
 
 
-                System.out.println("tester");
-                System.out.println("tester");
+                System.out.println("Napapa gana Ko na Android studio. sana di na mag loko XD");
+
 
             }
         });
