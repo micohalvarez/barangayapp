@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import  android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
 import android.widget.Button;
 
 
@@ -17,13 +17,10 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Button_user=(Button)findViewById(R.id.User_button);
-        Button_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenUser();
-            }
-        });
+        Button_user= findViewById(R.id.User_button);
+        Button_barangay= findViewById(R.id.Barangay_button);
+        Button_user.setOnClickListener(v -> OpenUser());
+        Button_barangay.setOnClickListener(v -> OpenBarangay());
     }
 
     public void OpenUser()
@@ -31,4 +28,12 @@ public class MainMenu extends AppCompatActivity {
         Intent intent=new Intent(this, UserLogin.class);
         startActivity(intent);
     }
+
+    public void OpenBarangay()
+    {
+        Intent intent=new Intent(this, BarangayLogin.class);
+        startActivity(intent);
+    }
+    @Override
+    public void onBackPressed() { }
 }
