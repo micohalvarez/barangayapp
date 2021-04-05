@@ -1,4 +1,4 @@
-package com.release.barangayapp;
+    package com.release.barangayapp;
 
 import android.os.Bundle;
 
