@@ -48,9 +48,9 @@
         android:layout_width="166dp"
         android:layout_height="29dp"
         android:background="@drawable/editround"
-        android:paddingLeft="9dp"
+        android:paddingLeft="10dp"
         android:text="    Username"
-        android:textSize="15sp"
+        android:ems="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.53"
@@ -70,12 +70,13 @@
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.588" />
+        app:layout_constraintVertical_bias="0.591" />
 
     <Button
         android:id="@+id/User_btn_signin"
         android:layout_width="166dp"
         android:layout_height="35dp"
+        android:background="@drawable/buttonround"
         android:text="Sign In"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
