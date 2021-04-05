@@ -34,7 +34,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Login"
+        android:text="Barangay Login"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.673" />
 
     <Button
-        android:id="@+id/User"
+        android:id="@+id/User_cntlgn"
         android:layout_width="166dp"
         android:layout_height="35dp"
         android:background="@drawable/buttonround"
