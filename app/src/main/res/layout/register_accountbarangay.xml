@@ -18,10 +18,10 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.11" />
 
     <TextView
         android:id="@+id/textView2"
@@ -45,6 +45,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:background="@color/white"
+        android:clickable="true"
         android:ems="10"
         android:fontFamily="@font/aladin"
         android:inputType="textPersonName"
@@ -65,6 +66,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:background="@color/white"
+        android:clickable="true"
         android:ems="10"
         android:fontFamily="@font/aladin"
         android:inputType="textPersonName"
@@ -85,6 +87,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:background="#FFFFFF"
+        android:clickable="true"
         android:ems="10"
         android:fontFamily="@font/aladin"
         android:hint="Mobile Number"
@@ -107,6 +110,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:background="#FFFFFF"
+        android:clickable="true"
         android:ems="10"
         android:fontFamily="@font/aladin"
         android:hint="Password"
@@ -129,6 +133,7 @@
         android:layout_marginStart="14dp"
         android:layout_marginEnd="14dp"
         android:background="#FFFFFF"
+        android:clickable="true"
         android:ems="10"
         android:fontFamily="@font/aladin"
         android:hint="Confirm Password"
@@ -161,20 +166,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.773" />
-
-    <TextView
-        android:id="@+id/Loginhere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aladin"
-        android:text="Already Registered? Login Here"
-        android:textColor="#FFEE58"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856" />
 
     <TextView
         android:id="@+id/textView3"
