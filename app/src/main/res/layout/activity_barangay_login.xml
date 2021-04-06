@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0A2435"
     tools:context=".BarangayLogin">
 
   <TextView
@@ -34,7 +35,7 @@
       android:id="@+id/textView3"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="User Login"
+      android:text="Barangay Login"
       android:textColor="#000000"
       android:textSize="24sp"
       app:layout_constraintBottom_toBottomOf="parent"

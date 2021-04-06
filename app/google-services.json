@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "422663406950",
+    "project_id": "cpedes1-c6935",
+    "storage_bucket": "cpedes1-c6935.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422663406950:android:db447d38883f45c286b4a7",
+        "android_client_info": {
+          "package_name": "com.release.barangayapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422663406950-nk1us5vp8o9m2bnvcq02m6t7or4f27g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq5N1X1p4DZ3vWK0Rf7MxyeaSaGBP17hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422663406950-nk1us5vp8o9m2bnvcq02m6t7or4f27g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
