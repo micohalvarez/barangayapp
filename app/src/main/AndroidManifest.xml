@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".UserMainMenu"></activity>
-        <activity android:name=".BarangayLogin"></activity>
+        <activity android:name=".Emergency"></activity>
+        <activity android:name=".UserMainMenu" />
+        <activity android:name=".BarangayLogin" />
         <activity android:name=".UserLogin" />
         <activity android:name=".MainMenu" />
         <activity

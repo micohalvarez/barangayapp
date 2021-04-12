@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0A2435"
-    tools:context=".UserMainMenu">
+    tools:context=".Emergency">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -16,20 +16,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintVertical_bias="0.065" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="265dp"
-        android:layout_height="88dp"
-        android:text="Barangay Emergency Application"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Emergency"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202" />
+        app:layout_constraintVertical_bias="0.223" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="111dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/newsfeed" />
+            android:src="@drawable/fire" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="111dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/sos" />
+            android:src="@drawable/medical" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="111dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/covidsymptom" />
+            android:src="@drawable/crime" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -105,60 +105,58 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/NewsFeed"
+        android:id="@+id/Fire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" News Feed"
+        android:text=" FIRE"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.531" />
 
     <TextView
-        android:id="@+id/SoS"
+        android:id="@+id/Medical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" SOS"
+        android:text="MEDICAL"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.769"
+        app:layout_constraintHorizontal_bias="0.823"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.531" />
 
     <TextView
-        android:id="@+id/CovidSymptomSurvey"
-        android:layout_width="173dp"
-        android:layout_height="105dp"
-        android:text="Covid Symptom Survey"
+        android:id="@+id/Crime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CRIME"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
+        app:layout_constraintVertical_bias="0.862" />
 
     <TextView
-        android:id="@+id/ChatSupport"
-        android:layout_width="154dp"
-        android:layout_height="75dp"
-        android:text="Chat Support"
+        android:id="@+id/Accident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ACCIDENT"
         android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
-
-
+        app:layout_constraintVertical_bias="0.862" />
 </androidx.constraintlayout.widget.ConstraintLayout>
