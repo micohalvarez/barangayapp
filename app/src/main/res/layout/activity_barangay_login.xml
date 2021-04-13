@@ -12,24 +12,25 @@
       android:id="@+id/textView2"
       android:layout_width="305dp"
       android:layout_height="454dp"
-      android:text=""
       android:background="@drawable/box"
+      android:text=""
+      android:textSize="8sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.498" />
 
   <ImageView
       android:id="@+id/imageView3"
-      android:layout_width="150dp"
-      android:layout_height="150dp"
+      android:layout_width="127dp"
+      android:layout_height="104dp"
       android:src="@drawable/logo5"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.498"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.275" />
+      app:layout_constraintBottom_toBottomOf="@+id/textView2"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toTopOf="@+id/textView2"
+      app:layout_constraintVertical_bias="0.145" />
 
   <TextView
       android:id="@+id/textView3"
@@ -38,11 +39,23 @@
       android:text="Barangay Login"
       android:textColor="#000000"
       android:textSize="24sp"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.466" />
+      app:layout_constraintBottom_toBottomOf="@+id/textView2"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintHorizontal_bias="0.496"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toTopOf="@+id/textView2"
+      app:layout_constraintVertical_bias="0.431" />
+
+  <View
+      android:id="@+id/line"
+      android:layout_width="185dp"
+      android:layout_height="1dp"
+      android:background="#000000"
+      app:layout_constraintBottom_toTopOf="@+id/Barangay_UserName"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toBottomOf="@+id/textView3"
+      app:layout_constraintVertical_bias="0.419" />
 
   <TextView
       android:id="@+id/Barangay_UserName"
@@ -50,57 +63,62 @@
       android:layout_height="29dp"
       android:background="@drawable/editround"
       android:paddingLeft="10dp"
-      android:text="    Username"
-      android:ems="10"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.53"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.532" />
+      android:drawableLeft="@drawable/user"
+      android:text="Username"
+      android:textSize="18dp"
+      app:layout_constraintBottom_toBottomOf="@+id/textView2"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toTopOf="@+id/textView2"
+      app:layout_constraintVertical_bias="0.576" />
 
   <EditText
       android:id="@+id/Barangay_Password"
       android:layout_width="166dp"
       android:layout_height="29dp"
       android:background="@drawable/editround"
-      android:ems="10"
-      android:hint="    Password"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.53"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.591" />
+      android:paddingLeft="10dp"
+      android:drawableLeft="@drawable/pass3"
+      android:hint="Password"
+      android:textSize="18dp"
+      app:layout_constraintBottom_toBottomOf="@+id/textView2"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toTopOf="@+id/textView2"
+      app:layout_constraintVertical_bias="0.677" />
 
   <Button
       android:id="@+id/Barangay_btn_signin"
       android:layout_width="166dp"
-      android:layout_height="35dp"
+      android:layout_height="29dp"
       android:background="@drawable/buttonround"
       android:text="Sign In"
       android:textAllCaps="false"
       android:textColor="#FFFFFF"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.53"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.673" />
+      android:textSize="7sp"
+      app:layout_constraintBottom_toBottomOf="@+id/textView2"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toTopOf="@+id/textView2"
+      app:layout_constraintVertical_bias="0.771" />
 
   <Button
       android:id="@+id/User_cntlgn"
       android:layout_width="166dp"
-      android:layout_height="35dp"
+      android:layout_height="29dp"
       android:background="@drawable/buttonround"
       android:text="Can't Login?"
       android:textAllCaps="false"
       android:textColor="#FFFFFF"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.53"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.738" />
+      android:textSize="7sp"
+      app:layout_constraintBottom_toBottomOf="@+id/textView2"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintHorizontal_bias="0.503"
+      app:layout_constraintStart_toStartOf="@+id/textView2"
+      app:layout_constraintTop_toTopOf="@+id/textView2"
+      app:layout_constraintVertical_bias="0.861" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
