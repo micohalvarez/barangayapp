@@ -106,7 +106,7 @@
       app:layout_constraintVertical_bias="0.771" />
 
   <Button
-      android:id="@+id/User_cntlgn"
+      android:id="@+id/Barangay_cntlgn"
       android:layout_width="166dp"
       android:layout_height="29dp"
       android:background="@drawable/buttonround"
