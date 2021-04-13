@@ -25,11 +25,11 @@
         app:layout_constraintVertical_bias="0.569" />
 
     <Button
-        android:id="@+id/Barangay_button"
+        android:id="@+id/AboutUs_button"
         android:layout_width="201dp"
         android:layout_height="50dp"
         android:background="@drawable/buttonround"
-        android:text="Barangay"
+        android:text="About Us"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
@@ -64,5 +64,5 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="0.237" />
 </androidx.constraintlayout.widget.ConstraintLayout>
