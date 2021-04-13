@@ -26,7 +26,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_user_main_menu);
 
 
-        drawerLayout = findViewById(R.id.drawer_layout);
+        /*drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.tool_bar);
 
@@ -39,7 +39,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
 
 
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_view);
+        navigationView.setCheckedItem(R.id.nav_view);*/
 
 
 
