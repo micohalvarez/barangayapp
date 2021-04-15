@@ -47,4 +47,7 @@ public class Emergency extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() { }
+
 }

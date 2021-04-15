@@ -19,7 +19,8 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class UserMainMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class UserMainMenu extends AppCompatActivity{
+
 
     DrawerLayout drawerLayout;
     GridLayout mainGrid;
@@ -50,34 +51,24 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         navigationView.setCheckedItem(R.id.nav_view);*/
 
 
-
-
     }
 
 
     private void setSingleEvent(GridLayout mainGrid) {
-        for(int i=0; i<mainGrid.getChildCount();i++)
-        {
-            CardView cardview = (CardView)mainGrid.getChildAt(i);
+        for (int i = 0; i < mainGrid.getChildCount(); i++) {
+            CardView cardview = (CardView) mainGrid.getChildAt(i);
             final int finalI = i;
             cardview.setOnClickListener(v -> {
 
-                if(finalI == 0)
-                {
+                if (finalI == 0) {
 
-                }
-                else if (finalI == 1)
-                {
-                    Intent intent = new Intent(UserMainMenu.this, Emergency.class);
+                } else if (finalI == 1) {
+                    Intent intent = new Intent(this, Emergency.class);
                     startActivity(intent);
-                }
-                else if (finalI == 2)
-                {
+                } else if (finalI == 2) {
 
 
-                }
-                else if (finalI == 3)
-                {
+                } else if (finalI == 3) {
 
 
                 }
@@ -87,6 +78,9 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
+    public void onBackPressed() { }
+
+    /*@Override
     public void onBackPressed() {
 
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
@@ -100,5 +94,5 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return true;
-    }
+    }*/
 }
