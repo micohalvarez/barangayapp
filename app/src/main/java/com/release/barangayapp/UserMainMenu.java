@@ -55,21 +55,28 @@ public class UserMainMenu extends AppCompatActivity{
 
 
     private void setSingleEvent(GridLayout mainGrid) {
-        for (int i = 0; i < mainGrid.getChildCount(); i++) {
-            CardView cardview = (CardView) mainGrid.getChildAt(i);
+        for(int i=0; i<mainGrid.getChildCount();i++)
+        {
+            CardView cardview = (CardView)mainGrid.getChildAt(i);
             final int finalI = i;
             cardview.setOnClickListener(v -> {
 
-                if (finalI == 0) {
+                if(finalI == 0)
+                {
 
-                } else if (finalI == 1) {
-                    Intent intent = new Intent(this, Emergency.class);
+                }
+                else if (finalI == 1)
+                {
+                    Intent intent=new Intent(UserMainMenu.this, Emergency.class);
                     startActivity(intent);
-                } else if (finalI == 2) {
 
+                }
+                else if (finalI == 2)
+                {
 
-                } else if (finalI == 3) {
-
+                }
+                else if (finalI == 3)
+                {
 
                 }
 
