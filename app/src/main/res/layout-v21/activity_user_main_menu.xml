@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     android:orientation="vertical"
-    android:background="#0A2435"
+    android:background="#DFE6E9"
     android:weightSum="10"
     tools:context=".UserMainMenu"
     android:fitsSystemWindows="true"
@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#0A2435"
+        android:background="#DFE6E9"
         android:weightSum="10">
 
 
