@@ -19,7 +19,7 @@
         android:id="@+id/Usernav_view"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu_main"
-        android:layout_gravity="start"/>0
+        android:layout_gravity="start"/>
 
 
     <LinearLayout
@@ -80,7 +80,7 @@
     </RelativeLayout>
 
     <GridLayout
-        android:id="@+id/mainGrid"
+        android:id="@+id/User_mainGrid"
         android:layout_weight="7"
         android:columnCount="2"
         android:rowCount="3"

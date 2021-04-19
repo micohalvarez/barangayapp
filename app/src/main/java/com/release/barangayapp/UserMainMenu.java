@@ -31,7 +31,7 @@ public class UserMainMenu extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_main_menu);
-        UsermainGrid = findViewById(R.id.mainGrid);
+        UsermainGrid = findViewById(R.id.User_mainGrid);
         setSingleEvent(UsermainGrid);
 
 
