@@ -10,7 +10,7 @@ import android.widget.Button;
 
 
 public class MainMenu extends AppCompatActivity {
-    private Button Button_user;
+    private Button Button_user, Button_admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +19,24 @@ public class MainMenu extends AppCompatActivity {
 
         Button_user= findViewById(R.id.User_button);
         Button_user.setOnClickListener(v -> OpenUser());
+        Button_admin= findViewById(R.id.AboutUs_button);
+        Button_admin.setOnClickListener(v -> OpenAdmin());
     }
 
     public void OpenUser()
     {
-        Intent intent=new Intent(this, UserLogin.class);
-        startActivity(intent);
+        Intent userlogin=new Intent(this, UserLogin.class);
+        startActivity(userlogin);
     }
+
+    public void OpenAdmin()
+    {
+        Intent aboutus=new Intent(this, AboutUs.class);
+        startActivity(aboutus);
+    }
+
+
+
     @Override
     public void onBackPressed() { }
 }

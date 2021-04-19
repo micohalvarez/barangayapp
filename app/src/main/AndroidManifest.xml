@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".AdminMainMenu"></activity>
+        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".AdminChatSupport" />
+        <activity android:name=".Logbook" />
+        <activity android:name=".Reports" />
+        <activity android:name=".Notifications" />
+        <activity android:name=".ChatSupport" />
+        <activity android:name=".CovidSymptomSurvey" />
+        <activity android:name=".NewsFeed" />
+        <activity android:name=".AdminMainMenu" />
         <activity android:name=".Emergency" />
         <activity android:name=".UserMainMenu" />
         <activity android:name=".UserLogin" />

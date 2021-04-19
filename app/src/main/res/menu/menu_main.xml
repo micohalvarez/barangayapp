@@ -3,7 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.release.barangayapp.MainActivity">
 
+    <group android:checkableBehavior="single">
 
+        <item android:id="@+id/user_profile"
+            android:icon="@drawable/profile"
+            android:title="Profile" >
+
+
+        </item>
+
+        <item
+            android:id="@+id/user_settings"
+            android:icon="@drawable/settings"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/user_logout"
+            android:icon="@drawable/logout_icon"
+            android:title="Logout" />
+    </group>
 
 
 </menu>

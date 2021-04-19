@@ -22,33 +22,29 @@ import com.google.firebase.auth.FirebaseAuth;
 public class UserMainMenu extends AppCompatActivity{
 
 
-    DrawerLayout drawerLayout;
-    GridLayout mainGrid;
-    NavigationView navigationView;
-    Toolbar toolbar;
+    DrawerLayout UserdrawerLayout;
+    GridLayout UsermainGrid;
+    NavigationView UsernavigationView;
+    Toolbar Usertoolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_main_menu);
-        mainGrid = findViewById(R.id.mainGrid);
-        setSingleEvent(mainGrid);
+        UsermainGrid = findViewById(R.id.mainGrid);
+        setSingleEvent(UsermainGrid);
 
 
-        /*drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.tool_bar);
+        UserdrawerLayout = findViewById(R.id.Userdrawer_layout);
+        UsernavigationView = findViewById(R.id.Usernav_view);
+        Usertoolbar = findViewById(R.id.Usertool_bar);
 
-        navigationView.bringToFront();
-        setSupportActionBar(toolbar);
+        UsernavigationView.bringToFront();
+        setSupportActionBar(Usertoolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, UserdrawerLayout, Usertoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        UserdrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
-
-        navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_view);*/
 
 
     }
@@ -63,21 +59,25 @@ public class UserMainMenu extends AppCompatActivity{
 
                 if(finalI == 0)
                 {
+                    Intent newsfeed=new Intent(UserMainMenu.this, NewsFeed.class);
+                    startActivity(newsfeed);
 
                 }
                 else if (finalI == 1)
                 {
-                    Intent intent=new Intent(UserMainMenu.this, Emergency.class);
-                    startActivity(intent);
+                    Intent emergency=new Intent(UserMainMenu.this, Emergency.class);
+                    startActivity(emergency);
 
                 }
                 else if (finalI == 2)
                 {
-
+                    Intent covidsymptom=new Intent(UserMainMenu.this, CovidSymptomSurvey.class);
+                    startActivity(covidsymptom);
                 }
                 else if (finalI == 3)
                 {
-
+                    Intent chatsupport=new Intent(UserMainMenu.this, ChatSupport.class);
+                    startActivity(chatsupport);
                 }
 
             });
@@ -85,21 +85,15 @@ public class UserMainMenu extends AppCompatActivity{
     }
 
     @Override
-    public void onBackPressed() { }
-
-    /*@Override
     public void onBackPressed() {
 
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START);
+        if (UserdrawerLayout.isDrawerOpen((GravityCompat.START))) {
+
+            UserdrawerLayout.closeDrawer(GravityCompat.START);
         }
-        else{
+        else {
             super.onBackPressed();
         }
-    }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return true;
-    }*/
+    }
 }
