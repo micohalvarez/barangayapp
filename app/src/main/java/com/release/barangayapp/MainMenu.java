@@ -25,8 +25,13 @@ public class MainMenu extends AppCompatActivity {
 
     public void OpenUser()
     {
+<<<<<<< Updated upstream
         Intent userlogin=new Intent(this, UserLogin.class);
         startActivity(userlogin);
+=======
+        Intent intent=new Intent(this, Register.class);
+        startActivity(intent);
+>>>>>>> Stashed changes
     }
 
     public void OpenAdmin()
