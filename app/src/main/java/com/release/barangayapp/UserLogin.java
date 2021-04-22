@@ -20,31 +20,25 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class UserLogin extends AppCompatActivity {
 
-<<<<<<< Updated upstream
-    private Button Login_user, Login_admin;
-=======
-    Button Login_user;
-    EditText Username,Password;
-    FirebaseAuth FirebaseLoginAuth;
-    ProgressBar PBar;
->>>>>>> Stashed changes
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_login);
+        Button Login_user;
+        EditText Username,Password;
+        FirebaseAuth FirebaseLoginAuth;
+        ProgressBar PBar;
 
-<<<<<<< Updated upstream
 
-        Login_admin=findViewById(R.id.User_cntlgn);
-        Login_admin.setOnClickListener(v -> LoginAdmin());
-=======
-        Username = findViewById(R.id.User_EmailUsername);
-        Password = findViewById(R.id.User_Password);
->>>>>>> Stashed changes
-        Login_user= findViewById(R.id.User_btn_signin);
-        FirebaseLoginAuth = FirebaseAuth.getInstance();
-        PBar = findViewById(R.id.progressBar1);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_user_login);
+
+
+            Username = findViewById(R.id.User_EmailUsername);
+            Password = findViewById(R.id.User_Password);
+
+            Login_user= findViewById(R.id.User_btn_signin);
+            FirebaseLoginAuth = FirebaseAuth.getInstance();
+            PBar = findViewById(R.id.progressBar1);
 
         Login_user.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,21 +87,8 @@ public class UserLogin extends AppCompatActivity {
         });
 
 
-<<<<<<< Updated upstream
-    public void LoginUser()
-    {
-        Intent usermainmenu=new Intent(this, UserMainMenu.class);
-        startActivity(usermainmenu);
-    }
 
-
-    public void LoginAdmin()
-    {
-        Intent adminmainmenu=new Intent(this, AdminMainMenu.class);
-        startActivity(adminmainmenu);
-=======
->>>>>>> Stashed changes
-    }
+        }
 
     @Override
     public void onBackPressed() { }
