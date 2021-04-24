@@ -54,6 +54,7 @@
         android:layout_height="29dp"
         android:background="@drawable/editround"
         android:clickable="true"
+        android:inputType="textPassword"
         android:drawableLeft="@drawable/pass3"
         android:fontFamily="@font/aladin"
         android:hint="Password"
