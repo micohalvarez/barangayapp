@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class UserLogin extends AppCompatActivity {
 
-<<<<<<< Updated upstream
+
 
 
         Button Login_user;
@@ -42,31 +42,7 @@ public class UserLogin extends AppCompatActivity {
             FirebaseLoginAuth = FirebaseAuth.getInstance();
             PBar = findViewById(R.id.progressBar1);
 
-=======
 
-
-    Button Login_user, Login_admin;
-    EditText Username, Password;
-    FirebaseAuth FirebaseLoginAuth;
-    ProgressBar PBar;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_login);
-
-        Login_admin = findViewById(R.id.User_cntlgn);
-        Login_admin.setOnClickListener(v -> LoginAdmin());
-
-        Username = findViewById(R.id.User_EmailUsername);
-        Password = findViewById(R.id.User_Password);
-
-        Login_user = findViewById(R.id.User_btn_signin);
-        FirebaseLoginAuth = FirebaseAuth.getInstance();
-        PBar = findViewById(R.id.progressBar1);
-
->>>>>>> Stashed changes
 
                 Login_user.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -109,47 +85,29 @@ public class UserLogin extends AppCompatActivity {
 
             }
 
-<<<<<<< Updated upstream
-            public void LoginUser ()
-            {
-                Intent usermainmenu = new Intent(this, UserMainMenu.class);
-                startActivity(usermainmenu);
-            }
-
-=======
 
 
-        }
 
         public void LoginUser ()
         {
             Intent usermainmenu = new Intent(this, UserMainMenu.class);
             startActivity(usermainmenu);
         }
->>>>>>> Stashed changes
+
 
             public void LoginAdmin ()
             {
                 Intent adminmainmenu = new Intent(this, AdminMainMenu.class);
                 startActivity(adminmainmenu);
 
-<<<<<<< Updated upstream
-            }
-=======
-        public void LoginAdmin ()
-        {
-            Intent adminmainmenu = new Intent(this, AdminMainMenu.class);
-            startActivity(adminmainmenu);
 
->>>>>>> Stashed changes
+            }
+
 
             @Override
             public void onBackPressed () {
             }
 
         }
-<<<<<<< Updated upstream
-=======
 
-    }
->>>>>>> Stashed changes
+
