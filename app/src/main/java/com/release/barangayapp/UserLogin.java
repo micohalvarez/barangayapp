@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class UserLogin extends AppCompatActivity {
 
-<<<<<<< Updated upstream
+
 
         Button Login_user;
         EditText Username,Password;
@@ -37,94 +37,68 @@ public class UserLogin extends AppCompatActivity {
             Username = findViewById(R.id.User_EmailUsername);
             Password = findViewById(R.id.User_Password);
 
-            Login_user= findViewById(R.id.User_btn_signin);
+            Login_user = findViewById(R.id.User_btn_signin);
             FirebaseLoginAuth = FirebaseAuth.getInstance();
             PBar = findViewById(R.id.progressBar1);
-=======
-
-    Button Login_user, Login_admin;
-    EditText Username, Password;
-    FirebaseAuth FirebaseLoginAuth;
-    ProgressBar PBar;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_login);
-
-        Login_admin = findViewById(R.id.User_cntlgn);
-        Login_admin.setOnClickListener(v -> LoginAdmin());
-
-        Username = findViewById(R.id.User_EmailUsername);
-        Password = findViewById(R.id.User_Password);
-
-        Login_user = findViewById(R.id.User_btn_signin);
-        FirebaseLoginAuth = FirebaseAuth.getInstance();
-        PBar = findViewById(R.id.progressBar1);
->>>>>>> Stashed changes
-
-        Login_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String StgUsername = Username.getText().toString().trim();
-                String StgPassword = Password.getText().toString().trim();
-                if (TextUtils.isEmpty(StgUsername)) {
-                    Username.setError("Username is Required");
-                    return;
-                }
-                if (TextUtils.isEmpty(StgPassword)) {
-                    Password.setError("Password is Empty");
-                    return;
-                }
-                if (StgPassword.length() < 6) {
-                    Password.setError("Password must be more than 6 characters");
-                    return;
-                }
-                if (!Patterns.EMAIL_ADDRESS.matcher(StgUsername).matches()) {
-                    Username.setError("Invalid Email");
-                    return;
-                }
-                PBar.setVisibility(View.VISIBLE);
-                FirebaseLoginAuth.signInWithEmailAndPassword(StgUsername, StgPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                Login_user.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), UserMainMenu.class));
-                        } else {
-                            Toast.makeText(UserLogin.this, "Error Occured: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    public void onClick(View v) {
+                        String StgUsername = Username.getText().toString().trim();
+                        String StgPassword = Password.getText().toString().trim();
+                        if (TextUtils.isEmpty(StgUsername)) {
+                            Username.setError("Username is Required");
+                            return;
                         }
+                        if (TextUtils.isEmpty(StgPassword)) {
+                            Password.setError("Password is Empty");
+                            return;
+                        }
+                        if (StgPassword.length() < 6) {
+                            Password.setError("Password must be more than 6 characters");
+                            return;
+                        }
+                        if (!Patterns.EMAIL_ADDRESS.matcher(StgUsername).matches()) {
+                            Username.setError("Invalid Email");
+                            return;
+                        }
+                        PBar.setVisibility(View.VISIBLE);
+                        FirebaseLoginAuth.signInWithEmailAndPassword(StgUsername, StgPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), UserMainMenu.class));
+                                } else {
+                                    Toast.makeText(UserLogin.this, "Error Occured: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+
+
                     }
                 });
 
 
             }
-        });
+
+            public void LoginUser ()
+            {
+                Intent usermainmenu = new Intent(this, UserMainMenu.class);
+                startActivity(usermainmenu);
+            }
 
 
-<<<<<<< Updated upstream
+            public void LoginAdmin ()
+            {
+                Intent adminmainmenu = new Intent(this, AdminMainMenu.class);
+                startActivity(adminmainmenu);
+
+            }
+
+            @Override
+            public void onBackPressed () {
+            }
 
         }
-=======
-        public void LoginUser ()
-        {
-            Intent usermainmenu = new Intent(this, UserMainMenu.class);
-            startActivity(usermainmenu);
-        }
-
-
-        public void LoginAdmin ()
-        {
-            Intent adminmainmenu = new Intent(this, AdminMainMenu.class);
-            startActivity(adminmainmenu);
->>>>>>> Stashed changes
-
-        }
-
-        @Override
-        public void onBackPressed () {
-        }
-
-    }
-}
