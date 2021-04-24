@@ -49,30 +49,40 @@ try {
         ARegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String compPass = APassword.getText().toString().trim();
+                String compCPass = AConfPassword.getText().toString().trim();
                 String BUsername = AUsername.getText().toString().trim();
-                String BPassword = APassword.getText().toString().trim();
+                String BPassword = AConfPassword.getText().toString().trim();
+System.out.println(compPass);
+System.out.println(compCPass);
+                if (!compPass.equals(compCPass))
+                {
+                    AConfPassword.setError("Confirmed Password is not the same");
+                    return;
+                }
 
-                if (TextUtils.isEmpty(BUsername))
+                else if (TextUtils.isEmpty(BUsername))
                 {
                    AUsername.setError("Username is Required");
                    return;
                 }
-                if (TextUtils.isEmpty(BPassword))
+                else if (TextUtils.isEmpty(BPassword))
                 {
-                    APassword.setError("Password is Empty");
+                    AConfPassword.setError("Password is Empty");
                     return;
                 }
-                if (BPassword.length() < 6)
+                else if (BPassword.length() < 6)
                 {
-                    APassword.setError("Password must be more than 6 characters");
+                    AConfPassword.setError("Password must be more than 6 characters");
                     return;
                 }
-                if (!Patterns.EMAIL_ADDRESS.matcher(BUsername).matches())
+                else if (!Patterns.EMAIL_ADDRESS.matcher(BUsername).matches())
                 {
                     AUsername.setError("Invalid Email");
                     return;
                 }
-
+                else
+                    {
                 ProgressB.setVisibility(View.VISIBLE);
                 FAuth.createUserWithEmailAndPassword(BUsername,BPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -89,6 +99,8 @@ try {
                             }
                     }
                 });
+                    }
+
             }
         });
     }
