@@ -33,7 +33,6 @@ public class AnnouncementService {
 
                 for (DataSnapshot dsp : dataSnapshot.getChildren()) {
                    announcementList.add(dsp.getValue(Announcement.class));
-
                 }
 
             }

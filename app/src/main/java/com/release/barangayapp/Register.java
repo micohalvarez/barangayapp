@@ -24,6 +24,7 @@ import com.release.barangayapp.service.AnnouncementService;
 import com.release.barangayapp.service.LogBookService;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Register extends AppCompatActivity {
@@ -33,10 +34,33 @@ public class Register extends AppCompatActivity {
     Button ARegister;
     FirebaseAuth FAuth;
     ProgressBar ProgressB;
-    public AnnouncementService announcementService;
+    private AnnouncementService announcementService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //for saving
+//        DateFormat Date = DateFormat.getDateInstance();
+//        Calendar cals = Calendar.getInstance();
+//
+//        Announcement lb = new Announcement();
+//
+//        String currentDate = Date.format(cals.getTime());
+//        lb.setContent("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+//        lb.setTitle("Test Announcement");
+//        lb.setCreatedAt(currentDate);
+//
+//        announcementService = new AnnouncementService();
+//        announcementService.saveData(lb);
+
+        //for retrieving
+//       ArrayList<Announcement> announcements =  announcementService.getData();
+//
+//       for(Announcement announcement : announcements){
+//
+//       }
+
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_accountbarangay);
