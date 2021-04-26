@@ -47,7 +47,7 @@ public class AdminMainMenu extends AppCompatActivity {
 
                 if(finalI == 0)
                 {
-                    Intent notification=new Intent(AdminMainMenu.this, Notifications.class);
+                    Intent notification=new Intent(AdminMainMenu.this, CreateAnnouncementActivity.class);
                     startActivity(notification);
 
                 }

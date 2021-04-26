@@ -72,22 +72,22 @@ public class Register extends AppCompatActivity {
         APhone = findViewById(R.id.RegPersonnelNumber);
 
         ARegister = findViewById(R.id.RegRegisterPersonnelButton);
-try {
 
-    FAuth = FirebaseAuth.getInstance();
-} catch (Exception E)
-{System.out.println(E.toString());}
+
+        FAuth = FirebaseAuth.getInstance();
+
+
         ProgressB = findViewById(R.id.progressBar);
 
         ARegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),UserLogin.class));
                 String compPass = APassword.getText().toString().trim();
                 String compCPass = AConfPassword.getText().toString().trim();
                 String BUsername = AUsername.getText().toString().trim();
                 String BPassword = AConfPassword.getText().toString().trim();
-System.out.println(compPass);
-System.out.println(compCPass);
+
                 if (!compPass.equals(compCPass))
                 {
                     AConfPassword.setError("Confirmed Password is not the same");

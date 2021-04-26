@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blueback">
+    android:background="@color/teal_200">
 
     <EditText
         android:id="@+id/CAnnounceSubject"
@@ -28,7 +28,7 @@
         app:layout_constraintVertical_bias="0.039" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/CAnnounceIconType"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
@@ -77,17 +77,32 @@
         app:srcCompat="@drawable/notif_editicon" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/CAnnounceDetail"
         android:layout_width="304dp"
         android:layout_height="254dp"
+        android:clickable="true"
         android:ems="10"
+        android:fontFamily="@font/bevan"
+        android:hint="Announcement Detail"
         android:inputType="textLongMessage"
-        android:text="Detail"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.555" />
+
+    <ImageView
+        android:id="@+id/CAnnounceSendIcon"
+        android:layout_width="71dp"
+        android:layout_height="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875"
+        app:srcCompat="@drawable/notif_send" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
