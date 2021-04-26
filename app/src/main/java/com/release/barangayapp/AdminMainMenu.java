@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.release.barangayapp.service.AuthService;
 
 public class AdminMainMenu extends AppCompatActivity {
 
@@ -19,11 +20,21 @@ public class AdminMainMenu extends AppCompatActivity {
     GridLayout AdminmainGrid;
     NavigationView AdminnavigationView;
     Toolbar Admintoolbar;
+    private AuthService authService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main_menu);
+
+        authService = new AuthService();
+        authService.getUserDetails(value ->  {
+            if(authService.getAuthUser() == null) {
+                Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
+                startActivity(homeIntent);
+                finish();
+            }
+        });
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);

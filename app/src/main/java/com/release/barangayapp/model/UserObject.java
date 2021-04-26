@@ -2,26 +2,18 @@ package com.release.barangayapp.model;
 
 public class UserObject {
 
-    private String firstName;
-    private String lastName;
+    private String fullName;
     private int age;
-    private char gender;
+    private int role;
+    private String gender;
     private String address;
 
-    public String getFirstName() {
-        return firstName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getAge() {
@@ -32,11 +24,11 @@ public class UserObject {
         this.age = age;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -46,5 +38,13 @@ public class UserObject {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }
