@@ -18,6 +18,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.release.barangayapp.model.Announcement;
+import com.release.barangayapp.model.LogBook;
+import com.release.barangayapp.service.AnnouncementService;
+import com.release.barangayapp.service.LogBookService;
+
+import java.text.DateFormat;
+import java.util.Calendar;
 
 public class Register extends AppCompatActivity {
 
@@ -26,9 +33,11 @@ public class Register extends AppCompatActivity {
     Button ARegister;
     FirebaseAuth FAuth;
     ProgressBar ProgressB;
+    public AnnouncementService announcementService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_accountbarangay);
 
