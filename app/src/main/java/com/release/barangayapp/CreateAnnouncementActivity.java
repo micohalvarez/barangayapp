@@ -7,7 +7,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +26,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barangay_createannouncement);
 
-        subjectSection = findViewById(R.id.CAnnounceSubject);
+        subjectSection = findViewById(R.id.RegPersonnelCPass);
         editIcon = (Spinner) findViewById(R.id.spinnerEditIcon);
         iconType = findViewById(R.id.CAnnounceIconType);
         sendIcon = findViewById(R.id.CAnnounceSendIcon);

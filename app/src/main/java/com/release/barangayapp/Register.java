@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,20 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.release.barangayapp.model.Announcement;
-import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.model.UserObject;
-import com.release.barangayapp.service.AnnouncementService;
-import com.release.barangayapp.service.LogBookService;
 import com.release.barangayapp.service.UserService;
-
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
 
 public class Register extends AppCompatActivity {
 
-    EditText AFullname, AUsername;
+    EditText AFullname, AUsername, AAddress;
     EditText APassword, AConfPassword, APhone;
     Button ARegister;
     FirebaseAuth FAuth;
@@ -48,6 +39,7 @@ public class Register extends AppCompatActivity {
 
         AFullname = findViewById(R.id.RegPersonnelName);
         AUsername = findViewById(R.id.RegPersonnelEmail);
+        AAddress = findViewById(R.id.RegPersonnelAddress);
         APassword = findViewById(R.id.RegPersonnelPass);
         AConfPassword = findViewById(R.id.RegPersonnelCPass);
         APhone = findViewById(R.id.RegPersonnelNumber);
@@ -58,7 +50,7 @@ public class Register extends AppCompatActivity {
         ARegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),UserLogin.class));
+
                 String compPass = APassword.getText().toString().trim();
                 String compCPass = AConfPassword.getText().toString().trim();
                 String BUsername = AUsername.getText().toString().trim();

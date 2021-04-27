@@ -7,7 +7,7 @@
     android:background="@color/teal_200">
 
     <EditText
-        android:id="@+id/CAnnounceSubject"
+        android:id="@+id/RegPersonnelCPass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"

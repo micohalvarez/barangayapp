@@ -22,34 +22,38 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 4000;
-    private AuthService authService;
+//    private AuthService authService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        authService = new AuthService();
+//        authService = new AuthService();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        authService.getUserDetails(value -> new Handler().postDelayed(() -> {
-            if(authService.getAuthUser() == null) {
-                Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
-                startActivity(homeIntent);
-                finish();
-            }
-            else{
-                if(value.getRole() == 2) {
-                    Intent homeIntent = new Intent(MainActivity.this, UserMainMenu.class);
-                    startActivity(homeIntent);
-                    finish();
-                }
-                else {
-                    Intent homeIntent = new Intent(MainActivity.this, AdminMainMenu.class);
-                    startActivity(homeIntent);
-                    finish();
-                }
-            }
-        }, SPLASH_TIME_OUT));
+        new Handler().postDelayed(() ->{
+            Intent homeIntent =new Intent(MainActivity.this, MainMenu.class);
+            startActivity(homeIntent);
+            finish();
+        },SPLASH_TIME_OUT);
+//        authService.getUserDetails(value -> new Handler().postDelayed(() -> {
+//            if(authService.getAuthUser() == null) {
+//                Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
+//                startActivity(homeIntent);
+//                finish();
+//            }
+//            else{
+//                if(value.getRole() == 2) {
+//                    Intent homeIntent = new Intent(MainActivity.this, UserMainMenu.class);
+//                    startActivity(homeIntent);
+//                    finish();
+//                }
+//                else {
+//                    Intent homeIntent = new Intent(MainActivity.this, AdminMainMenu.class);
+//                    startActivity(homeIntent);
+//                    finish();
+//                }
+//            }
+//        }, SPLASH_TIME_OUT));
 
 
     }
