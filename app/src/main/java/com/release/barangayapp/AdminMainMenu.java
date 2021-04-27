@@ -24,6 +24,8 @@ public class AdminMainMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main_menu);
+        AdminmainGrid = findViewById(R.id.Admin_mainGrid);
+        setSingleEvent(AdminmainGrid);
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
@@ -47,7 +49,7 @@ public class AdminMainMenu extends AppCompatActivity {
 
                 if(finalI == 0)
                 {
-                    Intent notification=new Intent(AdminMainMenu.this, Notifications.class);
+                    Intent notification=new Intent(AdminMainMenu.this, NotificationsActivity.class);
                     startActivity(notification);
 
                 }

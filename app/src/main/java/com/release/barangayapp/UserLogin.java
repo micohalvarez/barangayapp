@@ -23,6 +23,7 @@ public class UserLogin extends AppCompatActivity {
 
 
 
+
         Button Login_user;
         EditText Username,Password;
         FirebaseAuth FirebaseLoginAuth;
@@ -35,12 +36,16 @@ public class UserLogin extends AppCompatActivity {
             setContentView(R.layout.activity_user_login);
 
 
+
+
             Username = findViewById(R.id.User_EmailUsername);
             Password = findViewById(R.id.User_Password);
 
             Login_user = findViewById(R.id.User_btn_signin);
             FirebaseLoginAuth = FirebaseAuth.getInstance();
             PBar = findViewById(R.id.progressBar1);
+
+
 
 
 
