@@ -1,15 +1,17 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CovidSymptomSurvey extends AppCompatActivity {
+import com.release.barangayapp.R;
+
+public class ChatSupport extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_covid_symptom_survey);
+        setContentView(R.layout.activity_chat_support);
     }
 
 

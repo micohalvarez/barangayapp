@@ -1,4 +1,4 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,11 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,16 +21,20 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.release.barangayapp.model.UserObject;
+import com.release.barangayapp.R;
+import com.release.barangayapp.model.UserRegisterObject;
 import com.release.barangayapp.service.UserService;
 
 public class Register extends AppCompatActivity {
 
     EditText AFullname, AUsername, AAddress;
     EditText APassword, AConfPassword, APhone;
+    Switch ADesignator;
+    TextView ADesignatorDetail;
     Button ARegister;
     FirebaseAuth FAuth;
     ProgressBar ProgressB;
+    int Role;
     private UserService userService;
 
     @Override
@@ -43,14 +50,31 @@ public class Register extends AppCompatActivity {
         APassword = findViewById(R.id.RegPersonnelPass);
         AConfPassword = findViewById(R.id.RegPersonnelCPass);
         APhone = findViewById(R.id.RegPersonnelNumber);
+
+
         FAuth = FirebaseAuth.getInstance();
         ARegister = findViewById(R.id.RegRegisterPersonnelButton);
+        ADesignator = findViewById(R.id.SwitchAccountDesignator);
+        ADesignatorDetail = findViewById(R.id.AccountDesignateDetail);
         ProgressB = findViewById(R.id.progressBar);
+
+        ADesignator.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (ADesignator.isChecked())
+                {ADesignatorDetail.setText("RESIDENT USER");
+                Role = 2;}
+                else
+                {ADesignatorDetail.setText("BARANGAY USER");
+                Role = 1;}
+            }
+        });
+
 
         ARegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getApplicationContext(),UserLogin.class));
                 String compPass = APassword.getText().toString().trim();
                 String compCPass = AConfPassword.getText().toString().trim();
                 String BUsername = AUsername.getText().toString().trim();
@@ -110,12 +134,14 @@ public class Register extends AppCompatActivity {
     public void register(String userId){
 
         userService = new UserService();
-        UserObject user = new UserObject();
+        UserRegisterObject user = new UserRegisterObject();
         user.setAge(23);
         user.setAddress("Manila City");
         user.setRole(1);
         user.setGender("M");
-        user.setFullName(AFullname.getText().toString());
+        user.setFullName(AFullname.getText().toString().trim());
+        user.setAddress(AAddress.getText().toString().trim());
+        user.setPhonenumber(APhone.getText().toString().trim());
 
         userService.saveData(user,userId);
     }

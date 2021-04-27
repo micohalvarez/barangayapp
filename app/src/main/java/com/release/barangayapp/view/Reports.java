@@ -1,16 +1,16 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class AboutUs extends AppCompatActivity {
+import com.release.barangayapp.R;
+
+public class Reports extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_us);
+        setContentView(R.layout.activity_reports);
     }
-    @Override
-    public void onBackPressed() { }
 }

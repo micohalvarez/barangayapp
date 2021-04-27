@@ -1,12 +1,18 @@
 package com.release.barangayapp.model;
 
-public class UserObject {
+public class UserRegisterObject {
 
     private String fullName;
     private int age;
     private int role;
     private String gender;
     private String address;
+
+    public String getPhonenumber() { return Phonenumber; }
+
+    public void setPhonenumber(String phonenumber) { this.Phonenumber = phonenumber; }
+
+    private String Phonenumber;
 
     public String getFullName() {
         return fullName;

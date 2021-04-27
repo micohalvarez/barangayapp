@@ -1,8 +1,8 @@
 package com.release.barangayapp.service;
 
-import com.release.barangayapp.model.UserObject;
+import com.release.barangayapp.model.UserRegisterObject;
 
 public interface MyCallBack {
-    void authCallBack(UserObject value);
+    void authCallBack(UserRegisterObject value);
 
 }

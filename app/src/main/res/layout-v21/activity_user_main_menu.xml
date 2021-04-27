@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="#0A2435"
     android:weightSum="10"
-    tools:context=".UserMainMenu"
+    tools:context=".view.UserMainMenu"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     >

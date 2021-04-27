@@ -1,7 +1,5 @@
 package com.release.barangayapp.service;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -9,17 +7,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.release.barangayapp.model.UserObject;
+import com.release.barangayapp.model.UserRegisterObject;
 
 public class AuthService {
 
     private FirebaseUser user;
-    private UserObject userObject;
+    private UserRegisterObject userObject;
     public AuthService(){
         user = FirebaseAuth.getInstance().getCurrentUser();
-        userObject = new UserObject();
+        userObject = new UserRegisterObject();
     }
 
     public FirebaseUser getAuthUser(){
@@ -38,7 +35,7 @@ public class AuthService {
                     if (!task.isSuccessful()) {
                         myCallBack.authCallBack(userObject);
                     } else {
-                        userObject = task.getResult().getValue(UserObject.class);
+                        userObject = task.getResult().getValue(UserRegisterObject.class);
                         myCallBack.authCallBack(userObject);
 
                     }

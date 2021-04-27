@@ -79,10 +79,10 @@
         app:backgroundTint="#191818"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="0.853" />
 
     <RelativeLayout
         android:layout_width="370dp"
@@ -237,6 +237,42 @@
             tools:layout_editor_absoluteX="64dp"
             tools:layout_editor_absoluteY="364dp" />
     </RelativeLayout>
+
+    <Switch
+        android:id="@+id/SwitchAccountDesignator"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="160dp"
+        android:fontFamily="@font/bevan"
+        android:text="Account Designator"
+        android:textColor="#4BFF05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.771" />
+
+    <TextView
+        android:id="@+id/AccountDesignateDetail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginBottom="160dp"
+        android:fontFamily="@font/bevan"
+        android:gravity="center_vertical"
+        android:text="User Detail"
+        android:textColor="#43FF05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
