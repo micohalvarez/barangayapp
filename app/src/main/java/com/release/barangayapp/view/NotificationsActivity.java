@@ -24,10 +24,8 @@ public class NotificationsActivity extends AppCompatActivity {
         Addannouncement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Go to Add Announcement
+                //Go to CreateAnnouncementActivity
 
-
-                //sample only
                 Intent emergency=new Intent(NotificationsActivity.this, CreateAnnouncementActivity.class);
                 startActivity(emergency);
             }
