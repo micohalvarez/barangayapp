@@ -21,16 +21,15 @@ public class NotificationsActivity extends AppCompatActivity {
 
         Addannouncement = findViewById(R.id.AddAnnouncement);
 
-        Addannouncement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Go to CreateAnnouncementActivity
-
-                Intent emergency=new Intent(NotificationsActivity.this, CreateAnnouncementActivity.class);
-                startActivity(emergency);
-            }
+        Addannouncement.setOnClickListener(v -> {
+            //Go to CreateAnnouncementActivity
+            Intent emergency=new Intent(NotificationsActivity.this, CreateAnnouncementActivity.class);
+            startActivity(emergency);
         });
 
 
     }
+
+    @Override
+    public void onBackPressed() { }
 }
