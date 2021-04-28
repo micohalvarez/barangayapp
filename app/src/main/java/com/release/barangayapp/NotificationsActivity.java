@@ -11,25 +11,13 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class NotificationsActivity extends AppCompatActivity {
 
-    FloatingActionButton Addannouncement;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
 
-        Addannouncement = findViewById(R.id.AddAnnouncement);
 
-        Addannouncement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Go to Add Announcement
-
-
-                //sample only
-                Intent emergency=new Intent(NotificationsActivity.this, Emergency.class);
-                startActivity(emergency);
-            }
-        });
 
 
     }
