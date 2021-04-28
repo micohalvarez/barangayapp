@@ -28,7 +28,7 @@ public class NotificationsActivity extends AppCompatActivity {
 
 
                 //sample only
-                Intent emergency=new Intent(NotificationsActivity.this, Emergency.class);
+                Intent emergency=new Intent(NotificationsActivity.this, CreateAnnouncementActivity.class);
                 startActivity(emergency);
             }
         });
