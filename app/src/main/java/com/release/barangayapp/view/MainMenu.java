@@ -1,4 +1,4 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import  android.content.Intent;
 import android.os.Bundle;
 
 import android.widget.Button;
+
+import com.release.barangayapp.R;
 
 
 public class MainMenu extends AppCompatActivity {

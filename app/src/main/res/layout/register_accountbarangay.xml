@@ -8,27 +8,6 @@
     android:background="@drawable/blueback">
 
 
-    <EditText
-        android:id="@+id/CAnnounceSubject"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:background="#FFFFFF"
-        android:clickable="true"
-        android:ems="10"
-        android:fontFamily="@font/aladin"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.708" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -39,10 +18,9 @@
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/textView2"
@@ -57,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.241" />
 
     <TextView
         android:id="@+id/textView3"
@@ -69,10 +47,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintVertical_bias="0.154" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -101,116 +79,200 @@
         app:backgroundTint="#191818"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.853" />
+
+    <RelativeLayout
+        android:layout_width="370dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="1.0">
 
-    <EditText
-        android:id="@+id/RegPersonnelName"
+
+        <EditText
+            android:id="@+id/RegPersonnelName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="245dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:ems="10"
+            android:fontFamily="@font/aladin"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="274dp" />
+
+        <EditText
+            android:id="@+id/RegPersonnelCPass"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="235dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:ems="10"
+            android:fontFamily="@font/aladin"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="504dp" />
+
+        <EditText
+            android:id="@+id/RegPersonnelEmail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="155dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:ems="10"
+            android:fontFamily="@font/aladin"
+            android:hint="Email/Username"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="319dp" />
+
+        <EditText
+            android:id="@+id/RegPersonnelPass"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="190dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="65dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:ems="10"
+            android:fontFamily="@font/aladin"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="459dp" />
+
+        <EditText
+            android:id="@+id/RegPersonnelAddress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="55dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="200dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:ems="10"
+            android:fontFamily="@font/aladin"
+            android:hint="Address"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="412dp" />
+
+        <EditText
+            android:id="@+id/RegPersonnelNumber"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="145dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="110dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:ems="10"
+            android:fontFamily="@font/aladin"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="64dp"
+            tools:layout_editor_absoluteY="364dp" />
+    </RelativeLayout>
+
+    <Switch
+        android:id="@+id/SwitchAccountDesignator"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:background="@color/white"
-        android:clickable="true"
-        android:ems="10"
-        android:fontFamily="@font/aladin"
-        android:hint="Full Name"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textSize="20sp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="160dp"
+        android:fontFamily="@font/bevan"
+        android:text="Account Designator"
+        android:textColor="#4BFF05"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintVertical_bias="0.771" />
 
-    <EditText
-        android:id="@+id/RegPersonnelEmail"
+    <TextView
+        android:id="@+id/AccountDesignateDetail"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:background="@color/white"
-        android:clickable="true"
-        android:ems="10"
-        android:fontFamily="@font/aladin"
-        android:hint="Email/Username"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textSize="20sp"
+        android:layout_height="0dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginBottom="160dp"
+        android:fontFamily="@font/bevan"
+        android:gravity="center_vertical"
+        android:text="User Detail"
+        android:textColor="#43FF05"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
-
-
-    <EditText
-        android:id="@+id/RegPersonnelPass"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:background="#FFFFFF"
-        android:clickable="true"
-        android:ems="10"
-        android:fontFamily="@font/aladin"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
-
-    <EditText
-        android:id="@+id/RegPersonnelCPass"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:background="#FFFFFF"
-        android:clickable="true"
-        android:ems="10"
-        android:fontFamily="@font/aladin"
-        android:hint="Address"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
-
-    <EditText
-        android:id="@+id/RegPersonnelNumber"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:background="@color/white"
-        android:clickable="true"
-        android:ems="10"
-        android:fontFamily="@font/aladin"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        android:padding="10dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.765" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

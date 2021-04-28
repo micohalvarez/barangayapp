@@ -1,4 +1,4 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,9 +6,11 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,48 +20,25 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.release.barangayapp.model.Announcement;
-import com.release.barangayapp.model.LogBook;
-import com.release.barangayapp.service.AnnouncementService;
-import com.release.barangayapp.service.LogBookService;
-
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
+import com.google.firebase.auth.FirebaseUser;
+import com.release.barangayapp.R;
+import com.release.barangayapp.model.UserRegisterObject;
+import com.release.barangayapp.service.UserService;
 
 public class Register extends AppCompatActivity {
 
-    EditText AFullname, AUsername;
+    EditText AFullname, AUsername, AAddress;
     EditText APassword, AConfPassword, APhone;
+    Switch ADesignator;
+    TextView ADesignatorDetail;
     Button ARegister;
     FirebaseAuth FAuth;
     ProgressBar ProgressB;
-    private AnnouncementService announcementService;
+    int Role;
+    private UserService userService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        //for saving
-//        DateFormat Date = DateFormat.getDateInstance();
-//        Calendar cals = Calendar.getInstance();
-//
-//        Announcement lb = new Announcement();
-//
-//        String currentDate = Date.format(cals.getTime());
-//        lb.setContent("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
-//        lb.setTitle("Test Announcement");
-//        lb.setCreatedAt(currentDate);
-//
-//        announcementService = new AnnouncementService();
-//        announcementService.saveData(lb);
-
-        //for retrieving
-//       ArrayList<Announcement> announcements =  announcementService.getData();
-//
-//       for(Announcement announcement : announcements){
-//
-//       }
-
 
 
         super.onCreate(savedInstanceState);
@@ -67,27 +46,40 @@ public class Register extends AppCompatActivity {
 
         AFullname = findViewById(R.id.RegPersonnelName);
         AUsername = findViewById(R.id.RegPersonnelEmail);
+        AAddress = findViewById(R.id.RegPersonnelAddress);
         APassword = findViewById(R.id.RegPersonnelPass);
         AConfPassword = findViewById(R.id.RegPersonnelCPass);
         APhone = findViewById(R.id.RegPersonnelNumber);
 
-        ARegister = findViewById(R.id.RegRegisterPersonnelButton);
-try {
 
-    FAuth = FirebaseAuth.getInstance();
-} catch (Exception E)
-{System.out.println(E.toString());}
+        FAuth = FirebaseAuth.getInstance();
+        ARegister = findViewById(R.id.RegRegisterPersonnelButton);
+        ADesignator = findViewById(R.id.SwitchAccountDesignator);
+        ADesignatorDetail = findViewById(R.id.AccountDesignateDetail);
         ProgressB = findViewById(R.id.progressBar);
+
+        ADesignator.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (ADesignator.isChecked())
+                {ADesignatorDetail.setText("RESIDENT USER");
+                Role = 2;}
+                else
+                {ADesignatorDetail.setText("BARANGAY USER");
+                Role = 1;}
+            }
+        });
+
 
         ARegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),UserLogin.class));
                 String compPass = APassword.getText().toString().trim();
                 String compCPass = AConfPassword.getText().toString().trim();
                 String BUsername = AUsername.getText().toString().trim();
                 String BPassword = AConfPassword.getText().toString().trim();
-System.out.println(compPass);
-System.out.println(compCPass);
+
                 if (!compPass.equals(compCPass))
                 {
                     AConfPassword.setError("Confirmed Password is not the same");
@@ -122,6 +114,8 @@ System.out.println(compCPass);
                     public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful())
                             {
+                                FirebaseUser user = FAuth.getCurrentUser();
+                                register(user.getUid());
                                 Toast.makeText(Register.this,"Account Created Successfully",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),UserLogin.class));
                             }
@@ -132,10 +126,24 @@ System.out.println(compCPass);
                             }
                     }
                 });
-                    }
-
+             }
             }
         });
+    }
+
+    public void register(String userId){
+
+        userService = new UserService();
+        UserRegisterObject user = new UserRegisterObject();
+        user.setAge(23);
+        user.setAddress("Manila City");
+        user.setRole(1);
+        user.setGender("M");
+        user.setFullName(AFullname.getText().toString().trim());
+        user.setAddress(AAddress.getText().toString().trim());
+        user.setPhonenumber(APhone.getText().toString().trim());
+
+        userService.saveData(user,userId);
     }
     @Override
     public void onBackPressed() { }

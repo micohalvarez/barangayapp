@@ -1,4 +1,4 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.release.barangayapp.R;
+import com.release.barangayapp.service.AuthService;
 
 public class AdminMainMenu extends AppCompatActivity {
 
@@ -19,13 +21,21 @@ public class AdminMainMenu extends AppCompatActivity {
     GridLayout AdminmainGrid;
     NavigationView AdminnavigationView;
     Toolbar Admintoolbar;
+    private AuthService authService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main_menu);
-        AdminmainGrid = findViewById(R.id.Admin_mainGrid);
-        setSingleEvent(AdminmainGrid);
+
+        authService = new AuthService();
+        authService.getUserDetails(value ->  {
+            if(authService.getAuthUser() == null) {
+                Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
+                startActivity(homeIntent);
+                finish();
+            }
+        });
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
@@ -49,7 +59,7 @@ public class AdminMainMenu extends AppCompatActivity {
 
                 if(finalI == 0)
                 {
-                    Intent notification=new Intent(AdminMainMenu.this, NotificationsActivity.class);
+                    Intent notification=new Intent(AdminMainMenu.this, CreateAnnouncementActivity.class);
                     startActivity(notification);
 
                 }

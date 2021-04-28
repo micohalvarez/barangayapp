@@ -1,4 +1,4 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.release.barangayapp.R;
 
 public class Emergency extends AppCompatActivity {
     DrawerLayout EmergencydrawerLayout;

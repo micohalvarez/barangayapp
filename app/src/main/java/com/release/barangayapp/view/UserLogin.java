@@ -1,4 +1,4 @@
-package com.release.barangayapp;
+package com.release.barangayapp.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,11 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.release.barangayapp.R;
 
 public class UserLogin extends AppCompatActivity {
-
-
-
 
 
         Button Login_user;
@@ -32,10 +30,9 @@ public class UserLogin extends AppCompatActivity {
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
+
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_user_login);
-
-
 
 
             Username = findViewById(R.id.User_EmailUsername);
@@ -44,8 +41,6 @@ public class UserLogin extends AppCompatActivity {
             Login_user = findViewById(R.id.User_btn_signin);
             FirebaseLoginAuth = FirebaseAuth.getInstance();
             PBar = findViewById(R.id.progressBar1);
-
-
 
 
 

@@ -10,22 +10,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".AboutUs"></activity>
-        <activity android:name=".AdminChatSupport" />
-        <activity android:name=".Logbook" />
-        <activity android:name=".Reports" />
-        <activity android:name=".NotificationsActivity" />
-        <activity android:name=".ChatSupport" />
-        <activity android:name=".CovidSymptomSurvey" />
-        <activity android:name=".NewsFeed" />
-        <activity android:name=".AdminMainMenu" />
-        <activity android:name=".Emergency" />
-        <activity android:name=".UserMainMenu" />
-        <activity android:name=".UserLogin" />
-        <activity android:name=".MainMenu" />
-        <activity android:name=".Register" />
+        <activity android:name=".view.AboutUs"></activity>
+        <activity android:name=".view.AdminChatSupport" />
+        <activity android:name=".view.Logbook" />
+        <activity android:name=".view.Reports" />
+        <activity android:name=".view.Notifications" />
+        <activity android:name=".view.ChatSupport" />
+        <activity android:name=".view.CovidSymptomSurvey" />
+        <activity android:name=".view.NewsFeed" />
+        <activity android:name=".view.AdminMainMenu" />
+        <activity android:name=".view.Emergency" />
+        <activity android:name=".view.UserMainMenu" />
+        <activity android:name=".view.UserLogin" />
+        <activity android:name=".view.MainMenu" />
+        <activity android:name=".view.Register" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.BarangayApp.NoActionBar">
             <intent-filter>
