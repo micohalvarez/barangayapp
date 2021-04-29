@@ -46,10 +46,10 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         AdminmainGrid = findViewById(R.id.Admin_mainGrid);
         setSingleEvent(AdminmainGrid);
 
+
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
         Admintoolbar = findViewById(R.id.Admintool_bar);
-
 
         AdminnavigationView.bringToFront();
         setSupportActionBar(Admintoolbar);
@@ -63,7 +63,6 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         AdminnavigationView.setNavigationItemSelectedListener(this);
-
 
 
     }
