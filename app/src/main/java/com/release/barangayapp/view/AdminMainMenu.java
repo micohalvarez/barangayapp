@@ -33,6 +33,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_admin_main_menu);
 
         AdminauthService = new AuthService();
+        AdminLogoutAuth = FirebaseAuth.getInstance();
         AdminauthService.getUserDetails(value ->  {
             if(AdminauthService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
