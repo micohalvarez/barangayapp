@@ -23,7 +23,7 @@ public class AuthService {
         return user;
     }
 
-    public void signout(){
+    public void signOut(){
         FirebaseAuth.getInstance().signOut();
     }
 

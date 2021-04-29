@@ -27,7 +27,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
     NavigationView UsernavigationView;
     Toolbar Usertoolbar;
     private AuthService authService;
-    private FirebaseAuth LogoutAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_user_main_menu);
 
         authService = new AuthService();
-        LogoutAuth = FirebaseAuth.getInstance();
+
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(UserMainMenu.this, MainMenu.class);
@@ -126,7 +126,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
                 Intent LogoutIntent = new Intent(UserMainMenu.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
-                LogoutAuth.signOut();
+               authService.signOut();
                 break;
 
         }
