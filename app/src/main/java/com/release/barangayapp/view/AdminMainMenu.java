@@ -59,8 +59,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
 
 
 
-        //For Signout in Firebase
-        AdminLogoutAuth.signOut();
+
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
@@ -123,6 +122,8 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
             case R.id.admin_settings:
                 break;
             case R.id.admin_logout:
+                //For Signout in Firebase
+                AdminLogoutAuth.signOut();
                 break;
 
         }
