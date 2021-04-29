@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
+import com.release.barangayapp.service.AuthService;
 
 public class UserLogin extends AppCompatActivity {
 
@@ -70,15 +72,29 @@ public class UserLogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(), AdminMainMenu.class));
+                                    AuthService authService = new AuthService();
+
+                                    authService.getUserDetails(value -> {
+                                            if (value == null) {
+                                                Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(getApplicationContext(), MainMenu.class));
+                                                finish();
+                                            } else if (value.getRole() == 2) {
+                                                Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(getApplicationContext(), UserMainMenu.class));
+                                                finish();
+                                            } else {
+                                                Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(getApplicationContext(), AdminMainMenu.class));
+                                                finish();
+                                            }
+                                    });
+
                                 } else {
                                     Toast.makeText(UserLogin.this, "Error Occured: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
-
-
                     }
                 });
 

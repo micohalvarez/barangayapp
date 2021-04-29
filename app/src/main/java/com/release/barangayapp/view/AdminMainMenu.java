@@ -10,21 +10,23 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
 public class AdminMainMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    DrawerLayout adminDrawerLayout;
-    GridLayout adminMainGrid;
-    NavigationView adminNavigationView;
-    Toolbar adminToolBar;
+    DrawerLayout AdmindrawerLayout;
+    GridLayout AdminmainGrid;
+    NavigationView AdminnavigationView;
+    Toolbar Admintoolbar;
     private AuthService authService;
-
+    private FirebaseAuth LogoutAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_admin_main_menu);
 
         authService = new AuthService();
-
+        LogoutAuth = FirebaseAuth.getInstance();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
@@ -41,28 +43,26 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
             }
         });
 
-        adminMainGrid = findViewById(R.id.Admin_mainGrid);
-        setSingleEvent(adminMainGrid);
-        adminNavigationView.setNavigationItemSelectedListener(this);
-
-        adminDrawerLayout = findViewById(R.id.Admindrawer_layout);
-        adminNavigationView = findViewById(R.id.Adminnav_view);
-        adminToolBar = findViewById(R.id.Admintool_bar);
+        AdminmainGrid = findViewById(R.id.Admin_mainGrid);
+        setSingleEvent(AdminmainGrid);
 
 
-        adminNavigationView.bringToFront();
-        setSupportActionBar(adminToolBar);
+        AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
+        AdminnavigationView = findViewById(R.id.Adminnav_view);
+        Admintoolbar = findViewById(R.id.Admintool_bar);
+
+        AdminnavigationView.bringToFront();
+        setSupportActionBar(Admintoolbar);
 
         //hide or show items
 //        Menu menu = AdminnavigationView.getMenu();
 //        menu.findItem(R.id.admin_logout).setVisible(false);
 //        menu.findItem(R.id.admin_profile).setVisible(false);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, adminDrawerLayout, adminToolBar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-        adminDrawerLayout.addDrawerListener(toggle);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, AdmindrawerLayout, Admintoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        adminNavigationView.setNavigationItemSelectedListener(this);
-
+        AdminnavigationView.setNavigationItemSelectedListener(this);
 
 
     }
@@ -104,9 +104,9 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
     @Override
     public void onBackPressed() {
 
-        if (adminDrawerLayout.isDrawerOpen((GravityCompat.START))) {
+        if (AdmindrawerLayout.isDrawerOpen((GravityCompat.START))) {
 
-            adminDrawerLayout.closeDrawer(GravityCompat.START);
+            AdmindrawerLayout.closeDrawer(GravityCompat.START);
         }
         else {
             super.onBackPressed();
@@ -131,11 +131,11 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 Intent LogoutIntent = new Intent(AdminMainMenu.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
-                authService.signOut();
+                LogoutAuth.signOut();
                 break;
 
         }
-        adminDrawerLayout.closeDrawer(GravityCompat.START);
+        AdmindrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }
