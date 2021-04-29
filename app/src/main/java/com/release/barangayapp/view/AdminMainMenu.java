@@ -64,7 +64,6 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         AdminnavigationView.setNavigationItemSelectedListener(this);
 
 
-
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
