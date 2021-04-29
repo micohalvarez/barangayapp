@@ -115,6 +115,18 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.user_profile:
+                break;
+            case R.id.user_settings:
+                break;
+            case R.id.user_logout:
+                //For Signout in Firebase
+                LogoutAuth.signOut();
+                break;
+
+        }
         return true;
     }
 }
