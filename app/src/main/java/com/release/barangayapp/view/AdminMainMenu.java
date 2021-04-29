@@ -42,6 +42,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
             }
         });
 
+
         AdminmainGrid = findViewById(R.id.Admin_mainGrid);
         setSingleEvent(AdminmainGrid);AdminnavigationView.setNavigationItemSelectedListener(this);
 
@@ -58,7 +59,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
 
 
-
+        AdminLogoutAuth.signOut();
 
     }
 
@@ -123,7 +124,10 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-                AdminLogoutAuth.signOut();
+//                AdminLogoutAuth.signOut();
+//                Intent LoginIntent  = new Intent(AdminMainMenu.this, MainMenu.class);
+//                startActivity(LoginIntent);
+//                finish();
                 break;
 
         }
