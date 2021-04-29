@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 
@@ -34,20 +35,22 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
 
         authService = new AuthService();
         LogoutAuth = FirebaseAuth.getInstance();
+        authService.getUserDetails(value ->  {
 
-            if(authService.getAuthUser() == null) {
+            if(authService.getAuthUser() == null && value == null) {
                 Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
-
+        });
 
         AdminmainGrid = findViewById(R.id.Admin_mainGrid);
         setSingleEvent(AdminmainGrid);
-        AdminnavigationView.setNavigationItemSelectedListener(this);
+
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
+        AdminnavigationView.setNavigationItemSelectedListener(this);
         Admintoolbar = findViewById(R.id.Admintool_bar);
         //Test
 
@@ -58,7 +61,6 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         AdminnavigationView.setNavigationItemSelectedListener(this);
-
 
 
     }
@@ -124,9 +126,6 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-                Intent LogoutIntent = new Intent(AdminMainMenu.this, MainMenu.class);
-                startActivity(LogoutIntent);
-                finish();
                 LogoutAuth.signOut();
                 break;
 

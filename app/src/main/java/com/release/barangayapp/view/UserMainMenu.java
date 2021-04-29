@@ -37,8 +37,8 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         authService = new AuthService();
         LogoutAuth = FirebaseAuth.getInstance();
         authService.getUserDetails(value ->  {
-            if(authService.getAuthUser() == null) {
-                //Note : Mainmenu Changed to UserMainMenu
+
+            if(authService.getAuthUser() == null && value == null) {
                 Intent homeIntent = new Intent(UserMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
@@ -116,21 +116,6 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()){
-            case R.id.user_profile:
-                break;
-            case R.id.user_settings:
-                break;
-            case R.id.user_logout:
-                //For Signout in Firebase
-                Intent LogoutIntent = new Intent(UserMainMenu.this, MainMenu.class);
-                startActivity(LogoutIntent);
-                finish();
-                LogoutAuth.signOut();
-                break;
-
-        }
         return true;
     }
 }
