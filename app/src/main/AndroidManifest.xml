@@ -24,6 +24,7 @@
         <activity android:name=".view.MainMenu" />
         <activity android:name=".view.Register" />
         <activity android:name=".view.NotificationsActivity"/>
+        <activity android:name=".view.CreateAnnouncementActivity"/>
         <activity
             android:name=".view.MainActivity"
             android:label="@string/app_name"

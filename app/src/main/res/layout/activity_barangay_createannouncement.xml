@@ -11,6 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="#FFFFFF"
         android:clickable="true"
@@ -22,10 +23,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.045" />
 
     <FrameLayout
         android:layout_width="0dp"
@@ -64,7 +65,7 @@
         android:layout_marginBottom="510dp"
         android:background="@drawable/editround"
         android:hint="Select a Course"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -107,9 +108,9 @@
         app:layout_constraintVertical_bias="0.555" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="118dp"
-        android:layout_height="114dp"
+        android:id="@+id/CAnnouncementSend"
+        android:layout_width="64dp"
+        android:layout_height="66dp"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
