@@ -1,5 +1,6 @@
 package com.release.barangayapp.view;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -48,6 +49,11 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position)
                 {
+                    case 1:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_fire));
+                    }
+
 
                 }
             }
