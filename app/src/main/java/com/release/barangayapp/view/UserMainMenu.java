@@ -38,6 +38,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         LogoutAuth = FirebaseAuth.getInstance();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
+                //Note : Mainmenu Changed to UserMainMenu
                 Intent homeIntent = new Intent(UserMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();

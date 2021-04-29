@@ -34,13 +34,13 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
 
         authService = new AuthService();
         LogoutAuth = FirebaseAuth.getInstance();
-        authService.getUserDetails(value ->  {
+
             if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
-        });
+
 
         AdminmainGrid = findViewById(R.id.Admin_mainGrid);
         setSingleEvent(AdminmainGrid);
