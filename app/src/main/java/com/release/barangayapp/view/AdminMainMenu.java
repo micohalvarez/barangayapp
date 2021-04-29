@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
@@ -23,16 +24,17 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
     GridLayout AdminmainGrid;
     NavigationView AdminnavigationView;
     Toolbar Admintoolbar;
-    private AuthService authService;
+    private AuthService AdminauthService;
+    private FirebaseAuth AdminLogoutAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main_menu);
 
-        authService = new AuthService();
-        authService.getUserDetails(value ->  {
-            if(authService.getAuthUser() == null) {
+        AdminauthService = new AuthService();
+        AdminauthService.getUserDetails(value ->  {
+            if(AdminauthService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
@@ -54,6 +56,10 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         AdminnavigationView.setNavigationItemSelectedListener(this);
+
+
+        //For Signout in Firebase
+        AdminLogoutAuth.signOut();
     }
 
     private void setSingleEvent(GridLayout mainGrid) {

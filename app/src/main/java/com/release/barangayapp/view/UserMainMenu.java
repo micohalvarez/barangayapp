@@ -24,18 +24,18 @@ public class UserMainMenu extends AppCompatActivity{
     GridLayout UsermainGrid;
     NavigationView UsernavigationView;
     Toolbar Usertoolbar;
-    private AuthService authService;
-    private FirebaseAuth LogoutAuth;
+    private AuthService UserauthService;
+    private FirebaseAuth UserLogoutAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_main_menu);
 
-        authService = new AuthService();
-        LogoutAuth = FirebaseAuth.getInstance();
-        authService.getUserDetails(value ->  {
-            if(authService.getAuthUser() == null) {
+        UserauthService = new AuthService();
+        UserLogoutAuth = FirebaseAuth.getInstance();
+        UserauthService.getUserDetails(value ->  {
+            if(UserauthService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(UserMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
@@ -59,7 +59,7 @@ public class UserMainMenu extends AppCompatActivity{
         toggle.syncState();
 
         //For Signout in Firebase
-        LogoutAuth.signOut();
+        UserLogoutAuth.signOut();
     }
 
 
