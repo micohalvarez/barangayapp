@@ -43,7 +43,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         });
 
         AdminmainGrid = findViewById(R.id.Admin_mainGrid);
-        setSingleEvent(AdminmainGrid);
+        setSingleEvent(AdminmainGrid);AdminnavigationView.setNavigationItemSelectedListener(this);
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
@@ -56,11 +56,10 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, AdmindrawerLayout, Admintoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        AdminnavigationView.setNavigationItemSelectedListener(this);
 
 
-        //For Signout in Firebase
-        AdminLogoutAuth.signOut();
+
+
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
@@ -114,6 +113,20 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.admin_profile:
+                break;
+                case R.id.admin_register:
+                    break;
+            case R.id.admin_settings:
+                break;
+            case R.id.admin_logout:
+                //For Signout in Firebase
+                AdminLogoutAuth.signOut();
+                break;
+
+        }
         return true;
     }
 }
