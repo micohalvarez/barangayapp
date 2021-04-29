@@ -34,7 +34,7 @@ public class Register extends AppCompatActivity {
     Button ARegister;
     FirebaseAuth FAuth;
     ProgressBar ProgressB;
-    int Role;
+    int Role = 1;
     private UserService userService;
 
     @Override
@@ -42,7 +42,7 @@ public class Register extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_accountbarangay);
+        setContentView(R.layout.activity_register_account);
 
         AFullname = findViewById(R.id.RegPersonnelName);
         AUsername = findViewById(R.id.RegPersonnelEmail);
@@ -135,10 +135,8 @@ public class Register extends AppCompatActivity {
 
         userService = new UserService();
         UserRegisterObject user = new UserRegisterObject();
-        user.setAge(23);
-        user.setAddress("Manila City");
-        user.setRole(1);
-        user.setGender("M");
+        //Set Objects
+        user.setRole(Role);
         user.setFullName(AFullname.getText().toString().trim());
         user.setAddress(AAddress.getText().toString().trim());
         user.setPhonenumber(APhone.getText().toString().trim());

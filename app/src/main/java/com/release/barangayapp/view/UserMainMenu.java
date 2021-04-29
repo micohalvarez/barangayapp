@@ -13,6 +13,7 @@ import android.widget.GridLayout;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
@@ -24,6 +25,7 @@ public class UserMainMenu extends AppCompatActivity{
     NavigationView UsernavigationView;
     Toolbar Usertoolbar;
     private AuthService authService;
+    private FirebaseAuth LogoutAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class UserMainMenu extends AppCompatActivity{
         setContentView(R.layout.activity_user_main_menu);
 
         authService = new AuthService();
+        LogoutAuth = FirebaseAuth.getInstance();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(UserMainMenu.this, MainMenu.class);
@@ -55,7 +58,8 @@ public class UserMainMenu extends AppCompatActivity{
         UserdrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-
+        //For Signout in Firebase
+        LogoutAuth.signOut();
     }
 
 
