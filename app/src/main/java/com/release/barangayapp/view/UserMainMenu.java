@@ -130,6 +130,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
                 break;
 
         }
+        UserdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }
