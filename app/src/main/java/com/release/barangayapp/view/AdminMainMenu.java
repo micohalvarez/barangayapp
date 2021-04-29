@@ -58,8 +58,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
         AdminnavigationView.setNavigationItemSelectedListener(this);
 
-        //For Signout in Firebase
-        LogoutAuth.signOut();
+
 
     }
 
@@ -123,7 +122,8 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
             case R.id.admin_settings:
                 break;
             case R.id.admin_logout:
-
+                //For Signout in Firebase
+                LogoutAuth.signOut();
                 break;
 
         }
