@@ -50,7 +50,7 @@ public class Emergency extends AppCompatActivity {
 
                 if(finalI == 0)
                 {
-                    Intent notification=new Intent(Emergency.this, Notifications.class);
+                    Intent notification=new Intent(Emergency.this, NotificationsActivity.class);
                     startActivity(notification);
 
                 }

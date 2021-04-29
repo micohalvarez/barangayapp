@@ -28,7 +28,7 @@ public class MainMenu extends AppCompatActivity {
     public void OpenUser()
     {
 
-        Intent userlogin=new Intent(this, Register.class);
+        Intent userlogin=new Intent(this, UserLogin.class);
         startActivity(userlogin);
     }
 

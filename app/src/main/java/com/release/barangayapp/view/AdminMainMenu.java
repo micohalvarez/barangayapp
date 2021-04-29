@@ -37,6 +37,9 @@ public class AdminMainMenu extends AppCompatActivity {
             }
         });
 
+        AdminmainGrid = findViewById(R.id.Admin_mainGrid);
+        setSingleEvent(AdminmainGrid);
+
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
         Admintoolbar = findViewById(R.id.Admintool_bar);
@@ -59,7 +62,7 @@ public class AdminMainMenu extends AppCompatActivity {
 
                 if(finalI == 0)
                 {
-                    Intent notification=new Intent(AdminMainMenu.this, CreateAnnouncementActivity.class);
+                    Intent notification=new Intent(AdminMainMenu.this, NotificationsActivity.class);
                     startActivity(notification);
 
                 }
