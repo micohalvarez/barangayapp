@@ -123,6 +123,9 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
+                Intent registerIntent = new Intent(AdminMainMenu.this, Register.class);
+                startActivity(registerIntent);
+                finish();
                 break;
             case R.id.admin_settings:
                 break;
@@ -131,7 +134,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 Intent LogoutIntent = new Intent(AdminMainMenu.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
-                LogoutAuth.signOut();
+                authService.signOut();
                 break;
 
         }
