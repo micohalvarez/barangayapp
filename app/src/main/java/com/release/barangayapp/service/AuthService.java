@@ -1,7 +1,5 @@
 package com.release.barangayapp.service;
 
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,7 +29,6 @@ public class AuthService {
 
     public void getUserDetails(MyCallBack myCallBack) {
         if(user !=  null) {
-            Log.e("USER","NOT NULL");
             FirebaseDatabase.getInstance().getReference("users").child(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {

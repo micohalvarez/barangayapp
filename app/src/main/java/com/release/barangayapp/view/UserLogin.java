@@ -72,7 +72,6 @@ public class UserLogin extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(getApplicationContext(), AdminMainMenu.class));
-                                    finish();
                                 } else {
                                     Toast.makeText(UserLogin.this, "Error Occured: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
