@@ -56,9 +56,8 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, AdmindrawerLayout, Admintoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
-
-
+        AdminnavigationView.setNavigationItemSelectedListener(this);
+        
 
     }
 
