@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.release.barangayapp.R;
 
 import java.util.ArrayList;
@@ -19,9 +20,10 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
 
     private ArrayList<String> icons;
 
-    ImageView iconType, sendIcon;
+    ImageView iconType;
     EditText subjectSection,announcementDetail;
     Spinner editIcon;
+    FloatingActionButton FABSend;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,8 +33,8 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         subjectSection = findViewById(R.id.RegPersonnelCPass);
         editIcon = (Spinner) findViewById(R.id.spinnerEditIcon);
         iconType = findViewById(R.id.CAnnounceIconType);
-        sendIcon = findViewById(R.id.CAnnounceSendIcon);
         announcementDetail = findViewById(R.id.CAnnounceDetail);
+        FABSend = findViewById(R.id.CAnnouncementSend);
 
         this.initializeDropdown();
         ArrayAdapter<String> iconAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, this.icons);
@@ -56,9 +58,10 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
             }
         });
 
-        sendIcon.setOnClickListener(new View.OnClickListener() {
+
+        FABSend.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
             }
         });
