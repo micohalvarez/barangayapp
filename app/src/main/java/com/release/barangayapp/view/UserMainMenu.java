@@ -123,6 +123,9 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.user_logout:
                 //For Signout in Firebase
+                Intent LogoutIntent = new Intent(UserMainMenu.this, MainMenu.class);
+                startActivity(LogoutIntent);
+                finish();
                 LogoutAuth.signOut();
                 break;
 

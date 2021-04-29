@@ -124,6 +124,9 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
+                Intent LogoutIntent = new Intent(AdminMainMenu.this, MainMenu.class);
+                startActivity(LogoutIntent);
+                finish();
                 LogoutAuth.signOut();
                 break;
 
