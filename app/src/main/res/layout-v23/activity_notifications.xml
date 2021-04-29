@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.NotificationsActivity"
     android:id="@+id/Notificationsdrawer_layout"
-    android:background="#0A2435"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     android:layout_weight="10">
@@ -30,7 +29,6 @@
             android:background="@color/teal_700"
             android:minHeight="?attr/actionBarSize"
             android:paddingLeft="20dp"
-            android:theme="?attr/actionBarTheme"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -67,9 +65,10 @@
 
         </com.google.android.material.tabs.TabLayout>
 
-        <androidx.viewpager2.widget.ViewPager2
+        <androidx.viewpager.widget.ViewPager
             android:layout_width="match_parent"
             android:layout_height="630dp"
+            android:id="@+id/viewpager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
