@@ -49,7 +49,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
         Admintoolbar = findViewById(R.id.Admintool_bar);
-
+        //Test
 
         AdminnavigationView.bringToFront();
         setSupportActionBar(Admintoolbar);
