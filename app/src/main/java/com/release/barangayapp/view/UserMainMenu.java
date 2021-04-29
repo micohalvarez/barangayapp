@@ -61,8 +61,8 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         UsernavigationView.setNavigationItemSelectedListener(this);
 
-        //For Signout in Firebase
-        LogoutAuth.signOut();
+//        //For Signout in Firebase
+//        LogoutAuth.signOut();
     }
 
 

@@ -43,7 +43,8 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         });
 
         AdminmainGrid = findViewById(R.id.Admin_mainGrid);
-        setSingleEvent(AdminmainGrid);AdminnavigationView.setNavigationItemSelectedListener(this);
+        setSingleEvent(AdminmainGrid);
+        AdminnavigationView.setNavigationItemSelectedListener(this);
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.Adminnav_view);
