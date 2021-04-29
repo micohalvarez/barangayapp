@@ -20,11 +20,7 @@ import com.release.barangayapp.service.AuthService;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        new Handler().postDelayed(() ->{
-//            Intent homeIntent =new Intent(MainActivity.this, MainMenu.class);
-//            startActivity(homeIntent);
-//            finish();
-//        },SPLASH_TIME_OUT);
+
         authService.getUserDetails(value -> new Handler().postDelayed(() -> {
             if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
