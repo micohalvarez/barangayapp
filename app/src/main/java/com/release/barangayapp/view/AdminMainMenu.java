@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 
@@ -52,6 +53,11 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
 
         AdminnavigationView.bringToFront();
         setSupportActionBar(Admintoolbar);
+
+        //hide or show items
+//        Menu menu = AdminnavigationView.getMenu();
+//        menu.findItem(R.id.admin_logout).setVisible(false);
+//        menu.findItem(R.id.admin_profile).setVisible(false);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, AdmindrawerLayout, Admintoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         AdmindrawerLayout.addDrawerListener(toggle);
@@ -127,6 +133,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 break;
 
         }
+        AdmindrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }

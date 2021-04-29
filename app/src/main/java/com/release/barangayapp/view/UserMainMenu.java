@@ -61,8 +61,8 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         UsernavigationView.setNavigationItemSelectedListener(this);
 
-        //For Signout in Firebase
-        LogoutAuth.signOut();
+
+        UsernavigationView.setCheckedItem(R.id.user_profile);
     }
 
 
@@ -127,6 +127,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
                 break;
 
         }
+        UserdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }
