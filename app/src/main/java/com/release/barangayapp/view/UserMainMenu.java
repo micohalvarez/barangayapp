@@ -26,18 +26,18 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
     GridLayout UsermainGrid;
     NavigationView UsernavigationView;
     Toolbar Usertoolbar;
-    private AuthService UserauthService;
-    private FirebaseAuth UserLogoutAuth;
+    private AuthService authService;
+    private FirebaseAuth LogoutAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_main_menu);
 
-        UserauthService = new AuthService();
-        UserLogoutAuth = FirebaseAuth.getInstance();
-        UserauthService.getUserDetails(value ->  {
-            if(UserauthService.getAuthUser() == null) {
+        authService = new AuthService();
+        LogoutAuth = FirebaseAuth.getInstance();
+        authService.getUserDetails(value ->  {
+            if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(UserMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
@@ -62,7 +62,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         UsernavigationView.setNavigationItemSelectedListener(this);
 
         //For Signout in Firebase
-        UserLogoutAuth.signOut();
+        LogoutAuth.signOut();
     }
 
 

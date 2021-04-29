@@ -24,24 +24,23 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
     GridLayout AdminmainGrid;
     NavigationView AdminnavigationView;
     Toolbar Admintoolbar;
-    private AuthService AdminauthService;
-    private FirebaseAuth AdminLogoutAuth;
+    private AuthService authService;
+    private FirebaseAuth LogoutAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main_menu);
 
-        AdminauthService = new AuthService();
-        AdminLogoutAuth = FirebaseAuth.getInstance();
-        AdminauthService.getUserDetails(value ->  {
-            if(AdminauthService.getAuthUser() == null) {
+        authService = new AuthService();
+        LogoutAuth = FirebaseAuth.getInstance();
+        authService.getUserDetails(value ->  {
+            if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
         });
-
 
         AdminmainGrid = findViewById(R.id.Admin_mainGrid);
         setSingleEvent(AdminmainGrid);AdminnavigationView.setNavigationItemSelectedListener(this);
@@ -57,9 +56,8 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, AdmindrawerLayout, Admintoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        AdminnavigationView.setNavigationItemSelectedListener(this);
 
-
-        AdminLogoutAuth.signOut();
 
     }
 
@@ -124,10 +122,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-//                AdminLogoutAuth.signOut();
-//                Intent LoginIntent  = new Intent(AdminMainMenu.this, MainMenu.class);
-//                startActivity(LoginIntent);
-//                finish();
+                LogoutAuth.signOut();
                 break;
 
         }
