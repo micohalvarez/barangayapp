@@ -1,5 +1,6 @@
 package com.release.barangayapp.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -8,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.GridLayout;
 
 import androidx.appcompat.widget.Toolbar;
@@ -17,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
-public class UserMainMenu extends AppCompatActivity{
+public class UserMainMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     DrawerLayout UserdrawerLayout;
@@ -57,6 +59,7 @@ public class UserMainMenu extends AppCompatActivity{
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, UserdrawerLayout, Usertoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         UserdrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        UsernavigationView.setNavigationItemSelectedListener(this);
 
         //For Signout in Firebase
         UserLogoutAuth.signOut();
@@ -108,5 +111,10 @@ public class UserMainMenu extends AppCompatActivity{
             super.onBackPressed();
         }
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return true;
     }
 }
