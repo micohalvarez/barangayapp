@@ -137,7 +137,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                sendAnnouncement(userRegisterObject.);
+                sendAnnouncement(userRegisterObject);
 
             }
         });
