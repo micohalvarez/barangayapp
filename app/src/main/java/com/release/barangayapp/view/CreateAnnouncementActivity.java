@@ -38,7 +38,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
     FloatingActionButton fabSend;
     private AuthService authService;
     AnnouncementService announcementService;
-    UserRegisterObject userRegisterObject;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +50,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
                 Intent homeIntent = new Intent(CreateAnnouncementActivity.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
-            }else
-                {
-                    userRegisterObject = value;
-
-                }
+            }
         });
         subjectSection = findViewById(R.id.RegPersonnelCPass);
         editIcon = (Spinner) findViewById(R.id.spinnerEditIcon);
@@ -137,7 +133,8 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                sendAnnouncement(userRegisterObject);
+
+                sendAnnouncement(authService.getAuthUser().getUid());
 
             }
         });
