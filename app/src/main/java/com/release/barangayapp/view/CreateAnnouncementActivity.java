@@ -1,5 +1,6 @@
 package com.release.barangayapp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,7 +18,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.release.barangayapp.R;
 import com.release.barangayapp.model.Announcement;
+import com.release.barangayapp.model.UserRegisterObject;
 import com.release.barangayapp.service.AnnouncementService;
+import com.release.barangayapp.service.AuthService;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -32,15 +35,27 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
     ImageView iconType;
     EditText subjectSection,announcementDetail;
     Spinner editIcon;
-//    private FirebaseAuth FAuth;
     FloatingActionButton fabSend;
-//    AnnouncementService announcementService;
-
+    private AuthService authService;
+    AnnouncementService announcementService;
+    UserRegisterObject userRegisterObject;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barangay_createannouncement);
 
+        authService = new AuthService();
+        authService.getUserDetails(value -> {
+            if(authService.getAuthUser() == null) {
+                Intent homeIntent = new Intent(CreateAnnouncementActivity.this, MainMenu.class);
+                startActivity(homeIntent);
+                finish();
+            }else
+                {
+                    userRegisterObject = value;
+
+                }
+        });
         subjectSection = findViewById(R.id.RegPersonnelCPass);
         editIcon = (Spinner) findViewById(R.id.spinnerEditIcon);
         iconType = findViewById(R.id.CAnnounceIconType);
@@ -121,8 +136,8 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         fabSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                FirebaseUser user = FAuth.getCurrentUser();
-//                sendAnnouncement(user.getUid());
+
+                sendAnnouncement(userRegisterObject.);
 
             }
         });
@@ -131,17 +146,17 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
 
     }
 
-//    public void sendAnnouncement(String userId){
-//
-//        announcementService = new AnnouncementService();
-//        Announcement userAnnouncement = new Announcement();
-//        //Set Objects
-//        userAnnouncement.setTitle(subjectSection.getText().toString().trim());
-//        userAnnouncement.setContent(announcementDetail.getText().toString().trim());
-//        userAnnouncement.setCurrentDate(Dateview.getText().toString().trim());
-//
-//       announcementService.saveData(userAnnouncement, userId);
-//    }
+    public void sendAnnouncement(String userId){
+
+        announcementService = new AnnouncementService();
+        Announcement userAnnouncement = new Announcement();
+        //Set Objects
+        userAnnouncement.setTitle(subjectSection.getText().toString().trim());
+        userAnnouncement.setContent(announcementDetail.getText().toString().trim());
+        userAnnouncement.setCurrentDate(Dateview.getText().toString().trim());
+
+       announcementService.saveData(userAnnouncement, userId);
+    }
 
     private void initializeDropdown(){
         this.icons = new ArrayList<>();

@@ -143,7 +143,5 @@ public class Register extends AppCompatActivity {
 
         userService.saveData(user,userId);
     }
-    @Override
-    public void onBackPressed() { }
 
 }

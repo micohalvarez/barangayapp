@@ -26,7 +26,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
     NavigationView AdminnavigationView;
     Toolbar Admintoolbar;
     private AuthService authService;
-    private FirebaseAuth LogoutAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,6 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_admin_main_menu);
 
         authService = new AuthService();
-        LogoutAuth = FirebaseAuth.getInstance();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(AdminMainMenu.this, MainMenu.class);
