@@ -1,6 +1,5 @@
 package com.release.barangayapp.view;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,23 +7,34 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.release.barangayapp.R;
+import com.release.barangayapp.model.Announcement;
+import com.release.barangayapp.service.AnnouncementService;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class CreateAnnouncementActivity extends AppCompatActivity {
 
     private ArrayList<String> icons;
 
+    TextView Dateview;
     ImageView iconType;
     EditText subjectSection,announcementDetail;
     Spinner editIcon;
-    FloatingActionButton FABSend;
+//    private FirebaseAuth FAuth;
+    FloatingActionButton fabSend;
+//    AnnouncementService announcementService;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,7 +45,12 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         editIcon = (Spinner) findViewById(R.id.spinnerEditIcon);
         iconType = findViewById(R.id.CAnnounceIconType);
         announcementDetail = findViewById(R.id.CAnnounceDetail);
-        FABSend = findViewById(R.id.CAnnouncementSend);
+        fabSend = findViewById(R.id.CAnnouncementSend);
+
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
+        Dateview = findViewById(R.id.ACurrentDate);
+        String currentdate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        Dateview.setText(currentdate);
 
         this.initializeDropdown();
         ArrayAdapter<String> iconAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, this.icons);
@@ -52,7 +67,45 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
                     case 1:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_fire));
+                        break;
                     }
+                    case 2:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_weather));
+                        break;
+                    }
+                    case 3:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_covid));
+                        break;
+                    }
+                    case 4:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_crime));
+                        break;
+                    }
+                    case 5:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_news));
+                        break;
+                    }
+                    case 6:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_med));
+                        break;
+                    }
+                    case 7:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_accident));
+                        break;
+                    }
+                    default:
+                    {
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.defaulticon));
+                        break;
+                    }
+
+
 
 
                 }
@@ -65,9 +118,11 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         });
 
 
-        FABSend.setOnClickListener(new View.OnClickListener() {
+        fabSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                FirebaseUser user = FAuth.getCurrentUser();
+//                sendAnnouncement(user.getUid());
 
             }
         });
@@ -75,6 +130,18 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
 
 
     }
+
+//    public void sendAnnouncement(String userId){
+//
+//        announcementService = new AnnouncementService();
+//        Announcement userAnnouncement = new Announcement();
+//        //Set Objects
+//        userAnnouncement.setTitle(subjectSection.getText().toString().trim());
+//        userAnnouncement.setContent(announcementDetail.getText().toString().trim());
+//        userAnnouncement.setCurrentDate(Dateview.getText().toString().trim());
+//
+//       announcementService.saveData(userAnnouncement, userId);
+//    }
 
     private void initializeDropdown(){
         this.icons = new ArrayList<>();
@@ -84,6 +151,9 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         this.icons.add("Weather");
         this.icons.add("Covid");
         this.icons.add("Crime");
+        this.icons.add("News");
+        this.icons.add("Health");
+        this.icons.add("Accident");
 
     }
 }

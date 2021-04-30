@@ -30,6 +30,4 @@ public class NotificationsActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() { }
 }

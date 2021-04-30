@@ -8,6 +8,11 @@ public class Announcement {
     private String content;
     private String createdAt;
     private String userId;
+    private String currentDate;
+
+    public String getCurrentDate() { return currentDate; }
+
+    public void setCurrentDate(String currentDate) { this.currentDate = currentDate; }
 
     public String getTitle() {
         return title;

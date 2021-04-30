@@ -46,7 +46,7 @@ public class AnnouncementService {
     }
 
     //function for saving data to the news_feed tree
-    public void saveData(Announcement logbookData){
+    public void saveData(Announcement logbookData, String userId){
         newsFeedRef.push().setValue(logbookData);
     }
 
