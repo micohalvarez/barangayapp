@@ -2,6 +2,7 @@ package com.release.barangayapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -132,9 +134,30 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         fabSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String subject = subjectSection.getText().toString().trim();
+                String detail = announcementDetail.getText().toString().trim();
 
 
-                sendAnnouncement(authService.getAuthUser().getUid());
+                if (TextUtils.isEmpty(subject))
+                {
+                    subjectSection.setError("Must have a Subject");
+                    return;
+                }
+                else if (TextUtils.isEmpty(detail))
+                {
+                    announcementDetail.setError("Must have an Announcement Detail");
+                    return;
+                }
+                else if (editIcon.getSelectedItemPosition() == 0)
+                {
+                    Toast.makeText(CreateAnnouncementActivity.this, "Must Select an Icon", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    sendAnnouncement(authService.getAuthUser().getUid());
+                    Toast.makeText(CreateAnnouncementActivity.this, "Announcement Created Successfully", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),NotificationsActivity.class));
+                }
 
             }
         });
@@ -151,7 +174,6 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         userAnnouncement.setTitle(subjectSection.getText().toString().trim());
         userAnnouncement.setContent(announcementDetail.getText().toString().trim());
         userAnnouncement.setCurrentDate(Dateview.getText().toString().trim());
-
        announcementService.saveData(userAnnouncement, userId);
     }
 

@@ -92,6 +92,7 @@ public class UserLogin extends AppCompatActivity {
 
                                 } else {
                                     Toast.makeText(UserLogin.this, "Error Occured: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    PBar.setVisibility(View.INVISIBLE);
                                 }
                             }
                         });

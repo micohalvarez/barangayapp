@@ -74,7 +74,6 @@ public class Register extends AppCompatActivity {
         ARegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),UserLogin.class));
                 String compPass = APassword.getText().toString().trim();
                 String compCPass = AConfPassword.getText().toString().trim();
                 String BUsername = AUsername.getText().toString().trim();
@@ -122,7 +121,7 @@ public class Register extends AppCompatActivity {
                             else
                             {
                                 Toast.makeText(Register.this,"Error Occured" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-
+                                ProgressB.setVisibility(View.INVISIBLE);
                             }
                     }
                 });
@@ -144,4 +143,8 @@ public class Register extends AppCompatActivity {
         userService.saveData(user,userId);
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),AdminMainMenu.class));
+    }
 }
