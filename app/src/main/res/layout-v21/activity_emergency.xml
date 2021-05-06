@@ -9,6 +9,8 @@
     tools:context=".view.Emergency"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
+    android:weightSum="10"
+
     >
 
     <com.google.android.material.navigation.NavigationView

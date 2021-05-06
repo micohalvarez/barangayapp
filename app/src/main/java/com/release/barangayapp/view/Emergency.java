@@ -1,5 +1,6 @@
 package com.release.barangayapp.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,22 +10,34 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
+import com.release.barangayapp.service.AuthService;
 
-public class Emergency extends AppCompatActivity {
+public class Emergency extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout EmergencydrawerLayout;
     GridLayout EmergencymainGrid;
     NavigationView EmergencynavigationView;
     Toolbar Emergencytoolbar;
+    private AuthService authService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
-        setSingleEvent(EmergencymainGrid);
+
+        authService = new AuthService();
+
+        authService.getUserDetails(value ->  {
+            if(authService.getAuthUser() == null) {
+                Intent homeIntent = new Intent(Emergency.this, MainMenu.class);
+                startActivity(homeIntent);
+                finish();
+            }
+        });
 
         EmergencydrawerLayout = findViewById(R.id.Emergencydrawer_layout);
         EmergencynavigationView = findViewById(R.id.Emergencynav_view);
@@ -39,6 +52,7 @@ public class Emergency extends AppCompatActivity {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, EmergencydrawerLayout, Emergencytoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         EmergencydrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        EmergencynavigationView.setNavigationItemSelectedListener(this);
     }
 
     private void setSingleEvent(GridLayout mainGrid) {
@@ -89,4 +103,23 @@ public class Emergency extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.user_profile:
+                break;
+            case R.id.user_settings:
+                break;
+            case R.id.user_logout:
+                //For Signout in Firebase
+                Intent LogoutIntent = new Intent(Emergency.this, MainMenu.class);
+                startActivity(LogoutIntent);
+                finish();
+                authService.signOut();
+                break;
+
+        }
+        EmergencydrawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

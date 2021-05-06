@@ -5,7 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0A2435"
-    tools:context=".view.Emergency">
+    tools:context=".view.Emergency"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    android:weightSum="10">
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/Emergencynav_view"
+        app:headerLayout="@layout/header"
+        app:menu="@menu/menu_main"
+        android:layout_gravity="start"/>
 
 
     <LinearLayout
@@ -22,22 +34,50 @@
             android:layout_width="match_parent"
             android:layout_height="0dp">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Emergencytool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/teal_700"
+                android:minHeight="?attr/actionBarSize"
+                android:paddingLeft="20dp"
+                android:theme="?attr/actionBarTheme"
+                app:navigationIcon="@drawable/trymenu" />
+
+
+
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="133dp"
-                android:layout_marginEnd="128dp"
-                android:layout_marginBottom="37dp"
+                android:layout_marginStart="131dp"
+                android:layout_marginEnd="130dp"
+                android:layout_marginBottom="49dp"
                 android:src="@drawable/logo5" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="148dp"
+                android:layout_marginBottom="9dp"
+                android:text="EMERGENCY"
+                android:textColor="@color/teal_200"
+                android:textSize="20dp" />
 
 
         </RelativeLayout>
 
         <GridLayout
-            android:id="@+id/mainGrid"
+            android:id="@+id/Emergency_mainGrid"
             android:layout_weight="7"
             android:columnCount="2"
             android:rowCount="3"
@@ -54,16 +94,16 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="19dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:cardElevation="30sp"
+                app:cardCornerRadius="20dp">
 
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -86,18 +126,19 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="19dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:cardElevation="30sp"
+                app:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    >
 
                     <ImageView
                         android:src="@drawable/medical"
@@ -119,18 +160,19 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="19dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:cardElevation="30sp"
+                app:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    >
 
                     <ImageView
                         android:src="@drawable/crime"
@@ -151,15 +193,15 @@
                 android:layout_height="0dp"
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp">
+                android:layout_marginTop="19dp"
+                android:layout_marginBottom="19dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                app:cardElevation="30sp"
+                app:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="16dp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
