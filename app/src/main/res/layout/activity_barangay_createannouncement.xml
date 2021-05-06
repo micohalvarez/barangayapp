@@ -9,12 +9,8 @@
 
     <EditText
         android:id="@+id/RegPersonnelCPass"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="590dp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
         android:background="#FFFFFF"
         android:clickable="true"
         android:ems="5"
@@ -25,78 +21,60 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.146" />
 
     <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="270dp"
-        android:layout_marginBottom="560dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.109"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122">
+        app:layout_constraintVertical_bias="0.050000012">
 
         <ImageView
             android:id="@+id/CAnnounceIconType"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             app:srcCompat="@drawable/defaulticon" />
     </FrameLayout>
 
+
     <Spinner
         android:id="@+id/spinnerEditIcon"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="250dp"
-        android:layout_marginBottom="510dp"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:background="@drawable/editround"
         android:hint="Select a Course"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintVertical_bias="0.324"
         tools:visibility="visible" />
-
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="200dp"
-        android:layout_marginBottom="510dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.324"
         app:srcCompat="@drawable/notif_editicon" />
 
     <EditText
         android:id="@+id/CAnnounceDetail"
-        android:layout_width="304dp"
-        android:layout_height="254dp"
+        android:layout_width="300dp"
+        android:layout_height="255dp"
         android:clickable="true"
         android:ems="10"
         android:fontFamily="@font/bevan"
@@ -105,18 +83,17 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555"
+        app:layout_constraintVertical_bias="0.649"
         tools:inputType="textMultiLine"
         tools:maxLength="150" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/CAnnouncementSend"
-        android:layout_width="67dp"
-        android:layout_height="76dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="70dp"
+        android:layout_height="75dp"
         android:clickable="true"
         android:drawingCacheQuality="high"
         android:textAlignment="gravity"
@@ -135,17 +112,14 @@
     <TextView
         android:id="@+id/ACurrentDate"
         android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="180dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="640dp"
+        android:layout_height="50dp"
         android:text="TextView"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.054" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
