@@ -30,10 +30,10 @@
         android:layout_height="40dp"
         android:background="#FFEE58"
         android:fontFamily="@font/bevan"
-        android:gravity="top"
+        android:gravity="left"
         android:text="Common Symptoms"
         android:textColor="#131111"
-        android:textSize="17sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
@@ -47,10 +47,10 @@
         android:layout_height="40dp"
         android:background="#FFEE58"
         android:fontFamily="@font/bevan"
-        android:gravity="center|top"
+        android:gravity="left"
         android:text="Other Symptoms"
         android:textColor="#131111"
-        android:textSize="17sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -65,7 +65,7 @@
         app:barrierDirection="left" />
 
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidFeverButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -81,9 +81,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.212"
-        tools:fontFamily="@font/bevan" />
+        android:fontFamily="@font/bevan" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidDryCoughButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -99,9 +99,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.256"
-        tools:fontFamily="@font/bevan" />
+        android:fontFamily="@font/bevan" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidSoreThroatButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -117,9 +117,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.298"
-        tools:fontFamily="@font/bevan" />
+        android:fontFamily="@font/bevan" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidShortBreathButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -135,7 +135,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.34"
-        tools:fontFamily="@font/bevan" />
+       android:fontFamily="@font/bevan" />
 
     <TextView
         android:id="@+id/textView8"
@@ -148,7 +148,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidPainButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -166,7 +166,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidFatigueButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -184,7 +184,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.212" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidDiarrheaButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -202,7 +202,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.382" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidHeadAcheButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -220,7 +220,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.34" />
 
-    <RadioButton
+    <CheckBox
         android:id="@+id/covidRunnyNoseButton"
         android:layout_width="170dp"
         android:layout_height="30dp"
@@ -230,13 +230,13 @@
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/bevan"
         android:text="Runny Nose"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298"
-        tools:textColor="#FFFFFF" />
+        app:layout_constraintVertical_bias="0.298" />
 
     <TextView
         android:id="@+id/textView13"
@@ -259,7 +259,7 @@
     <CheckBox
         android:id="@+id/covidCheckList1"
         android:layout_width="350dp"
-        android:layout_height="80dp"
+        android:layout_height="85dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -273,15 +273,15 @@
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645" />
+        app:layout_constraintVertical_bias="0.662" />
 
     <CheckBox
         android:id="@+id/covidCheckList2"
         android:layout_width="350dp"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -298,7 +298,7 @@
         app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="0.786" />
 
     <CheckBox
         android:id="@+id/covidCheckList3"
@@ -320,7 +320,7 @@
         app:layout_constraintHorizontal_bias="0.295"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88" />
+        app:layout_constraintVertical_bias="0.879" />
 
     <Button
         android:id="@+id/covidSurveySubmit"
