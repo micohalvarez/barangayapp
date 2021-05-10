@@ -8,6 +8,7 @@ public class Announcement {
     private String content;
     private String createdAt;
     private String userId;
+    private String type;
     private String currentDate;
 
     public String getCurrentDate() { return currentDate; }
@@ -44,5 +45,13 @@ public class Announcement {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
