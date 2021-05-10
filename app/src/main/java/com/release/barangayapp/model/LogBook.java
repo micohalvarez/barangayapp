@@ -6,8 +6,16 @@ public class LogBook {
 
     private ArrayList<Integer> symptoms;
     private ArrayList<Integer> otherSymptoms;
+    private ArrayList<Integer> healthChecklist;
     private String userId;
 
+
+    public LogBook(){
+        symptoms = new ArrayList<>();
+        otherSymptoms = new ArrayList<>();
+        healthChecklist = new ArrayList<>();
+
+    }
     public ArrayList<Integer> getSymptoms() {
         return symptoms;
     }
@@ -30,5 +38,13 @@ public class LogBook {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public ArrayList<Integer> getHealthChecklist() {
+        return healthChecklist;
+    }
+
+    public void setHealthChecklist(ArrayList<Integer> healthChecklist) {
+        this.healthChecklist = healthChecklist;
     }
 }

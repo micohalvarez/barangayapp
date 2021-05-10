@@ -17,10 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity
-            android:name=".view.UserLocationActivity"
-            android:label="@string/title_activity_user_location"
-            android:theme="@style/Theme.BarangayApp.NoActionBar"></activity>
         <activity android:name=".view.AboutUs" />
         <activity android:name=".view.AdminChatSupport" />
         <activity android:name=".view.Logbook" />

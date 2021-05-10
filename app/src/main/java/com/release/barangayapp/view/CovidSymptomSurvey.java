@@ -9,7 +9,10 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 
+
+import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.R;
+import com.release.barangayapp.service.LogBookService;
 
 public class CovidSymptomSurvey extends AppCompatActivity {
 
@@ -19,6 +22,7 @@ public class CovidSymptomSurvey extends AppCompatActivity {
     Button covidSubmit;
     boolean headache, fatigue, runnynose, shortbreath, sorethroat;
     boolean drycough, fever, diarrhea, pain;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,7 @@ public class CovidSymptomSurvey extends AppCompatActivity {
 
         covidSubmit = findViewById(R.id.covidSurveySubmit);
 
+        
         covidHeadAche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

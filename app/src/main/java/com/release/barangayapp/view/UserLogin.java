@@ -19,7 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
+import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.service.AuthService;
+import com.release.barangayapp.service.LogBookService;
 
 public class UserLogin extends AppCompatActivity {
 
@@ -28,13 +30,15 @@ public class UserLogin extends AppCompatActivity {
         EditText Username,Password;
         FirebaseAuth FirebaseLoginAuth;
         ProgressBar PBar;
-
+        private LogBook logbook;
+        private LogBookService logBookService;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_user_login);
+
 
 
             Username = findViewById(R.id.User_EmailUsername);

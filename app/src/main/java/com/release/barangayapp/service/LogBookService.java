@@ -53,9 +53,7 @@ public class LogBookService {
 
     //function for saving data to the logbook tree
     public void saveData(LogBook logbookData){
-
         logbookRef.push().setValue(logbookData);
-
     }
 
     //function for deleting data to the logbook tree
