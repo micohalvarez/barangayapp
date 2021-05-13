@@ -6,10 +6,12 @@ public class Announcement {
 
     private String title;
     private String content;
-    private String createdAt;
-    private String userId;
-    private String type;
     private String currentDate;
+    private int iconValue;
+
+    public int getIconValue() { return iconValue; }
+
+    public void setIconValue(int iconValue) { this.iconValue = iconValue; }
 
     public String getCurrentDate() { return currentDate; }
 
@@ -23,35 +25,10 @@ public class Announcement {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
-    }
+    public String getContent() { return content; }
 
     public void setContent(String content) {
         this.content = content;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 }

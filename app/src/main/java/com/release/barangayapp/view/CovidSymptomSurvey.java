@@ -2,12 +2,14 @@ package com.release.barangayapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 
 import com.release.barangayapp.model.LogBook;
@@ -20,8 +22,9 @@ public class CovidSymptomSurvey extends AppCompatActivity {
     CheckBox covidShortBreath, covidSoreThroat, covidDryCough;
     CheckBox covidFever, covidDiarrhea, covidPain;
     Button covidSubmit;
-    boolean headache, fatigue, runnynose, shortbreath, sorethroat;
-    boolean drycough, fever, diarrhea, pain;
+    LogBookService logBookService;
+    LogBook logBook;
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,17 +43,20 @@ public class CovidSymptomSurvey extends AppCompatActivity {
 
         covidSubmit = findViewById(R.id.covidSurveySubmit);
 
+        logBookService = new LogBookService();
+        logBook = new LogBook();
+
         
         covidHeadAche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (covidHeadAche.isChecked())
                 {
-                    headache = true;
+                    logBook.getOtherSymptoms().add(3);
                 }
                 else
                 {
-                    headache = false;
+                    logBook.getOtherSymptoms().remove(Integer.valueOf(3));
                 }
             }
         });
@@ -59,11 +65,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidFatigue.isChecked())
                 {
-                    fatigue = true;
+                    logBook.getOtherSymptoms().add(0);
                 }
                 else
                 {
-                    fatigue = false;
+                    logBook.getOtherSymptoms().remove(Integer.valueOf(0));
                 }
             }
         });
@@ -72,11 +78,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidRunnyNose.isChecked())
                 {
-                    runnynose = true;
+                    logBook.getOtherSymptoms().add(2);
                 }
                 else
                 {
-                    runnynose = false;
+                    logBook.getOtherSymptoms().remove(Integer.valueOf(2));
                 }
             }
         });
@@ -85,11 +91,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidShortBreath.isChecked())
                 {
-                    shortbreath = true;
+                    logBook.getSymptoms().add(3);
                 }
                 else
                 {
-                    shortbreath = false;
+                    logBook.getSymptoms().remove(Integer.valueOf(3));
                 }
             }
         });
@@ -98,11 +104,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidSoreThroat.isChecked())
                 {
-                    sorethroat = true;
+                    logBook.getSymptoms().add(2);
                 }
                 else
                 {
-                    sorethroat = false;
+                    logBook.getSymptoms().remove(Integer.valueOf(2));
                 }
             }
         });
@@ -111,11 +117,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidDryCough.isChecked())
                 {
-                    drycough = true;
+                    logBook.getSymptoms().add(1);
                 }
                 else
                 {
-                    drycough = false;
+                    logBook.getSymptoms().remove(Integer.valueOf(1));
                 }
             }
         });
@@ -124,11 +130,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidFever.isChecked())
                 {
-                    fever = true;
+                    logBook.getSymptoms().add(0);
                 }
                 else
                 {
-                    fever = false;
+                    logBook.getSymptoms().remove(Integer.valueOf(0));
                 }
             }
         });
@@ -137,11 +143,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidDiarrhea.isChecked())
                 {
-                    diarrhea = true;
+                    logBook.getOtherSymptoms().add(4);
                 }
                 else
                 {
-                    diarrhea = false;
+                    logBook.getOtherSymptoms().remove(Integer.valueOf(4));
                 }
             }
         });
@@ -150,11 +156,11 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 if (covidPain.isChecked())
                 {
-                    pain = true;
+                    logBook.getOtherSymptoms().add(1);
                 }
                 else
                 {
-                    pain = false;
+                    logBook.getOtherSymptoms().remove(Integer.valueOf(1));
                 }
             }
         });
@@ -162,15 +168,9 @@ public class CovidSymptomSurvey extends AppCompatActivity {
         covidSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (headache == true)
-                {
-                    System.out.println("true");
-                }
-                else if (headache == false)
-                {
-                    System.out.println("false");
-                }
-
+               logBookService.saveData(logBook);
+                Toast.makeText(CovidSymptomSurvey.this, "Survey Data is submitted successfully",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),UserMainMenu.class));
             }
         });
 

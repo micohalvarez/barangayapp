@@ -40,6 +40,9 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
     FloatingActionButton fabSend;
     private AuthService authService;
     AnnouncementService announcementService;
+    Announcement userAnnouncement;
+    int iconValue;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,6 +68,9 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         String currentdate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
         Dateview.setText(currentdate);
 
+        announcementService = new AnnouncementService();
+        userAnnouncement = new Announcement();
+
         this.initializeDropdown();
         ArrayAdapter<String> iconAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, this.icons);
         iconAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -80,36 +86,43 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
                     case 1:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_fire));
+                        iconValue = 0;
                         break;
                     }
                     case 2:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_weather));
+                        iconValue = 1;
                         break;
                     }
                     case 3:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_covid));
+                        iconValue = 2;
                         break;
                     }
                     case 4:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_crime));
+                        iconValue = 3;
                         break;
                     }
                     case 5:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_news));
+                        iconValue = 4;
                         break;
                     }
                     case 6:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_med));
+                        iconValue = 5;
                         break;
                     }
                     case 7:
                     {
                         iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_accident));
+                        iconValue = 6;
                         break;
                     }
                     default:
@@ -168,13 +181,13 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
 
     public void sendAnnouncement(String userId){
 
-        announcementService = new AnnouncementService();
-        Announcement userAnnouncement = new Announcement();
+
         //Set Objects
         userAnnouncement.setTitle(subjectSection.getText().toString().trim());
         userAnnouncement.setContent(announcementDetail.getText().toString().trim());
         userAnnouncement.setCurrentDate(Dateview.getText().toString().trim());
-       announcementService.saveData(userAnnouncement, userId);
+        userAnnouncement.setIconValue(iconValue);
+        announcementService.saveData(userAnnouncement, userId);
     }
 
     private void initializeDropdown(){
