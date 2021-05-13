@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -23,6 +24,8 @@ import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.PagerAdapter;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
+
+
 
 public class NotificationsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

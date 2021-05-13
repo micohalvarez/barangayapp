@@ -12,13 +12,13 @@
     android:layout_weight="10"
     >
 
-    <com.google.android.material.navigation.NavigationView
+    <!--<com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/Newsfeednav_view"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu_main"
-        android:layout_gravity="start"/>
+        android:layout_gravity="start"/>-->
 
 
     <LinearLayout
