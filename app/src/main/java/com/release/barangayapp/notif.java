@@ -3,6 +3,7 @@ package com.release.barangayapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -67,6 +68,7 @@ public class notif extends Fragment {
         View view= inflater.inflate(R.layout.fragment_notif, container, false);
         recyclerView=view.findViewById(R.id.notif_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
         return view;
     }

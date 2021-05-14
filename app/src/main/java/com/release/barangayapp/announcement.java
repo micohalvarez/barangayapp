@@ -74,7 +74,7 @@ public class announcement extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         announcementholder= new ArrayList<>();
 
-        
+
 
         return view;
     }
