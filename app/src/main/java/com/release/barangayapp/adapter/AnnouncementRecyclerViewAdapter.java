@@ -1,5 +1,6 @@
 package com.release.barangayapp.adapter;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
@@ -20,6 +21,7 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
     private List<Announcement> filteredAnnouncement;
     public List<Announcement> mItemList;
     private OnAnnouncementListener onAnnouncementListener;
+    Announcement nContext;
 
 
     @Override
