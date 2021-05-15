@@ -6,11 +6,11 @@
     tools:context=".Fragment_Announcement">
 
     <!-- TODO: Update blank fragment layout -->
-    <!--<TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Announcement Fragment"
-        android:gravity="center"/>-->
+        android:gravity="center"/>
 
      <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/announcement_recyclerView"
