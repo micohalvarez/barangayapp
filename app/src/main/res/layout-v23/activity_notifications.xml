@@ -13,69 +13,42 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/Notificationsnav_view"
+        android:id="@+id/Adminnav_view"
         app:headerLayout="@layout/header"
         app:menu="@menu/menuu"
         android:layout_gravity="start"/>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/Notificationstool_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/teal_700"
-            android:minHeight="?attr/actionBarSize"
-            android:paddingLeft="20dp"
+            app:navigationIcon="@drawable/trymenu"
             android:theme="?attr/actionBarTheme"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:navigationIcon="@drawable/trymenu">
-
-        </androidx.appcompat.widget.Toolbar>
+            android:paddingLeft="20dp"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/teal_700"/>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/Notif_Announcement_Tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Notificationstool_bar"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_below="@id/Notificationstool_bar"/>
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/Notif_Tab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notifications" />
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/Announcement_Tab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Announcement" />
-
-
-        </com.google.android.material.tabs.TabLayout>
-
-        <androidx.viewpager.widget.ViewPager
+        <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="630dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Notif_Announcement_Tab"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_height="match_parent"
+            android:layout_below="@id/Notif_Announcement_Tab"/>
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/AddAnnouncement"
@@ -91,7 +64,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.899"
             />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

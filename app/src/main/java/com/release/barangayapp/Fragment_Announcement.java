@@ -3,20 +3,22 @@ package com.release.barangayapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.release.barangayapp.model.Announcement;
+
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link notif#newInstance} factory method to
+ * Use the {@link Fragment_Announcement#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class notif extends Fragment {
+public class Fragment_Announcement extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,8 +29,9 @@ public class notif extends Fragment {
     private String mParam1;
     private String mParam2;
     RecyclerView recyclerView;
+    ArrayList<Announcement> announcementholder;
 
-    public notif() {
+    public Fragment_Announcement() {
         // Required empty public constructor
     }
 
@@ -38,11 +41,11 @@ public class notif extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment notif.
+     * @return A new instance of fragment Fragment_Announcement.
      */
     // TODO: Rename and change types and number of parameters
-    public static notif newInstance(String param1, String param2) {
-        notif fragment = new notif();
+    public static Fragment_Announcement newInstance(String param1, String param2) {
+        Fragment_Announcement fragment = new Fragment_Announcement();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,13 +66,15 @@ public class notif extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_notif, container, false);
+        return inflater.inflate(R.layout.fragment__announcement, container, false);
 
-        View view= inflater.inflate(R.layout.fragment_notif, container, false);
-        recyclerView=view.findViewById(R.id.notif_recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
-        return view;
+//        View view= inflater.inflate(R.layout.fragment_announcement, container, false);
+//        recyclerView=view.findViewById(R.id.announcement_recyclerView);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        announcementholder= new ArrayList<>();
+//
+//
+//
+//        return view;
     }
 }

@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +16,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
-import com.release.barangayapp.adapter.PagerAdapter;
+import com.release.barangayapp.adapter.FragmentAdapter;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
@@ -32,10 +31,9 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
     NavigationView NotifnavigationView;
     Toolbar Notiftoolbar;
     private AuthService authService;
-    ViewPager pager;
-    TabLayout mTabLayout;
-    TabItem notif, announcement;
-    PagerAdapter adapter;
+    ViewPager2 pager2;
+    TabLayout tabLayout;
+    FragmentAdapter adapter;
 
 
     @Override
@@ -52,13 +50,12 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
             }
         });
 
-        pager = findViewById(R.id.viewpager);
-        mTabLayout= findViewById(R.id.Notif_Announcement_Tab);
-        notif= findViewById(R.id.Notif_Tab);
-        announcement= findViewById(R.id.Announcement_Tab);
+        pager2 = findViewById(R.id.viewpager);
+        tabLayout= findViewById(R.id.Notif_Announcement_Tab);
+
 
         NotifdrawerLayout = findViewById(R.id.Notificationsdrawer_layout);
-        NotifnavigationView = findViewById(R.id.Notificationsnav_view);
+        NotifnavigationView = findViewById(R.id.Adminnav_view);
         Notiftoolbar = findViewById(R.id.Notificationstool_bar);
 
         NotifnavigationView.bringToFront();
@@ -77,14 +74,20 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
             startActivity(emergency);
         });
 
-        adapter = new PagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mTabLayout.getTabCount());
-        pager.setAdapter(adapter);
+
+        //ViewPager2
+        FragmentManager fm= getSupportFragmentManager();
+        adapter = new FragmentAdapter(fm, getLifecycle());
+        pager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Notification"));
+        tabLayout.addTab(tabLayout.newTab().setText("Announcement"));
 
 
-        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                pager.setCurrentItem(tab.getPosition());
+                pager2.setCurrentItem(tab.getPosition());
             }
 
             @Override
@@ -97,7 +100,12 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
 
             }
         });
-        pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
+        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
 
     }
 

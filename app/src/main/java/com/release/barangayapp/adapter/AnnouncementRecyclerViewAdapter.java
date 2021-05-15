@@ -23,15 +23,16 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
     private OnAnnouncementListener onAnnouncementListener;
     Announcement nContext;
 
-    public AnnouncementRecyclerViewAdapter(List<Announcement> itemList, OnAnnouncementListener onAnnouncementListener) {
-
+    public AnnouncementRecyclerViewAdapter(List<Announcement> itemList, OnAnnouncementListener onAnnouncementListener)
+    {
         mItemList = itemList;
         filteredAnnouncement = mItemList;
         this.onAnnouncementListener  = onAnnouncementListener;
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v)
+    {
 
     }
 
