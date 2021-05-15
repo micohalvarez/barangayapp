@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A2435"
+    android:background="#dfe6e9"
     tools:context=".view.MainActivity">
 
 
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="BEA"
-        android:textColor="@color/design_default_color_secondary"
+        android:textColor="@color/black"
         android:textSize="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +39,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ELproyekto"
-        android:textColor="@color/teal_200"
+        android:text="El Proyekto"
+        android:textColor="@color/black"
         android:textColorHighlight="#FFFFFF"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
