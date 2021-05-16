@@ -7,7 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Button;
+import com.release.barangayapp.R;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment_ReportSummary#newInstance} factory method to
@@ -23,6 +24,7 @@ public class Fragment_ReportSummary extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button Button_update;
 
     public Fragment_ReportSummary() {
         // Required empty public constructor
@@ -60,5 +62,7 @@ public class Fragment_ReportSummary extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment__report_summary, container, false);
+
+
     }
 }
