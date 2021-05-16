@@ -5,7 +5,7 @@
     android:id="@+id/Mobile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dfe6e9">
+    android:background="@drawable/box1">
 
 
     <TextView
@@ -14,7 +14,7 @@
         android:layout_height="60dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="Barangay Response App"
+        android:text="Barangay Emergency App"
         android:textColor="#2d3436"
         android:textSize="24sp"
         app:layout_constrainedHeight="true"
