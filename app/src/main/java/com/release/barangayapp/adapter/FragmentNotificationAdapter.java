@@ -10,8 +10,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.release.barangayapp.Fragment_Announcement;
 import com.release.barangayapp.Fragment_Notification;
 
-public class FragmentAdapter extends FragmentStateAdapter {
-    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+public class FragmentNotificationAdapter extends FragmentStateAdapter {
+    public FragmentNotificationAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 

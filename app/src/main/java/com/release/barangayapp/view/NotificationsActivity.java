@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.release.barangayapp.adapter.FragmentAdapter;
+import com.release.barangayapp.adapter.FragmentNotificationAdapter;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
@@ -33,7 +33,7 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
     private AuthService authService;
     ViewPager2 pager2;
     TabLayout tabLayout;
-    FragmentAdapter adapter;
+    FragmentNotificationAdapter adapter;
 
 
     @Override
@@ -77,7 +77,7 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
 
         //ViewPager2
         FragmentManager fm= getSupportFragmentManager();
-        adapter = new FragmentAdapter(fm, getLifecycle());
+        adapter = new FragmentNotificationAdapter(fm, getLifecycle());
         pager2.setAdapter(adapter);
 
         tabLayout.addTab(tabLayout.newTab().setText("Notification"));
