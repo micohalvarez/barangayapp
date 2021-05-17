@@ -44,8 +44,8 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
 
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
-        AdminnavigationView = findViewById(R.id.Adminnav_view);
-        Admintoolbar = findViewById(R.id.Admintool_bar);
+        AdminnavigationView = findViewById(R.id.Loogbook_view);
+        Admintoolbar = findViewById(R.id.Loogbook_bar);
 
         AdminnavigationView.bringToFront();
         setSupportActionBar(Admintoolbar);
@@ -55,47 +55,14 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
         toggle.syncState();
         AdminnavigationView.setNavigationItemSelectedListener(this);
 
-        //Button Summary
-        Button_summary= findViewById(R.id.Summary_button);
-        Button_summary.setOnClickListener(v -> OpenSummary());
+
 
 
 
     }
 
 
-    private void setSingleEvent(GridLayout mainGrid) {
-        for(int i=0; i<mainGrid.getChildCount();i++)
-        {
-            CardView cardview = (CardView)mainGrid.getChildAt(i);
-            final int finalI = i;
-            cardview.setOnClickListener(v -> {
 
-                if(finalI == 0)
-                {
-                    Intent notification=new Intent(Logbook.this, NotificationsActivity.class);
-                    startActivity(notification);
-
-                }
-                else if (finalI == 1)
-                {
-                    Intent reports=new Intent(Logbook.this, Reports.class);
-                    startActivity(reports);
-                }
-                else if (finalI == 2)
-                {
-                    Intent loogbook=new Intent(Logbook.this, Logbook.class);
-                    startActivity(loogbook);
-                }
-                else if (finalI == 3)
-                {
-                    Intent adminchatsupport=new Intent(Logbook.this, AdminChatSupport.class);
-                    startActivity(adminchatsupport);
-                }
-
-            });
-        }
-    }
 
     @Override
     public void onBackPressed() {
@@ -138,10 +105,6 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
         return true;
     }
 
-    public void OpenSummary()
-    {
-        Intent summary=new Intent(this, CreateSummary.class);
-        startActivity(summary);
-    }
+   
 
 }

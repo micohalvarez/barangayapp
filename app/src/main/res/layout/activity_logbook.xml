@@ -13,7 +13,7 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/Adminnav_view"
+        android:id="@+id/Loogbook_view"
         app:headerLayout="@layout/header"
         app:menu="@menu/menuu"
         android:layout_gravity="start"/>
@@ -23,12 +23,12 @@
         android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/Admintool_bar"
+            android:id="@+id/Loogbook_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/teal_700"
             android:minHeight="?attr/actionBarSize"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:theme="?attr/actionBarTheme"
             app:navigationIcon="@drawable/trymenu"/>
 
