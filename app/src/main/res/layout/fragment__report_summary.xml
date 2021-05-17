@@ -48,6 +48,7 @@
             android:clickable="false"
             android:text="     "
             android:textSize="25dp"
+            android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.374"
@@ -57,8 +58,8 @@
 
         <View
             android:id="@+id/line"
-            android:layout_width="50dp"
-            android:layout_height="1dp"
+            android:layout_width="33dp"
+            android:layout_height="2dp"
             android:background="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,9 +84,10 @@
 
         <TextView
             android:id="@+id/summary_suspect"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="23dp"
+            android:layout_height="32dp"
             android:clickable="false"
+            android:inputType="number"
             android:text="     "
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -117,6 +119,7 @@
             android:clickable="false"
             android:text="     "
             android:textSize="25dp"
+            android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.374"
@@ -140,8 +143,8 @@
 
         <View
             android:id="@+id/line2"
-            android:layout_width="50dp"
-            android:layout_height="1dp"
+            android:layout_width="33dp"
+            android:layout_height="2dp"
             android:background="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -152,8 +155,8 @@
 
         <View
             android:id="@+id/line4"
-            android:layout_width="50dp"
-            android:layout_height="1dp"
+            android:layout_width="33dp"
+            android:layout_height="2dp"
             android:background="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -174,6 +177,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.891" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

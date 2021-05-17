@@ -105,6 +105,6 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
         return true;
     }
 
-   
+
 
 }
