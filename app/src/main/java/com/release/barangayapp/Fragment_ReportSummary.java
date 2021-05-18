@@ -1,5 +1,6 @@
 package com.release.barangayapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.release.barangayapp.R;
+import com.release.barangayapp.view.UserLogin;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment_ReportSummary#newInstance} factory method to
@@ -64,5 +67,14 @@ public class Fragment_ReportSummary extends Fragment {
         return inflater.inflate(R.layout.fragment__report_summary, container, false);
 
 
+
+
+    }
+
+    public void UpdateSummary()
+    {
+
+        /*Intent update=new Intent(this, UserLogin.class);
+        startActivity(update);*/
     }
 }
