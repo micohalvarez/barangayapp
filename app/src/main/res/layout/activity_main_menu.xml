@@ -12,14 +12,9 @@
         android:id="@+id/User_button"
         android:layout_width="201dp"
         android:layout_height="50dp"
-<<<<<<< Updated upstream
-        android:text="User"
-        android:background="@drawable/buttonround"
-=======
         android:background="@drawable/buttonround"
         android:fontFamily="@font/helvetica_bold"
         android:text="LOGIN"
->>>>>>> Stashed changes
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
