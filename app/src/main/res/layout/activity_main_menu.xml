@@ -10,7 +10,7 @@
 
     <Button
         android:id="@+id/User_button"
-        android:layout_width="201dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:background="@drawable/buttonround"
         android:fontFamily="@font/helvetica_bold"
@@ -20,9 +20,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.458" />
 
     <Button
         android:id="@+id/AboutUs_button"
@@ -36,9 +37,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/User_button"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.168" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -54,13 +56,14 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="330dp"
-        android:layout_height="200dp"
+        android:layout_width="290dp"
+        android:layout_height="150dp"
         android:background="@drawable/bea_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.436" />
+        app:layout_constraintVertical_bias="0.499" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/helvetica_bold"
         android:text="Login"
-        android:textColor="#000000"
+        android:textColor="#57606F"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
