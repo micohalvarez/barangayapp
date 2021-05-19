@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.release.barangayapp.R;
+import com.release.barangayapp.view.CreateSummary;
 import com.release.barangayapp.view.UserLogin;
 
 /**
@@ -64,17 +65,21 @@ public class Fragment_ReportSummary extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__report_summary, container, false);
+        View v= inflater.inflate(R.layout.fragment__report_summary, container, false);
 
 
+        Button_update = v.findViewById(R.id.Summary_button);
 
+        Button_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(), CreateSummary.class));
+            }
+        });
+        return v;
 
     }
 
-    public void UpdateSummary()
-    {
 
-        /*Intent update=new Intent(this, UserLogin.class);
-        startActivity(update);*/
-    }
 }
