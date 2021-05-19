@@ -8,8 +8,8 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 
@@ -17,7 +17,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
-public class CreateSummary extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class CreateUpdates extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout AdmindrawerLayout;
     NavigationView AdminnavigationView;
@@ -27,13 +27,12 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_summary);
-
+        setContentView(R.layout.activity_create_updates);
 
         authService = new AuthService();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
-                Intent homeIntent = new Intent(CreateSummary.this, MainMenu.class);
+                Intent homeIntent = new Intent(CreateUpdates.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
@@ -43,7 +42,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
 
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
-        AdminnavigationView = findViewById(R.id.summary_view);
+        AdminnavigationView = findViewById(R.id.updates_view);
         Admintoolbar = findViewById(R.id.summary_bar);
 
         AdminnavigationView.bringToFront();
@@ -54,8 +53,8 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
         toggle.syncState();
         AdminnavigationView.setNavigationItemSelectedListener(this);
 
-    }
 
+    }
 
 
 
@@ -81,7 +80,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
-                Intent registerIntent = new Intent(CreateSummary.this, Register.class);
+                Intent registerIntent = new Intent(CreateUpdates.this, Register.class);
                 startActivity(registerIntent);
                 finish();
                 break;
@@ -89,7 +88,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-                Intent LogoutIntent = new Intent(CreateSummary.this, MainMenu.class);
+                Intent LogoutIntent = new Intent(CreateUpdates.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
                 authService.signOut();

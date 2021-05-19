@@ -1,5 +1,6 @@
 package com.release.barangayapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.release.barangayapp.view.CreateSummary;
+import com.release.barangayapp.view.CreateUpdates;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +28,7 @@ public class Fragment_ReportUpdates extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button Button_update;
 
     public Fragment_ReportUpdates() {
         // Required empty public constructor
@@ -59,6 +65,20 @@ public class Fragment_ReportUpdates extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__report_updates, container, false);
+        return inflater.inflate(R.layout.fragment__report_summary, container, false);
+
+
+        //Comment for now. its causing an error. 
+        /*View u= inflater.inflate(R.layout.fragment__report_summary, container, false);
+        Button_update = u.findViewById(R.id.Updates_button);
+
+        Button_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View u) {
+
+                startActivity(new Intent(getActivity(), CreateUpdates.class));
+            }
+        });
+        return u;*/
     }
 }
