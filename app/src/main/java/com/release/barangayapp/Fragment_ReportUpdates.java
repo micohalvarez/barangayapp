@@ -65,12 +65,12 @@ public class Fragment_ReportUpdates extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__report_summary, container, false);
+        //return inflater.inflate(R.layout.fragment__report_updates, container, false);
 
 
         //Error if this part is included
         //Comment for now. its causing an error. 
-        /*View u= inflater.inflate(R.layout.fragment__report_summary, container, false);
+        View u= inflater.inflate(R.layout.fragment__report_summary, container, false);
         Button_update = u.findViewById(R.id.Updates_button);
 
         Button_update.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +80,6 @@ public class Fragment_ReportUpdates extends Fragment {
                 startActivity(new Intent(getActivity(), CreateUpdates.class));
             }
         });
-        return u;*/
+        return u;
     }
 }
