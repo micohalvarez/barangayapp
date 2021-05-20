@@ -70,7 +70,7 @@ public class Fragment_ReportUpdates extends Fragment {
 
         //Error if this part is included
         //Comment for now. its causing an error. 
-        View u= inflater.inflate(R.layout.fragment__report_summary, container, false);
+        View u= inflater.inflate(R.layout.fragment__report_updates, container, false);
         Button_update = u.findViewById(R.id.Updates_button);
 
         Button_update.setOnClickListener(new View.OnClickListener() {
