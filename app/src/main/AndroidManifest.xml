@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".view.CreateUpdates"></activity>
+        <activity android:name=".view.CovidUserProfile"></activity>
+        <activity android:name=".view.CreateUpdates" />
         <activity android:name=".view.CreateSummary" />
         <activity android:name=".view.AboutUs" />
         <activity android:name=".view.AdminChatSupport" />
