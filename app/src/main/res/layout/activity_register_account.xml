@@ -5,32 +5,16 @@
     android:id="@+id/Mobile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/box1">
+    android:background="@drawable/background_bea"
+    >
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:fontFamily="sans-serif-black"
-        android:gravity="center"
-        android:text="Barangay Emergency App"
-        android:textColor="#2d3436"
-        android:textSize="24sp"
-        app:layout_constrainedHeight="true"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/helvetica_bold"
+        android:gravity="center"
         android:text="Create New Account"
         android:textColor="#000000"
         android:textSize="22sp"
@@ -38,27 +22,10 @@
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.241" />
-
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="Barangay Personnel Registration"
-        android:textColor="#E60D0D"
-        android:textSize="25sp"
-        app:layout_constrainedHeight="true"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.237" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -79,10 +46,11 @@
         android:layout_width="230dp"
         android:layout_height="50dp"
         android:background="#332D2D"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/helvetica"
         android:text="Register"
+        android:textColor="#FFFFFF"
         android:textSize="17sp"
-        app:backgroundTint="#191818"
+        app:backgroundTint="#3867D6"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,6 +61,7 @@
         app:layout_constraintVertical_bias="0.876" />
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="370dp"
         android:layout_height="300dp"
         app:layout_constrainedHeight="true"
@@ -247,36 +216,36 @@
         android:id="@+id/SwitchAccountDesignator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/helvetica"
         android:text="Account Designator"
         android:textColor="#000000"
-        android:textSize="11sp"
+        android:textSize="15sp"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.767" />
 
     <TextView
         android:id="@+id/AccountDesignateDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:gravity="center_vertical"
+        android:layout_width="148dp"
+        android:layout_height="27dp"
+        android:fontFamily="@font/helvetica"
+        android:gravity="center|center_vertical"
         android:text="BARANGAY USER"
         android:textColor="#000000"
-        android:textSize="11sp"
+        android:textSize="15sp"
         app:layout_constrainedHeight="true"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
+        app:layout_constraintVertical_bias="0.767" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -291,6 +260,30 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="730dp" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049"
+        app:srcCompat="@drawable/logo5" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="188dp"
+        android:layout_height="147dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        app:srcCompat="@drawable/bea_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
