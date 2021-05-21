@@ -1,7 +1,9 @@
 package com.release.barangayapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,7 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+import com.release.barangayapp.adapter.AnnouncementRecyclerViewAdapter;
 import com.release.barangayapp.model.Announcement;
+import com.release.barangayapp.service.AnnouncementService;
+import com.release.barangayapp.service.AuthService;
+import com.release.barangayapp.view.AdminMainMenu;
+import com.release.barangayapp.view.MainMenu;
 
 import java.util.ArrayList;
 
@@ -19,7 +29,7 @@ import java.util.ArrayList;
  * Use the {@link announcement#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class announcement extends Fragment {
+public class announcement extends Fragment implements AnnouncementRecyclerViewAdapter.OnStudentListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,11 +40,10 @@ public class announcement extends Fragment {
     private String mParam1;
     private String mParam2;
     RecyclerView recyclerView;
+    private AnnouncementRecyclerViewAdapter recyclerViewAdapter;
     ArrayList<Announcement> announcementholder;
+    private AnnouncementService announcementService;
 
-    public announcement() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -73,9 +82,35 @@ public class announcement extends Fragment {
         recyclerView=view.findViewById(R.id.announcement_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         announcementholder= new ArrayList<>();
+        announcementService = new AnnouncementService();
 
-
-
+        System.out.println("hehe");
         return view;
+    }
+
+    private boolean isLoading = false;
+    private int startingIndex = 20;
+    private int currentSize;
+    private int nextLimit;
+    private String finalKey = "";
+
+    private void initAdapter() {
+
+        announcementService.getData(value ->  {
+            announcementholder = value;
+            System.out.println(value);
+            initializeAdapter();
+        });
+
+    }
+
+    private void initializeAdapter(){
+        recyclerViewAdapter = new AnnouncementRecyclerViewAdapter(announcementholder,this);
+        recyclerView.setAdapter(recyclerViewAdapter);
+    }
+
+    @Override
+    public void onStudentClick(int position) {
+
     }
 }

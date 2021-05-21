@@ -84,6 +84,8 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                System.out.println("heehe");
+
                 pager.setCurrentItem(tab.getPosition());
             }
 
