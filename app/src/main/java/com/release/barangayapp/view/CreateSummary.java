@@ -8,33 +8,32 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
-public class Logbook extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class CreateSummary extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout AdmindrawerLayout;
     NavigationView AdminnavigationView;
     Toolbar Admintoolbar;
     private AuthService authService;
-    private Button Button_summary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logbook);
+        setContentView(R.layout.activity_create_summary);
+
 
         authService = new AuthService();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
-                Intent homeIntent = new Intent(Logbook.this, MainMenu.class);
+                Intent homeIntent = new Intent(CreateSummary.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
@@ -44,8 +43,8 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
 
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
-        AdminnavigationView = findViewById(R.id.Loogbook_view);
-        Admintoolbar = findViewById(R.id.Loogbook_bar);
+        AdminnavigationView = findViewById(R.id.summary_view);
+        Admintoolbar = findViewById(R.id.summary_bar);
 
         AdminnavigationView.bringToFront();
         setSupportActionBar(Admintoolbar);
@@ -54,10 +53,6 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
         AdmindrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         AdminnavigationView.setNavigationItemSelectedListener(this);
-
-
-
-
 
     }
 
@@ -86,7 +81,7 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
-                Intent registerIntent = new Intent(Logbook.this, Register.class);
+                Intent registerIntent = new Intent(CreateSummary.this, Register.class);
                 startActivity(registerIntent);
                 finish();
                 break;
@@ -94,7 +89,7 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-                Intent LogoutIntent = new Intent(Logbook.this, MainMenu.class);
+                Intent LogoutIntent = new Intent(CreateSummary.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
                 authService.signOut();
@@ -104,7 +99,4 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
         AdmindrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-
 }

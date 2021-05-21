@@ -13,6 +13,7 @@
     tools:openDrawer="start"
     >
 
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -26,60 +27,58 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#0A2435"
+        android:background="#dfe6e9"
         android:weightSum="10">
 
 
-
-    <RelativeLayout
-        android:layout_weight="3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/Usertool_bar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="163dp"
-            android:background="@color/teal_700"
-            android:minHeight="?attr/actionBarSize"
-            android:paddingLeft="20dp"
-            android:theme="?attr/actionBarTheme"
-            app:navigationIcon="@drawable/trymenu" />
+            android:layout_height="0dp"
+            android:layout_weight="3">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="131dp"
-            android:layout_marginEnd="130dp"
-            android:layout_marginBottom="49dp"
-            android:src="@drawable/logo5" />
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="267dp"
+                android:layout_height="95dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="138dp"
+                android:layout_marginTop="87dp"
+                android:layout_marginEnd="6dp"
+                app:srcCompat="@drawable/bea_name" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="10dp"
-            android:text="Barangay Emergency Application"
-            android:textColor="@color/teal_200"
-            android:textSize="20dp" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/Usertool_bar"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="161dp"
+                android:background="#e74c3c"
+                android:minHeight="?attr/actionBarSize"
+                android:paddingLeft="20dp"
+                android:theme="?attr/actionBarTheme"
+                app:navigationIcon="@drawable/trymenu" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="201dp"
+                android:layout_marginBottom="13dp"
+                android:src="@drawable/logo5" />
 
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <GridLayout
+        <GridLayout
         android:id="@+id/User_mainGrid"
         android:layout_weight="7"
         android:columnCount="2"
@@ -225,5 +224,6 @@
     </GridLayout>
 
     </LinearLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

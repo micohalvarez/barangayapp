@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blueback"
+    android:background="@drawable/background_bea"
     tools:context=".view.UserLogin">
 
     <TextView
@@ -31,22 +31,32 @@
         app:layout_constraintTop_toTopOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.145" />
 
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/aladin"
-        android:text="User Login"
-        android:textColor="#000000"
+        android:fontFamily="@font/helvetica_bold"
+        android:text="Login"
+        android:textColor="#57606F"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.431"
-        tools:textColor="#E61212" />
+        app:layout_constraintVertical_bias="0.416"
+        tools:textColor="#57606F" />
 
+    <View
+        android:id="@+id/line"
+        android:layout_width="185dp"
+        android:layout_height="2dp"
+        android:background="#57606F"
+        app:layout_constraintBottom_toTopOf="@+id/User_EmailUsername"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.895" />
 
     <EditText
         android:id="@+id/User_Password"
@@ -54,12 +64,12 @@
         android:layout_height="29dp"
         android:background="@drawable/editround"
         android:clickable="true"
-        android:inputType="textPassword"
         android:drawableLeft="@drawable/pass3"
-        android:fontFamily="@font/aladin"
+        android:fontFamily="sans-serif"
         android:hint="Password"
+        android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:textSize="22dp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.503"
@@ -106,11 +116,11 @@
         android:background="@drawable/editround"
         android:clickable="true"
         android:drawableLeft="@drawable/user"
-        android:fontFamily="@font/aladin"
+        android:fontFamily="sans-serif"
         android:hint="Username"
         android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
-        android:textSize="22dp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"

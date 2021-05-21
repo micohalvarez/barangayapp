@@ -11,14 +11,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.release.barangayapp.R;
 import com.release.barangayapp.model.Announcement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener, Filterable {
+public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+        implements View.OnClickListener, Filterable {
 
     private final int VIEW_TYPE_ITEM = 0;
     private final int VIEW_TYPE_LOADING = 1;
@@ -26,11 +26,10 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
     public List<Announcement> mItemList;
     private OnStudentListener onStudentListener;
 
-    public AnnouncementRecyclerViewAdapter(List<Announcement> itemList, OnStudentListener onStudentListener) {
-
+    public AnnouncementRecyclerViewAdapter(List<Announcement> itemList, OnAnnouncementListener onAnnouncementListener) {
         mItemList = itemList;
         filteredStudents = mItemList;
-        this.onStudentListener  = onStudentListener;
+        this.onStudentListener = onStudentListener;
     }
 
     @NonNull
@@ -39,14 +38,13 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
         if (viewType == VIEW_TYPE_ITEM) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.announcement_row, parent, false);
             view.setOnClickListener(this);
-            return new ItemViewHolder(view,this.onStudentListener);
+            return new ItemViewHolder(view, this.onStudentListener);
         } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_loading, parent, false);
             view.setOnClickListener(this);
             return new LoadingViewHolder(view);
         }
     }
-
 
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
 
@@ -65,7 +63,8 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
     }
 
     /**
-     * The following method decides the type of ViewHolder to display in the RecyclerView
+     * The following method decides the type of ViewHolder to display in the
+     * RecyclerView
      *
      * @param position
      * @return
@@ -85,13 +84,13 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
         return null;
     }
 
-
-    private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvItem;
         TextView studentPref;
 
         OnStudentListener onStudentListener;
+
         public ItemViewHolder(@NonNull View itemView, OnStudentListener onStudentListener) {
             super(itemView);
 
@@ -120,7 +119,7 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
     }
 
     private void showLoadingView(LoadingViewHolder viewHolder, int position) {
-        //ProgressBar would be displayed
+        // ProgressBar would be displayed
 
     }
 
@@ -128,10 +127,10 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
 
         Announcement item = mItemList.get(position);
         viewHolder.tvItem.setText(item.getTitle());
-//        viewHolder.studentPref.setText(item.getFirstName().substring(0,1));
+        // viewHolder.studentPref.setText(item.getFirstName().substring(0,1));
     }
 
-    public interface OnStudentListener{
+    public interface OnStudentListener {
         void onStudentClick(int position);
     }
 

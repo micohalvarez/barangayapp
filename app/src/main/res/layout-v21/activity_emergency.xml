@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,7 +11,6 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     android:weightSum="10"
-
     >
 
     <com.google.android.material.navigation.NavigationView
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#0A2435"
+        android:background="@drawable/box1"
         android:weightSum="10">
 
 
@@ -44,36 +44,30 @@
                 android:layout_marginRight="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:background="@color/teal_700"
+                android:background="#e74c3c"
                 android:minHeight="?attr/actionBarSize"
                 android:paddingLeft="20dp"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@drawable/trymenu" />
 
 
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="333dp"
+                android:layout_height="123dp"
+                android:layout_below="@+id/Emergencytool_bar"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginEnd="130dp"
-                android:layout_marginBottom="49dp"
-                android:src="@drawable/logo5" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="148dp"
-                android:layout_marginBottom="9dp"
-                android:text="EMERGENCY"
-                android:textColor="@color/teal_200"
-                android:textSize="20dp" />
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="38dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/helvetica_bold"
+                android:gravity="center"
+                android:text="Select Type of Emergency"
+                android:textColor="#353b48"
+                android:textSize="40dp" />
 
 
         </RelativeLayout>

@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#0A2435"
+        android:background="@drawable/box1"
         android:weightSum="10">
 
 
@@ -44,34 +44,34 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="0dp"
                 android:layout_marginBottom="163dp"
-                android:background="@color/teal_700"
+                android:background="#e74c3c"
                 android:minHeight="?attr/actionBarSize"
                 android:paddingLeft="20dp"
                 android:theme="?attr/actionBarTheme"
                 app:navigationIcon="@drawable/trymenu" />
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="131dp"
-                android:layout_marginEnd="130dp"
-                android:layout_marginBottom="49dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="240dp"
+                android:layout_marginBottom="13dp"
                 android:src="@drawable/logo5" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="267dp"
+                android:layout_height="95dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="55dp"
-                android:layout_marginBottom="10dp"
-                android:text="Barangay Emergency Application"
-                android:textColor="@color/teal_200"
-                android:textSize="20dp" />
+                android:layout_marginStart="138dp"
+                android:layout_marginTop="87dp"
+                android:layout_marginEnd="43dp"
+                app:srcCompat="@drawable/bea_name" />
 
 
         </RelativeLayout>
