@@ -26,7 +26,7 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
     public List<Announcement> mItemList;
     private OnStudentListener onStudentListener;
 
-    public AnnouncementRecyclerViewAdapter(List<Announcement> itemList, OnAnnouncementListener onAnnouncementListener) {
+    public AnnouncementRecyclerViewAdapter(List<Announcement> itemList, OnStudentListener onAnnouncementListener) {
         mItemList = itemList;
         filteredStudents = mItemList;
         this.onStudentListener = onStudentListener;

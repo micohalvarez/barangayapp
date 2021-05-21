@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -79,7 +80,7 @@ public class Fragment_Announcement extends Fragment {
         // Inflate the layout for this fragment
         /* return inflater.inflate(R.layout.fragment_announcement, container, false); */
 
-        View view = inflater.inflate(R.layout.fragment_announcement, container, false);
+        View view = inflater.inflate(R.layout.fragment__announcement, container, false);
         recyclerView = view.findViewById(R.id.announcement_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         announcementholder = new ArrayList<>();
@@ -106,12 +107,8 @@ public class Fragment_Announcement extends Fragment {
     }
 
     private void initializeAdapter() {
-        recyclerViewAdapter = new AnnouncementRecyclerViewAdapter(announcementholder, this);
-        recyclerView.setAdapter(recyclerViewAdapter);
+//        recyclerViewAdapter = new AnnouncementRecyclerViewAdapter(announcementholder, );
+//        recyclerView.setAdapter(recyclerViewAdapter);
     }
 
-    @Override
-    public void onStudentClick(int position) {
-
-    }
 }
