@@ -106,8 +106,8 @@ public class Emergency extends AppCompatActivity implements NavigationView.OnNav
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.admin_home:
-                Intent home = new Intent(Emergency.this, AdminMainMenu.class);
+            case R.id.user_home:
+                Intent home = new Intent(Emergency.this, UserMainMenu.class);
                 startActivity(home);
                 finish();
                 break;
