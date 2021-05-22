@@ -119,14 +119,17 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
+            case R.id.admin_home:
+                Intent home = new Intent(AdminMainMenu.this, AdminMainMenu.class);
+                startActivity(home);
+                finish();
+                break;
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
                 Intent registerIntent = new Intent(AdminMainMenu.this, Register.class);
                 startActivity(registerIntent);
                 finish();
-                break;
-            case R.id.admin_settings:
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
