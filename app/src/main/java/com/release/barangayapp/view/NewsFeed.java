@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
@@ -45,7 +46,8 @@ public class NewsFeed extends AppCompatActivity implements NavigationView.OnNavi
         NewsfeednavigationView.bringToFront();
         setSupportActionBar(Newsfeedtoolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, NewsfeeddrawerLayout, Newsfeedtoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, NewsfeeddrawerLayout, Newsfeedtoolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         NewsfeeddrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         NewsfeednavigationView.setNavigationItemSelectedListener(this);
@@ -66,9 +68,12 @@ public class NewsFeed extends AppCompatActivity implements NavigationView.OnNavi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
-            case R.id.user_profile:
+            case R.id.user_home:
+                Intent home = new Intent(NewsFeed.this, UserMainMenu.class);
+                startActivity(home);
+                finish();
                 break;
-            case R.id.user_settings:
+            case R.id.user_profile:
                 break;
             case R.id.user_logout:
                 //For Signout in Firebase
@@ -78,6 +83,7 @@ public class NewsFeed extends AppCompatActivity implements NavigationView.OnNavi
                 authService.signOut();
                 break;
         }
+        NewsfeeddrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }

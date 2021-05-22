@@ -83,14 +83,17 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
+            case R.id.admin_home:
+                Intent home = new Intent(Logbook.this, AdminMainMenu.class);
+                startActivity(home);
+                finish();
+                break;
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
                 Intent registerIntent = new Intent(Logbook.this, Register.class);
                 startActivity(registerIntent);
                 finish();
-                break;
-            case R.id.admin_settings:
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase

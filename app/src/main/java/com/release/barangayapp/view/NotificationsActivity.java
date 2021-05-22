@@ -13,7 +13,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -21,10 +20,8 @@ import com.release.barangayapp.adapter.FragmentNotificationAdapter;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
-
-
-public class NotificationsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+public class NotificationsActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout NotifdrawerLayout;
     FloatingActionButton Addannouncement;
@@ -35,15 +32,14 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
     TabLayout tabLayout;
     FragmentNotificationAdapter adapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
 
         authService = new AuthService();
-        authService.getUserDetails(value ->  {
-            if(authService.getAuthUser() == null) {
+        authService.getUserDetails(value -> {
+            if (authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(NotificationsActivity.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
@@ -51,8 +47,7 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
         });
 
         pager2 = findViewById(R.id.viewpager);
-        tabLayout= findViewById(R.id.Notif_Announcement_Tab);
-
+        tabLayout = findViewById(R.id.Notif_Announcement_Tab);
 
         NotifdrawerLayout = findViewById(R.id.Notificationsdrawer_layout);
         NotifnavigationView = findViewById(R.id.Adminnav_view);
@@ -61,7 +56,8 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
         NotifnavigationView.bringToFront();
         setSupportActionBar(Notiftoolbar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, NotifdrawerLayout, Notiftoolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, NotifdrawerLayout, Notiftoolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         NotifdrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         NotifnavigationView.setNavigationItemSelectedListener(this);
@@ -69,20 +65,18 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
         Addannouncement = findViewById(R.id.AddAnnouncement);
 
         Addannouncement.setOnClickListener(v -> {
-            //Go to CreateAnnouncementActivity
-            Intent emergency=new Intent(NotificationsActivity.this, CreateAnnouncementActivity.class);
+            // Go to CreateAnnouncementActivity
+            Intent emergency = new Intent(NotificationsActivity.this, CreateAnnouncementActivity.class);
             startActivity(emergency);
         });
 
-
-        //ViewPager2
-        FragmentManager fm= getSupportFragmentManager();
+        // ViewPager2
+        FragmentManager fm = getSupportFragmentManager();
         adapter = new FragmentNotificationAdapter(fm, getLifecycle());
         pager2.setAdapter(adapter);
 
         tabLayout.addTab(tabLayout.newTab().setText("Notification"));
         tabLayout.addTab(tabLayout.newTab().setText("Announcement"));
-
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -112,7 +106,12 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
+            case R.id.admin_home:
+                Intent home = new Intent(NotificationsActivity.this, AdminMainMenu.class);
+                startActivity(home);
+                finish();
+                break;
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
@@ -120,10 +119,8 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
                 startActivity(registerIntent);
                 finish();
                 break;
-            case R.id.admin_settings:
-                break;
             case R.id.admin_logout:
-                //For Signout in Firebase
+                // For Signout in Firebase
                 Intent LogoutIntent = new Intent(NotificationsActivity.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
@@ -134,5 +131,5 @@ public class NotificationsActivity extends AppCompatActivity implements Navigati
         NotifdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
-    
+
 }

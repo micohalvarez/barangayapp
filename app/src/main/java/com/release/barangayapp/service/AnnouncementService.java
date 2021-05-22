@@ -1,11 +1,16 @@
 package com.release.barangayapp.service;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.release.barangayapp.model.Announcement;
+import com.release.barangayapp.model.UserRegisterObject;
 
 
 import java.util.ArrayList;
@@ -23,7 +28,7 @@ public class AnnouncementService {
     }
 
     //function for getting the data from news_feed tree
-    public ArrayList<Announcement> getData(){
+    public ArrayList<Announcement> getData(AnnouncementCallback myCallBack){
         ArrayList<Announcement> announcementList = new ArrayList<>();
 
         newsFeedRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -31,9 +36,14 @@ public class AnnouncementService {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map<String, Object> td = (HashMap<String,Object>) dataSnapshot.getValue();
 
-                for (DataSnapshot dsp : dataSnapshot.getChildren()) {
-                   announcementList.add(dsp.getValue(Announcement.class));
+                if(dataSnapshot.exists()) {
+                    for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                        announcementList.add(dsp.getValue(Announcement.class));
+                    }
+                    myCallBack.announcementCallBack(announcementList);
                 }
+                else
+                    myCallBack.announcementCallBack(null);
 
             }
 

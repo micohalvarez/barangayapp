@@ -106,9 +106,12 @@ public class Emergency extends AppCompatActivity implements NavigationView.OnNav
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.user_profile:
+            case R.id.user_home:
+                Intent home = new Intent(Emergency.this, UserMainMenu.class);
+                startActivity(home);
+                finish();
                 break;
-            case R.id.user_settings:
+            case R.id.user_profile:
                 break;
             case R.id.user_logout:
                 //For Signout in Firebase
