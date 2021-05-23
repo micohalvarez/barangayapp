@@ -7,6 +7,7 @@
     tools:context=".Fragment_CovidUserSummary">
 
     <!-- TODO: Update blank fragment layout -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,150 +21,165 @@
             android:text="Date:"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.135"
+            app:layout_constraintHorizontal_bias="0.143"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.218" />
+            app:layout_constraintVertical_bias="0.093" />
 
         <TextView
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
+            android:fontFamily="@font/helvetica_bold"
+            android:gravity="center"
             android:text="LGU Declared COVID-19 Cases"
+            android:textColor="#0097e6"
             android:textSize="25dp"
-            android:fontFamily="sans-serif-medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.329"
-            android:textColor="@color/teal_200"/>
+            app:layout_constraintVertical_bias="0.186" />
+
 
         <TextView
             android:id="@+id/summary_probable"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:clickable="false"
+            android:inputType="number"
             android:text="     "
             android:textSize="25dp"
-            android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.374"
+            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.483" />
+            app:layout_constraintVertical_bias="0.603" />
 
         <View
             android:id="@+id/line"
-            android:layout_width="33dp"
+            android:layout_width="50dp"
             android:layout_height="2dp"
             android:background="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.376"
+            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.51" />
+            app:layout_constraintVertical_bias="0.632" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
             android:text="Probable"
+            android:textColor="#f7b731"
             android:textSize="25dp"
-            android:textColor="@color/teal_200"
-            android:fontFamily="sans-serif-medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.631"
+            app:layout_constraintHorizontal_bias="0.064"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.483" />
+            app:layout_constraintVertical_bias="0.536" />
 
         <TextView
             android:id="@+id/summary_suspect"
-            android:layout_width="23dp"
-            android:layout_height="32dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:clickable="false"
             android:inputType="number"
             android:text="     "
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.374"
+            app:layout_constraintHorizontal_bias="0.864"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.583" />
-
+            app:layout_constraintVertical_bias="0.603" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
             android:text="Suspect"
-            android:textColor="@color/teal_200"
+            android:textColor="#fa8231"
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.625"
+            app:layout_constraintHorizontal_bias="0.912"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.583" />
+            app:layout_constraintVertical_bias="0.536" />
 
         <TextView
             android:id="@+id/summary_confirmed"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:clickable="false"
+            android:inputType="number"
             android:text="     "
             android:textSize="25dp"
-            android:inputType="number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.374"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.685" />
+            app:layout_constraintVertical_bias="0.603" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/helvetica"
+            android:gravity="center"
             android:text="Confirmed"
-            android:textColor="@color/teal_200"
+            android:textColor="#ff3838"
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.684"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.685" />
+            app:layout_constraintVertical_bias="0.536" />
 
         <View
             android:id="@+id/line2"
-            android:layout_width="33dp"
+            android:layout_width="50dp"
             android:layout_height="2dp"
             android:background="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.376"
+            app:layout_constraintHorizontal_bias="0.864"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.606" />
+            app:layout_constraintVertical_bias="0.632" />
 
         <View
             android:id="@+id/line4"
-            android:layout_width="33dp"
+            android:layout_width="50dp"
             android:layout_height="2dp"
             android:background="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.373"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.704" />
+            app:layout_constraintVertical_bias="0.632" />
 
+                                      <TextView
+                                  android:id="@+id/textView14"
+                                  android:layout_width="350dp"
+                                  android:layout_height="250dp"
+                                  android:background="@drawable/boxline"
+                                  android:text=""
+                                  app:layout_constraintBottom_toBottomOf="parent"
+                                  app:layout_constraintEnd_toEndOf="parent"
+                                  app:layout_constraintHorizontal_bias="0.491"
+                                  app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintTop_toTopOf="parent"
+                                  app:layout_constraintVertical_bias="0.69" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
