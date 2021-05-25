@@ -3,10 +3,15 @@ package com.release.barangayapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.release.barangayapp.adapter.NotificationViewAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +51,10 @@ public class Fragment_Notification extends Fragment {
         return fragment;
     }
 
+    private RecyclerView recyclerView;
+    private NotificationViewAdapter recyclerViewAdapter;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,19 +62,22 @@ public class Fragment_Notification extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Log.e("TESt","hi");
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__notification, container, false);
+//        return inflater.inflate(R.layout.fragment__notification, container, false);
 
-        /*View view= inflater.inflate(R.layout.fragment_notif, container, false);
+        View view= inflater.inflate(R.layout.fragment__notification, container, false);
+
         recyclerView=view.findViewById(R.id.notif_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        return view;*/
+        return view;
     }
 }

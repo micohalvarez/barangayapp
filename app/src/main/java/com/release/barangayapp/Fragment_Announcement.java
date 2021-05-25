@@ -1,20 +1,34 @@
 package com.release.barangayapp;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 import com.release.barangayapp.adapter.AnnouncementRecyclerViewAdapter;
 import com.release.barangayapp.model.Announcement;
 import com.release.barangayapp.service.AnnouncementService;
@@ -22,14 +36,17 @@ import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.view.AdminMainMenu;
 import com.release.barangayapp.view.MainMenu;
 
+import java.io.File;
 import java.util.ArrayList;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 /**
  * A simple {@link Fragment} subclass. Use the
  * {@link Fragment_Announcement#newInstance} factory method to create an
  * instance of this fragment.
  */
-public class Fragment_Announcement extends Fragment {
+public class Fragment_Announcement extends Fragment implements AnnouncementRecyclerViewAdapter.OnAnnouncementListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,38 +94,136 @@ public class Fragment_Announcement extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        /* return inflater.inflate(R.layout.fragment_announcement, container, false); */
 
         View view = inflater.inflate(R.layout.fragment__announcement, container, false);
         recyclerView = view.findViewById(R.id.announcement_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(),DividerItemDecoration.VERTICAL));
         announcementholder = new ArrayList<>();
         announcementService = new AnnouncementService();
 
-        System.out.println("hehe");
+        initAdapter();
         return view;
     }
 
     private boolean isLoading = false;
-    private int startingIndex = 20;
-    private int currentSize;
-    private int nextLimit;
-    private String finalKey = "";
+    private int nextLimit = 11;
 
     private void initAdapter() {
 
-        announcementService.getData(value -> {
+        announcementService.getSomeData(value -> {
             announcementholder = value;
-            System.out.println(value);
+
             initializeAdapter();
-        });
+            initScrollListener();
+        },10);
 
     }
 
     private void initializeAdapter() {
-//        recyclerViewAdapter = new AnnouncementRecyclerViewAdapter(announcementholder, );
-//        recyclerView.setAdapter(recyclerViewAdapter);
+
+        recyclerViewAdapter = new AnnouncementRecyclerViewAdapter(announcementholder,this );
+        recyclerView.setAdapter(recyclerViewAdapter);
     }
 
+    private ImageView imageView;
+    @Override
+    public void onAnnouncementClick(int position) {
+
+
+        AlertDialog.Builder imageDialog = new AlertDialog.Builder(getContext());
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+        final AlertDialog dialog = imageDialog.create();
+
+        View layout = inflater.inflate(R.layout.announcement_detail,
+              getView().findViewById(R.id.layout_announcementroot));
+
+        Button mStart = layout.findViewById(R.id.confirm_announcement_button);
+
+        imageView = layout.findViewById(R.id.CAnnounceIconType);
+
+
+        mStart.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View view) {
+                recyclerViewAdapter.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+        });
+
+        setAnnouncementDetails(layout,position);
+        dialog.setView(layout);
+        dialog.show();
+    }
+
+    private void setAnnouncementDetails(View mView,int position){
+        TextView title = mView.findViewById(R.id.textView11);
+        TextView content = mView.findViewById(R.id.notif_emergency_details);
+
+        setDetailImage(announcementholder.get(position).getIconValue());
+        title.setText(announcementholder.get(position).getTitle());
+        content.setText(announcementholder.get(position).getContent());
+
+    }
+
+    private void setDetailImage(int iconType){
+        String fileName = "fire";
+
+        //add additional conditions based on file name
+        if(iconType == 1){
+            fileName = "accident";
+        }
+
+        int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+        Drawable res = getResources().getDrawable(imageResource);
+        imageView.setImageDrawable(res);
+    }
+
+    private void initScrollListener() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+
+                if (!isLoading) {
+                    if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == announcementholder.size() - 1) {
+                        //bottom of list!
+                        loadMore();
+                        isLoading = true;
+                    }
+                }
+            }
+        });
+    }
+
+
+    private void loadMore() {
+        recyclerView.post(() -> {
+            announcementholder.add(null);
+            recyclerViewAdapter.notifyDataSetChanged();
+        });
+
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            announcementholder.remove(announcementholder.size() - 1);
+            int scrollPosition = announcementholder.size();
+            recyclerViewAdapter.notifyItemRemoved(scrollPosition);
+
+
+            announcementService.loadMoreData(value -> {
+                announcementholder = value;
+                recyclerViewAdapter.notifyDataSetChanged();
+                isLoading = false;
+            },nextLimit ,announcementholder);
+
+        }, 2000);
+    }
 }

@@ -7,6 +7,7 @@ public class Announcement {
     private String title;
     private String content;
     private String currentDate;
+    private String key;
     private int iconValue;
 
     public int getIconValue() { return iconValue; }
@@ -31,4 +32,11 @@ public class Announcement {
         this.content = content;
     }
 
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 }

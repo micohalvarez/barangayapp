@@ -21,6 +21,7 @@ public class AnnouncementService {
 
     private DatabaseReference newsFeedRef;
     private FirebaseDatabase firebaseDatabase;
+    private String finalKey;
 
     public AnnouncementService(){
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -55,9 +56,73 @@ public class AnnouncementService {
         return announcementList;
     }
 
+    //function for getting the data from news_feed tree
+    public ArrayList<Announcement> getSomeData(AnnouncementCallback myCallBack, int limit){
+        ArrayList<Announcement> announcementList = new ArrayList<>();
+
+        newsFeedRef.limitToFirst(limit).orderByKey().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Announcement announcement;
+                if(dataSnapshot.exists()) {
+                    for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                        announcement = dsp.getValue(Announcement.class);
+                        announcement.setKey(dsp.getKey());
+                        announcementList.add(announcement);
+                    }
+
+                    finalKey = announcementList.get(4).getKey();
+                    System.out.println(finalKey);
+                    myCallBack.announcementCallBack(announcementList);
+                }
+                else
+                    myCallBack.announcementCallBack(null);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        return announcementList;
+    }
+
+    //function for getting the data from news_feed tree
+    public ArrayList<Announcement> loadMoreData(AnnouncementCallback myCallBack, int limit,ArrayList<Announcement> announcementList){
+        newsFeedRef.limitToFirst(limit).orderByKey().startAt(finalKey).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Announcement announcement;
+                if(dataSnapshot.exists()) {
+                    for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+
+                        if(!dsp.getKey().equals(finalKey)) {
+                            announcement = dsp.getValue(Announcement.class);
+                            announcement.setKey(dsp.getKey());
+                            announcementList.add(announcement);
+                        }
+                    }
+                    finalKey = announcementList.get(announcementList.size() - 1).getKey();
+                    myCallBack.announcementCallBack(announcementList);
+                }
+                else
+                    myCallBack.announcementCallBack(null);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        return announcementList;
+    }
+
+
     //function for saving data to the news_feed tree
-    public void saveData(Announcement logbookData, String userId){
-        newsFeedRef.push().setValue(logbookData);
+    public void saveData(Announcement announcement){
+        newsFeedRef.push().setValue(announcement);
     }
 
     //function for deleting data to the news_feed tree

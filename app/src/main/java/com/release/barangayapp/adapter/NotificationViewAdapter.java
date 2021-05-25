@@ -17,17 +17,19 @@ import com.release.barangayapp.model.Announcement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+public class NotificationViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         implements View.OnClickListener, Filterable {
 
     private final int VIEW_TYPE_ITEM = 0;
     private final int VIEW_TYPE_LOADING = 1;
+    private List<Announcement> filteredStudents;
     public List<Announcement> mItemList;
-    private OnAnnouncementListener onAnnouncementListener;
+    private OnStudentListener onStudentListener;
 
-    public AnnouncementRecyclerViewAdapter(List<Announcement> itemList, OnAnnouncementListener onAnnouncementListener) {
+    public NotificationViewAdapter(List<Announcement> itemList, OnStudentListener onAnnouncementListener) {
         mItemList = itemList;
-        this.onAnnouncementListener = onAnnouncementListener;
+        filteredStudents = mItemList;
+        this.onStudentListener = onStudentListener;
     }
 
     @NonNull
@@ -36,7 +38,7 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
         if (viewType == VIEW_TYPE_ITEM) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.announcement_row, parent, false);
             view.setOnClickListener(this);
-            return new ItemViewHolder(view, this.onAnnouncementListener);
+            return new ItemViewHolder(view, this.onStudentListener);
         } else {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_loading, parent, false);
             view.setOnClickListener(this);
@@ -84,25 +86,25 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
 
     private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView announcementItem;
-        TextView announcementPref;
+        TextView tvItem;
+        TextView studentPref;
 
-        OnAnnouncementListener onAnnouncementListener;
+        OnStudentListener onStudentListener;
 
-        public ItemViewHolder(@NonNull View itemView, OnAnnouncementListener onAnnouncementListener) {
+        public ItemViewHolder(@NonNull View itemView, OnStudentListener onStudentListener) {
             super(itemView);
 
-            this.onAnnouncementListener = onAnnouncementListener;
+            this.onStudentListener = onStudentListener;
 
-            announcementItem = itemView.findViewById(R.id.announcementItem);
-            announcementPref = itemView.findViewById(R.id.announcementPref);
+            tvItem = itemView.findViewById(R.id.announcementItem);
+            studentPref = itemView.findViewById(R.id.announcementPref);
             itemView.setOnClickListener(this);
 
         }
 
         @Override
         public void onClick(View view) {
-            onAnnouncementListener.onAnnouncementClick(getAdapterPosition());
+            onStudentListener.onStudentClick(getAdapterPosition());
         }
     }
 
@@ -124,11 +126,12 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
 
         Announcement item = mItemList.get(position);
-        viewHolder.announcementItem.setText(item.getTitle());
+        viewHolder.tvItem.setText(item.getTitle());
+        // viewHolder.studentPref.setText(item.getFirstName().substring(0,1));
     }
 
-    public interface OnAnnouncementListener {
-        void onAnnouncementClick(int position);
+    public interface OnStudentListener {
+        void onStudentClick(int position);
     }
 
 }

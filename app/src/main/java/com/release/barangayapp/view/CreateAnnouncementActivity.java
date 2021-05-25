@@ -187,7 +187,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
         userAnnouncement.setContent(announcementDetail.getText().toString().trim());
         userAnnouncement.setCurrentDate(Dateview.getText().toString().trim());
         userAnnouncement.setIconValue(iconValue);
-        announcementService.saveData(userAnnouncement, userId);
+        announcementService.saveData(userAnnouncement);
     }
 
     private void initializeDropdown(){
