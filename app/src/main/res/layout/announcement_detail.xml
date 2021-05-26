@@ -8,6 +8,19 @@
     android:background="@drawable/box1">
 
     <TextView
+        android:id="@+id/date_layout"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:clickable="false"
+        android:text="Date:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.135" />
+
+    <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -172,7 +172,7 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
 
         //add additional conditions based on file name
         if(iconType == 0){
-            fileName = "notif_fire";
+            fileName = "fire";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
@@ -190,7 +190,7 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
             imageView.setImageDrawable(res);
         }
         if(iconType == 3){
-            fileName = "notif_crime";
+            fileName = "crime";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
@@ -202,7 +202,7 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
             imageView.setImageDrawable(res);
         }
         if(iconType == 5){
-            fileName = "notif_med";
+            fileName = "medical";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
