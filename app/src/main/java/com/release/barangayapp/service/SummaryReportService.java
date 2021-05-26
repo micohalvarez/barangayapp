@@ -59,7 +59,7 @@ public class SummaryReportService {
     }
 
     //function for saving data to the logbook tree
-    public void saveData(SummaryReport summary, Context context){
+   /* public void saveData(SummaryReport summary, Context context){
         summaryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -73,10 +73,32 @@ public class SummaryReportService {
             }
         });
 
-    }
+    }*/
 
     //function for deleting data to the logbook tree
     public void deleteData(){
     }
+
+
+    //try
+    /*public void saveData(SummaryReport summaryReport,  Context context) {
+        summaryRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(!dataSnapshot.exists())
+                    summaryRef.push().setValue(summaryReport);
+                else
+                    Toast.makeText( context,"Data Already exists", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }*/
+
+    public void saveData(SummaryReport summaryReport){
+        summaryRef.push().setValue(summaryReport);
+    }
+
 
 }

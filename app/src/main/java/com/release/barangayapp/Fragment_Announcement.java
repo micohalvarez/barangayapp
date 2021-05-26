@@ -171,13 +171,50 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
         String fileName = "fire";
 
         //add additional conditions based on file name
+        if(iconType == 0){
+            fileName = "notif_fire";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
         if(iconType == 1){
-            fileName = "accident";
+            fileName = "notif_weather";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 2){
+            fileName = "notif_covid";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 3){
+            fileName = "notif_crime";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 4){
+            fileName = "notif_news";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 5){
+            fileName = "notif_med";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 6){
+            fileName = "notif_accident";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
         }
 
-        int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
-        Drawable res = getResources().getDrawable(imageResource);
-        imageView.setImageDrawable(res);
+
     }
 
     private void initScrollListener() {

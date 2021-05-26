@@ -21,49 +21,38 @@
         android:layout_gravity="start"/>
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="675dp"
-        android:background="#0A2435"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/NewsFeedtool_bar"
+            android:id="@+id/Notificationstool_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#e74c3c"
-            android:minHeight="?attr/actionBarSize"
-            android:paddingLeft="20dp"
+            app:navigationIcon="@drawable/trymenu"
             android:theme="?attr/actionBarTheme"
-            app:navigationIcon="@drawable/trymenu">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/teal_700"/>
 
-                android:fontFamily="@font/aladin"
-                android:text="NewsFeed"
-                android:textColor="#FFF176"
-                android:textSize="35sp" />
-
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <LinearLayout
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/Notif_Announcement_Tab"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="9"
-            android:padding="10dp"
-            android:background="@drawable/recyclerview_bg">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Notificationstool_bar"/>
 
-        </LinearLayout>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/Notif_Announcement_Tab"/>
+
+    </RelativeLayout>
 
 
-    </LinearLayout>
+
+
+
 
 
 
