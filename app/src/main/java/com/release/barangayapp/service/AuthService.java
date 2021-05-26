@@ -36,6 +36,7 @@ public class AuthService {
                         myCallBack.authCallBack(userObject);
                     } else {
                         userObject = task.getResult().getValue(UserRegisterObject.class);
+                        userObject.setUserId(task.getResult().getKey());
                         myCallBack.authCallBack(userObject);
 
                     }

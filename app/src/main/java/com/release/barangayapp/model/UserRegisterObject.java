@@ -5,6 +5,7 @@ public class UserRegisterObject {
     private String fullName;
     private int role;
     private String address;
+    private String userId;
 
     public String getPhonenumber() { return Phonenumber; }
 
@@ -34,5 +35,13 @@ public class UserRegisterObject {
 
     public void setRole(int role) {
         this.role = role;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

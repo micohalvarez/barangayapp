@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.R;
+import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.service.LogBookService;
 
 public class CovidSymptomSurvey extends AppCompatActivity {
@@ -25,9 +26,23 @@ public class CovidSymptomSurvey extends AppCompatActivity {
     LogBookService logBookService;
     LogBook logBook;
 
-    
+    private AuthService authService;
+    private String userId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        authService = new AuthService();
+        authService.getUserDetails(value ->  {
+            if(authService.getAuthUser() == null) {
+                Intent homeIntent = new Intent(CovidSymptomSurvey.this, MainMenu.class);
+                startActivity(homeIntent);
+                finish();
+            }
+            else
+                userId = authService.getAuthUser().getUid();
+        });
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid_symptom_survey);
 
@@ -167,7 +182,8 @@ public class CovidSymptomSurvey extends AppCompatActivity {
              //On Clicking Submit
         covidSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { 
+                logBook.setUserId(userId);
                logBookService.saveData(logBook);
                 Toast.makeText(CovidSymptomSurvey.this, "Survey Data is submitted successfully",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),CovidUserProfile.class));
