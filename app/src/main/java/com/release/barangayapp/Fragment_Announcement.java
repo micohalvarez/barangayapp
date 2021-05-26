@@ -160,12 +160,16 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
     private void setAnnouncementDetails(View mView,int position){
         TextView title = mView.findViewById(R.id.textView11);
         TextView content = mView.findViewById(R.id.notif_emergency_details);
+        TextView date = mView.findViewById(R.id.date_layout);
 
+        date.setText(announcementholder.get(position).getCurrentDate());
         setDetailImage(announcementholder.get(position).getIconValue());
         title.setText(announcementholder.get(position).getTitle());
         content.setText(announcementholder.get(position).getContent());
 
     }
+
+
 
     private void setDetailImage(int iconType){
         String fileName = "fire";
