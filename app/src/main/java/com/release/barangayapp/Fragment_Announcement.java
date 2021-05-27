@@ -176,43 +176,43 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
 
         //add additional conditions based on file name
         if(iconType == 0){
-            fileName = "fire";
+            fileName = "ann_fire";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
         if(iconType == 1){
-            fileName = "notif_weather";
+            fileName = "ann_weather";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
         if(iconType == 2){
-            fileName = "notif_covid";
+            fileName = "ann_covid";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
         if(iconType == 3){
-            fileName = "crime";
+            fileName = "ann_crime";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
         if(iconType == 4){
-            fileName = "notif_news";
+            fileName = "ann_news_a";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
         if(iconType == 5){
-            fileName = "medical";
+            fileName = "ann_health_b";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
         if(iconType == 6){
-            fileName = "notif_accident";
+            fileName = "ann_accident_a";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
