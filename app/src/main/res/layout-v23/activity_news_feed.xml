@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.NewsFeed"
     android:id="@+id/NewsFeeddrawer_layout"
-    android:background="#0A2435"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     android:layout_weight="10">

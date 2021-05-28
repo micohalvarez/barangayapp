@@ -85,43 +85,43 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
                 {
                     case 1:
                     {
-                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_fire));
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.ann_fire));
                         iconValue = 0;
                         break;
                     }
                     case 2:
                     {
-                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_weather));
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.ann_weather));
                         iconValue = 1;
                         break;
                     }
                     case 3:
                     {
-                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_covid));
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.ann_covid));
                         iconValue = 2;
                         break;
                     }
                     case 4:
                     {
-                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_crime));
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.ann_crime));
                         iconValue = 3;
                         break;
                     }
                     case 5:
                     {
-                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_news));
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.ann_news_a));
                         iconValue = 4;
                         break;
                     }
                     case 6:
                     {
-                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_med));
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.ann_health_b));
                         iconValue = 5;
                         break;
                     }
                     case 7:
                     {
-                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.notif_accident));
+                        iconType.setImageDrawable(getResources().getDrawable(R.drawable.ann_accident_a));
                         iconValue = 6;
                         break;
                     }

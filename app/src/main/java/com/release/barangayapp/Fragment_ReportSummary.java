@@ -83,7 +83,6 @@ public class Fragment_ReportSummary extends Fragment {
             }
         });
         return v;
-
     }
 
 
