@@ -126,7 +126,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
         summaryReport.setProbable(Probable.getText().toString().trim());
         summaryReport.setSuspect(Suspected.getText().toString().trim());
         summaryReport.setConfirmed(Confirmed.getText().toString().trim());
-        summaryReportService.saveData(summaryReport);
+        summaryReportService.saveData(summaryReport,getApplicationContext());
     }
 
    /* public void update(View view){

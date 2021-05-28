@@ -10,8 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import com.release.barangayapp.R;
+import com.release.barangayapp.model.SummaryReport;
+import com.release.barangayapp.service.SummaryReportService;
 import com.release.barangayapp.view.CreateSummary;
 import com.release.barangayapp.view.UserLogin;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +23,8 @@ import com.release.barangayapp.view.UserLogin;
  */
 public class Fragment_ReportSummary extends Fragment {
 
+    private SummaryReportService summaryReportService;
+    private SummaryReport summaryReport;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";

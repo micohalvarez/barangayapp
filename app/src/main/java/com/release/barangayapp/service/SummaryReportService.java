@@ -81,23 +81,22 @@ public class SummaryReportService {
 
 
     //try
-    /*public void saveData(SummaryReport summaryReport,  Context context) {
+    public void saveData(SummaryReport summaryReport,  Context context) {
         summaryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.exists())
                     summaryRef.push().setValue(summaryReport);
                 else
-                    Toast.makeText( context,"Data Already exists", Toast.LENGTH_SHORT).show();
+                { for (DataSnapshot ds : dataSnapshot.getChildren())
+                    summaryRef.child(ds.getKey()).setValue(summaryReport);
+                    Toast.makeText(context, "Data Updated", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-    }*/
-
-    public void saveData(SummaryReport summaryReport){
-        summaryRef.push().setValue(summaryReport);
     }
 
 
