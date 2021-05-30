@@ -22,7 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.release.barangayapp.R;
-import com.release.barangayapp.model.UserRegisterObject;
+import com.release.barangayapp.model.UserObject;
+import com.release.barangayapp.service.NotificationService;
 import com.release.barangayapp.service.UserService;
 
 public class Register extends AppCompatActivity {
@@ -36,6 +37,7 @@ public class Register extends AppCompatActivity {
     ProgressBar ProgressB;
     int Role = 1;
     private UserService userService;
+    private NotificationService notificationService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,8 @@ public class Register extends AppCompatActivity {
         ADesignator = findViewById(R.id.SwitchAccountDesignator);
         ADesignatorDetail = findViewById(R.id.AccountDesignateDetail);
         ProgressB = findViewById(R.id.progressBar);
+
+        notificationService = new NotificationService();
 
         ADesignator.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -120,7 +124,7 @@ public class Register extends AppCompatActivity {
                             }
                             else
                             {
-                                Toast.makeText(Register.this,"Error Occured" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Register.this,"Error Occurred" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                                 ProgressB.setVisibility(View.INVISIBLE);
                             }
                     }
@@ -133,7 +137,7 @@ public class Register extends AppCompatActivity {
     public void register(String userId){
 
         userService = new UserService();
-        UserRegisterObject user = new UserRegisterObject();
+        UserObject user = new UserObject();
         //Set Objects
         user.setRole(Role);
         user.setFullName(AFullname.getText().toString().trim());
@@ -141,6 +145,18 @@ public class Register extends AppCompatActivity {
         user.setPhonenumber(APhone.getText().toString().trim());
 
         userService.saveData(user,userId);
+
+        if(Role == 1){
+            notificationService.getToken(resp ->{
+                if(resp){
+                    notificationService.pushToken(value->{
+                        if(value){
+                            Toast.makeText(Register.this,"Successfully registered admin token Occurred" ,Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
+        }
     }
 
     @Override

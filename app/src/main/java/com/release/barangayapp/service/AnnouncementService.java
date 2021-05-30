@@ -1,17 +1,12 @@
 package com.release.barangayapp.service;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.release.barangayapp.callback.AnnouncementCallback;
 import com.release.barangayapp.model.Announcement;
-import com.release.barangayapp.model.UserRegisterObject;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -71,8 +66,7 @@ public class AnnouncementService {
                         announcementList.add(announcement);
                     }
 
-                    finalKey = announcementList.get(4).getKey();
-                    System.out.println(finalKey);
+                    finalKey = announcementList.get(announcementList.size() - 1).getKey();
                     myCallBack.announcementCallBack(announcementList);
                 }
                 else

@@ -8,15 +8,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
-import com.release.barangayapp.model.UserRegisterObject;
+import com.release.barangayapp.callback.MyCallBack;
+import com.release.barangayapp.model.UserObject;
 
 public class AuthService {
 
     private FirebaseUser user;
-    private UserRegisterObject userObject;
+    private UserObject userObject;
     public AuthService(){
         user = FirebaseAuth.getInstance().getCurrentUser();
-        userObject = new UserRegisterObject();
+        userObject = new UserObject();
     }
 
     public FirebaseUser getAuthUser(){
@@ -35,7 +36,7 @@ public class AuthService {
                     if (!task.isSuccessful()) {
                         myCallBack.authCallBack(userObject);
                     } else {
-                        userObject = task.getResult().getValue(UserRegisterObject.class);
+                        userObject = task.getResult().getValue(UserObject.class);
                         userObject.setUserId(task.getResult().getKey());
                         myCallBack.authCallBack(userObject);
 

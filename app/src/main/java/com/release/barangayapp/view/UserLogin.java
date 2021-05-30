@@ -1,11 +1,7 @@
 package com.release.barangayapp.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
@@ -14,14 +10,16 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
-import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.service.AuthService;
-import com.release.barangayapp.service.LogBookService;
+import com.release.barangayapp.service.NotificationService;
 
 public class UserLogin extends AppCompatActivity {
 
@@ -30,8 +28,7 @@ public class UserLogin extends AppCompatActivity {
         EditText Username,Password;
         FirebaseAuth FirebaseLoginAuth;
         ProgressBar PBar;
-        private LogBook logbook;
-        private LogBookService logBookService;
+        private NotificationService notificationService;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,7 @@ public class UserLogin extends AppCompatActivity {
             Login_user = findViewById(R.id.User_btn_signin);
             FirebaseLoginAuth = FirebaseAuth.getInstance();
             PBar = findViewById(R.id.progressBar1);
-
+            notificationService = new NotificationService();
 
 
                 Login_user.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +85,15 @@ public class UserLogin extends AppCompatActivity {
                                                 startActivity(new Intent(getApplicationContext(), UserMainMenu.class));
                                                 finish();
                                             } else {
+                                                notificationService.getToken(resp ->{
+                                                    if(resp){
+                                                        notificationService.pushToken(response->{
+                                                            if(response){
+                                                                Toast.makeText(UserLogin.this,"Successfully registered admin token Occurred" ,Toast.LENGTH_SHORT).show();
+                                                            }
+                                                        });
+                                                    }
+                                                });
                                                 Toast.makeText(UserLogin.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
                                                 startActivity(new Intent(getApplicationContext(), AdminMainMenu.class));
                                                 finish();
@@ -105,27 +111,6 @@ public class UserLogin extends AppCompatActivity {
 
 
             }
-
-
-
-
-        public void LoginUser ()
-        {
-            Intent usermainmenu = new Intent(this, UserMainMenu.class);
-            startActivity(usermainmenu);
-        }
-
-
-            public void LoginAdmin ()
-            {
-                Intent adminmainmenu = new Intent(this, AdminMainMenu.class);
-                startActivity(adminmainmenu);
-
-
-            }
-
-
-
 
         }
 

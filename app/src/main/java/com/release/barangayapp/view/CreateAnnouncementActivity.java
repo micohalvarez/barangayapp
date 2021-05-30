@@ -16,11 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.release.barangayapp.R;
 import com.release.barangayapp.model.Announcement;
-import com.release.barangayapp.model.UserRegisterObject;
 import com.release.barangayapp.service.AnnouncementService;
 import com.release.barangayapp.service.AuthService;
 
