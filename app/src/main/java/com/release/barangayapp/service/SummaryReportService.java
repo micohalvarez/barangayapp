@@ -8,10 +8,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.release.barangayapp.model.Announcement;
-import com.release.barangayapp.model.LogBook;
+import com.release.barangayapp.callback.SummaryReportCallback;
 import com.release.barangayapp.model.SummaryReport;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,30 +19,29 @@ public class SummaryReportService {
 
     private DatabaseReference summaryRef;
     private FirebaseDatabase firebaseDatabase;
-    private String key;
-    public SummaryReportService(){
+
+    public SummaryReportService() {
         firebaseDatabase = FirebaseDatabase.getInstance();
         summaryRef = firebaseDatabase.getReference("summary_report");
     }
 
-    //function for getting the data from logbook tree
-    public ArrayList<SummaryReport> getData(SummaryReportCallback myCallBack){
+    // function for getting the data from summary_report tree
+    public ArrayList<SummaryReport> getData(SummaryReportCallback myCallBack) {
         ArrayList<SummaryReport> reportList = new ArrayList<>();
 
         summaryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Map<String, Object> td = (HashMap<String,Object>) dataSnapshot.getValue();
-                if(dataSnapshot.exists()) {
+                Map<String, Object> td = (HashMap<String, Object>) dataSnapshot.getValue();
+                if (dataSnapshot.exists()) {
                     for (DataSnapshot dsp : dataSnapshot.getChildren()) {
                         reportList.add(dsp.getValue(SummaryReport.class));
-                        key = dsp.getKey();
                     }
                     myCallBack.summaryCallBack(reportList);
-                }
-                else
+                } else
                     myCallBack.summaryCallBack(null);
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
@@ -53,13 +50,8 @@ public class SummaryReportService {
         return reportList;
     }
 
-
-    public void updateDate(SummaryReport summary){
-        summaryRef.child(key).setValue(summary);
-    }
-
-    //function for saving data to the logbook tree
-   /* public void saveData(SummaryReport summary, Context context){
+    // function for saving data to the summary_report tree
+    public void saveData(SummaryReport summary, Context context){
         summaryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -74,31 +66,5 @@ public class SummaryReportService {
         });
 
     }*/
-
-    //function for deleting data to the logbook tree
-    public void deleteData(){
-    }
-
-
-    //try
-    /*public void saveData(SummaryReport summaryReport,  Context context) {
-        summaryRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if(!dataSnapshot.exists())
-                    summaryRef.push().setValue(summaryReport);
-                else
-                    Toast.makeText( context,"Data Already exists", Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
-    }*/
-
-    public void saveData(SummaryReport summaryReport){
-        summaryRef.push().setValue(summaryReport);
-    }
-
 
 }

@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission android:name="com.name.name.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.name.name.permission.C2D_MESSAGE" />
+
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -28,7 +32,7 @@
         <activity android:name=".view.CovidSymptomSurvey" />
         <activity android:name=".view.NewsFeed" />
         <activity android:name=".view.AdminMainMenu" />
-        <activity android:name=".view.Emergency" />
+        <activity android:name=".view.EmergencyActivity" />
         <activity android:name=".view.UserMainMenu" />
         <activity android:name=".view.UserLogin" />
         <activity android:name=".view.MainMenu" />
@@ -49,6 +53,22 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".service.NotificationService"
+            android:exported="false"
+            android:directBootAware="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/announcement_bg" />
+
     </application>
 
 </manifest>

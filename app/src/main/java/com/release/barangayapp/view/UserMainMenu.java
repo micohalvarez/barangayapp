@@ -15,7 +15,6 @@ import android.widget.GridLayout;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
@@ -81,7 +80,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
                 }
                 else if (finalI == 1)
                 {
-                    Intent emergency=new Intent(UserMainMenu.this, Emergency.class);
+                    Intent emergency=new Intent(UserMainMenu.this, EmergencyActivity.class);
                     startActivity(emergency);
 
                 }

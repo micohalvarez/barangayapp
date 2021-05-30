@@ -8,6 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.release.barangayapp.model.Announcement;
+import com.release.barangayapp.model.SummaryReport;
+import com.release.barangayapp.service.SummaryReportService;
+
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Fragment_CovidUserSummary#newInstance} factory method to
@@ -15,6 +21,8 @@ import android.view.ViewGroup;
  */
 public class Fragment_CovidUserSummary extends Fragment {
 
+    SummaryReportService summaryReportService;
+    ArrayList<SummaryReport> reportHolder;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +67,12 @@ public class Fragment_CovidUserSummary extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        reportHolder = new ArrayList<>();
+        summaryReportService = new SummaryReportService();
+        summaryReportService.getData(value -> {
+            reportHolder = value;
+        });
         return inflater.inflate(R.layout.fragment__covid_user_summary, container, false);
-    }
+
+        }
 }

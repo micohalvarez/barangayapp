@@ -1,6 +1,6 @@
 package com.release.barangayapp.model;
 
-public class UserRegisterObject {
+public class UserObject {
 
     private String fullName;
     private int role;

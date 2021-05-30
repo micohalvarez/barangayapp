@@ -1,4 +1,4 @@
-package com.release.barangayapp.service;
+package com.release.barangayapp.callback;
 
 import com.release.barangayapp.model.SummaryReport;
 

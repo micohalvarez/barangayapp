@@ -8,17 +8,17 @@
     android:background="@drawable/box1">
 
     <TextView
-        android:id="@+id/date_layout"
+        android:id="@+id/announcement_date_layout"
         android:layout_width="160dp"
         android:layout_height="50dp"
         android:clickable="false"
         android:text="Date:"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintVertical_bias="0.137" />
 
     <TextView
         android:id="@+id/textView10"
@@ -62,7 +62,7 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/announcement_subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Announcement:"
@@ -76,7 +76,7 @@
         app:layout_constraintVertical_bias="0.079" />
 
     <TextView
-        android:id="@+id/notif_emergency_details"
+        android:id="@+id/announcement_details"
         android:layout_width="285dp"
         android:layout_height="225dp"
         android:gravity="left"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_subject"
         app:layout_constraintVertical_bias="0.325" />
 
     <LinearLayout
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notif_emergency_details"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_details"
         app:layout_constraintVertical_bias="0.0">
 
         <Button
