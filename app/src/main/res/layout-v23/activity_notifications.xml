@@ -30,7 +30,7 @@
             android:theme="?attr/actionBarTheme"
             android:paddingLeft="20dp"
             android:minHeight="?attr/actionBarSize"
-            android:background="@color/teal_700"/>
+            android:background="#e74c3c"/>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/Notif_Announcement_Tab"
@@ -57,13 +57,13 @@
             android:background="#FFFFFF"
             android:clickable="true"
             android:foreground="@android:drawable/ic_menu_add"
+            app:backgroundTint="#e74c3c"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.954"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.899"
-            />
+            app:layout_constraintVertical_bias="0.899" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

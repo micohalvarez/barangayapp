@@ -92,8 +92,8 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/CAnnouncementSend"
-        android:layout_width="70dp"
-        android:layout_height="75dp"
+        android:layout_width="104dp"
+        android:layout_height="80dp"
         android:clickable="true"
         android:drawingCacheQuality="high"
         android:textAlignment="gravity"
@@ -101,10 +101,10 @@
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
+        app:layout_constraintVertical_bias="0.884"
         app:maxImageSize="20dp"
         app:srcCompat="@android:drawable/ic_menu_send"
         tools:maxImageSize="80dp" />
