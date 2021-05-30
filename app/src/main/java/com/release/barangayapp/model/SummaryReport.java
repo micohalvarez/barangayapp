@@ -1,32 +1,34 @@
 package com.release.barangayapp.model;
 
+import android.widget.EditText;
+
 public class SummaryReport {
 
-    private int deaths;
-    private int recovered;
-    private int confirmed;
+    private String probable;
+    private String suspect;
+    private String confirmed;
 
-    public int getDeaths() {
-        return deaths;
+    public String getProbable() {
+        return probable;
     }
 
-    public void setDeaths(int deaths) {
-        this.deaths = deaths;
+    public void setProbable(String probable) {
+        this.probable = probable;
     }
 
-    public int getRecovered() {
-        return recovered;
+    public String getSuspect() {
+        return suspect;
     }
 
-    public void setRecovered(int recovered) {
-        this.recovered = recovered;
+    public void setSuspect(String suspect) {
+        this.suspect = suspect;
     }
 
-    public int getConfirmed() {
+    public String getConfirmed() {
         return confirmed;
     }
 
-    public void setConfirmed(int confirmed) {
+    public void setConfirmed(String confirmed) {
         this.confirmed = confirmed;
     }
 }

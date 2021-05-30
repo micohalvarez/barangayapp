@@ -2,24 +2,25 @@ package com.release.barangayapp.model;
 
 public class UpdateReport {
 
-    private int probable;
-    private int suspect;
+
+    private int deaths;
+    private int recovered;
     private int confirmed;
 
-    public int getProbable() {
-        return probable;
+    public int getDeaths() {
+        return deaths;
     }
 
-    public void setProbable(int probable) {
-        this.probable = probable;
+    public void setDeaths(int deaths) {
+        this.deaths = deaths;
     }
 
-    public int getSuspect() {
-        return suspect;
+    public int getRecovered() {
+        return recovered;
     }
 
-    public void setSuspect(int suspect) {
-        this.suspect = suspect;
+    public void setRecovered(int recovered) {
+        this.recovered = recovered;
     }
 
     public int getConfirmed() {
@@ -29,4 +30,6 @@ public class UpdateReport {
     public void setConfirmed(int confirmed) {
         this.confirmed = confirmed;
     }
+
+
 }

@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,15 +16,29 @@ import android.view.MenuItem;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.R;
+import com.release.barangayapp.adapter.AnnouncementRecyclerViewAdapter;
+import com.release.barangayapp.adapter.FragmentNewsFeedAdapter;
+import com.release.barangayapp.adapter.FragmentNotificationAdapter;
+import androidx.fragment.app.FragmentManager;
+import com.release.barangayapp.model.Announcement;
+import com.release.barangayapp.service.AnnouncementService;
 import com.release.barangayapp.service.AuthService;
+
+import java.util.ArrayList;
 
 public class NewsFeed extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    DrawerLayout NewsfeeddrawerLayout;
-    NavigationView NewsfeednavigationView;
-    Toolbar Newsfeedtoolbar;
+    DrawerLayout NotifdrawerLayout;
+    NavigationView NotifnavigationView;
+    Toolbar Notiftoolbar;
     private AuthService authService;
+
+
+    ViewPager2 pager2;
+    TabLayout tabLayout;
+    FragmentNewsFeedAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +56,61 @@ public class NewsFeed extends AppCompatActivity implements NavigationView.OnNavi
         });
 
 
-        NewsfeeddrawerLayout = findViewById(R.id.NewsFeeddrawer_layout);
-        NewsfeednavigationView = findViewById(R.id.Newsfeednav_view);
-        Newsfeedtoolbar = findViewById(R.id.NewsFeedtool_bar);
+        pager2 = findViewById(R.id.viewpager);
+        tabLayout = findViewById(R.id.Notif_Announcement_Tab);
 
-        NewsfeednavigationView.bringToFront();
-        setSupportActionBar(Newsfeedtoolbar);
+        NotifdrawerLayout = findViewById(R.id.NewsFeeddrawer_layout);
+        NotifnavigationView = findViewById(R.id.Newsfeednav_view);
+        Notiftoolbar = findViewById(R.id.Notificationstool_bar);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, NewsfeeddrawerLayout, Newsfeedtoolbar,
+        NotifnavigationView.bringToFront();
+        setSupportActionBar(Notiftoolbar);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, NotifdrawerLayout, Notiftoolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        NewsfeeddrawerLayout.addDrawerListener(toggle);
+        NotifdrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-        NewsfeednavigationView.setNavigationItemSelectedListener(this);
+        NotifnavigationView.setNavigationItemSelectedListener(this);
+
+
+        // ViewPager2
+        pager2 = findViewById(R.id.viewpager);
+        tabLayout = findViewById(R.id.Notif_Announcement_Tab);
+        FragmentManager fm = getSupportFragmentManager();
+        adapter = new FragmentNewsFeedAdapter(fm, getLifecycle());
+        pager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Announcements"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                pager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
     }
 
     @Override
     public void onBackPressed() {
-        if (NewsfeeddrawerLayout.isDrawerOpen((GravityCompat.START))) {
+        if (NotifdrawerLayout.isDrawerOpen((GravityCompat.START))) {
 
-            NewsfeeddrawerLayout.closeDrawer(GravityCompat.START);
+            NotifdrawerLayout.closeDrawer(GravityCompat.START);
         }
         else {
             super.onBackPressed();
@@ -83,7 +136,7 @@ public class NewsFeed extends AppCompatActivity implements NavigationView.OnNavi
                 authService.signOut();
                 break;
         }
-        NewsfeeddrawerLayout.closeDrawer(GravityCompat.START);
+        NotifdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 }

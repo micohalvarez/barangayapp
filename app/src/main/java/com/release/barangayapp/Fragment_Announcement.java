@@ -1,8 +1,5 @@
 package com.release.barangayapp;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,19 +20,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
 import com.release.barangayapp.adapter.AnnouncementRecyclerViewAdapter;
 import com.release.barangayapp.model.Announcement;
 import com.release.barangayapp.service.AnnouncementService;
-import com.release.barangayapp.service.AuthService;
-import com.release.barangayapp.view.AdminMainMenu;
-import com.release.barangayapp.view.MainMenu;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
@@ -95,7 +82,7 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment__announcement, container, false);
+        View view = inflater.inflate(R.layout.fragment__announcement_recyclerview, container, false);
         recyclerView = view.findViewById(R.id.announcement_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(),DividerItemDecoration.VERTICAL));
@@ -158,26 +145,67 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
     }
 
     private void setAnnouncementDetails(View mView,int position){
-        TextView title = mView.findViewById(R.id.textView11);
-        TextView content = mView.findViewById(R.id.notif_emergency_details);
+        TextView title = mView.findViewById(R.id.announcement_subject);
+        TextView content = mView.findViewById(R.id.announcement_details);
+        TextView date = mView.findViewById(R.id.announcement_date_layout);
 
+        date.setText(announcementholder.get(position).getCurrentDate());
         setDetailImage(announcementholder.get(position).getIconValue());
         title.setText(announcementholder.get(position).getTitle());
         content.setText(announcementholder.get(position).getContent());
 
     }
 
+
+
     private void setDetailImage(int iconType){
         String fileName = "fire";
 
         //add additional conditions based on file name
+        if(iconType == 0){
+            fileName = "ann_fire";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
         if(iconType == 1){
-            fileName = "accident";
+            fileName = "ann_weather";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 2){
+            fileName = "ann_covid";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 3){
+            fileName = "ann_crime";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 4){
+            fileName = "ann_news_a";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 5){
+            fileName = "ann_health_b";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 6){
+            fileName = "ann_accident_a";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
         }
 
-        int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
-        Drawable res = getResources().getDrawable(imageResource);
-        imageView.setImageDrawable(res);
+
     }
 
     private void initScrollListener() {

@@ -51,7 +51,7 @@
     </FrameLayout>
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/announcement_subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emergency:"
@@ -77,14 +77,14 @@
         android:textColor="@color/white"
         android:textSize="25dp"
 
-        app:layout_constraintBottom_toBottomOf="@+id/notif_emergency_details"
+        app:layout_constraintBottom_toBottomOf="@+id/announcement_details"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/announcement_subject"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <TextView
-        android:id="@+id/notif_emergency_details"
+        android:id="@+id/announcement_details"
         android:layout_width="315dp"
         android:layout_height="210dp"
         android:layout_marginStart="65dp"
@@ -98,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_subject"
         app:layout_constraintVertical_bias="0.082"
         tools:inputType="textMultiLine"
         tools:maxLength="150" />
@@ -116,7 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notif_emergency_details"
+        app:layout_constraintTop_toBottomOf="@+id/announcement_details"
         app:layout_constraintVertical_bias="0.0">
 
         <Button
