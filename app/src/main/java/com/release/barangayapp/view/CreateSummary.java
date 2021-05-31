@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -28,6 +29,10 @@ import com.release.barangayapp.model.SummaryReport;
 import com.release.barangayapp.service.AnnouncementService;
 import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.service.SummaryReportService;
+
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class CreateSummary extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -41,6 +46,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
     SummaryReportService summaryReportService;
     SummaryReport summaryReport;
     DatabaseReference reference;
+    TextView summaryDateView;
 
     String probable, confirmed, suspect;
 
@@ -69,6 +75,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
         Probable = findViewById(R.id.summary_probable);
         Suspected = findViewById(R.id.summary_suspected);
         Confirmed = findViewById(R.id.summary_confirmed);
+        summaryDateView = findViewById(R.id.create_summary_date_layout);
         save = findViewById(R.id.Summary_button);
 
 
@@ -76,6 +83,11 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.summary_view);
         Admintoolbar = findViewById(R.id.summary_bar);
+
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
+        summaryDateView = findViewById(R.id.create_summary_date_layout);
+        String currentdate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        summaryDateView.setText(currentdate);
 
         AdminnavigationView.bringToFront();
         setSupportActionBar(Admintoolbar);
@@ -126,6 +138,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
         summaryReport.setProbable(Probable.getText().toString().trim());
         summaryReport.setSuspect(Suspected.getText().toString().trim());
         summaryReport.setConfirmed(Confirmed.getText().toString().trim());
+        summaryReport.setSummaryDateView(summaryDateView.getText().toString().trim());
         summaryReportService.saveData(summaryReport,getApplicationContext());
     }
 

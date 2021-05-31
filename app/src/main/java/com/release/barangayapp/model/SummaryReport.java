@@ -7,6 +7,11 @@ public class SummaryReport {
     private String probable;
     private String suspect;
     private String confirmed;
+    private String summaryDateView;
+
+    public String getSummaryDateView() { return summaryDateView; }
+
+    public void setSummaryDateView(String summaryDateView) { this.summaryDateView = summaryDateView; }
 
     public String getProbable() {
         return probable;

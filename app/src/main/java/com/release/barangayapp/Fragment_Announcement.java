@@ -147,7 +147,7 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
     private void setAnnouncementDetails(View mView,int position){
         TextView title = mView.findViewById(R.id.announcement_subject);
         TextView content = mView.findViewById(R.id.announcement_details);
-        TextView date = mView.findViewById(R.id.announcement_date_layout);
+        TextView date = mView.findViewById(R.id.create_summary_date_layout);
 
         date.setText(announcementholder.get(position).getCurrentDate());
         setDetailImage(announcementholder.get(position).getIconValue());

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -17,17 +18,25 @@ import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.service.LogBookService;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
+
 public class CovidSymptomSurvey extends AppCompatActivity {
 
     CheckBox covidHeadAche, covidFatigue, covidRunnyNose;
     CheckBox covidShortBreath, covidSoreThroat, covidDryCough;
     CheckBox covidFever, covidDiarrhea, covidPain;
+    CheckBox healthCheck1, healthCheck2, healthCheck3;
     Button covidSubmit;
     LogBookService logBookService;
     LogBook logBook;
+    TextView surveyDateView;
 
     private AuthService authService;
     private String userId;
+    private String surveydate;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -55,6 +64,16 @@ public class CovidSymptomSurvey extends AppCompatActivity {
         covidFever = findViewById(R.id.covidFeverButton);
         covidDiarrhea = findViewById(R.id.covidDiarrheaButton);
         covidPain = findViewById(R.id.covidPainButton);
+        surveyDateView = findViewById(R.id.survey_dateview);
+        healthCheck1 = findViewById(R.id.covidCheckList1);
+        healthCheck2 = findViewById(R.id.covidCheckList2);
+        healthCheck3 = findViewById(R.id.covidCheckList3);
+
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
+        surveyDateView = findViewById(R.id.survey_dateview);
+        String currentdate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        surveyDateView.setText(currentdate);
+        surveydate = surveyDateView.getText().toString().trim();
 
         covidSubmit = findViewById(R.id.covidSurveySubmit);
 
@@ -179,10 +198,50 @@ public class CovidSymptomSurvey extends AppCompatActivity {
                 }
             }
         });
+        healthCheck1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (healthCheck1.isChecked())
+                {
+                    logBook.getHealthChecklist().add(0);
+                }
+                else
+                {
+                    logBook.getHealthChecklist().remove(Integer.valueOf(0));
+                }
+            }
+        });
+        healthCheck2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (healthCheck2.isChecked())
+                {
+                    logBook.getHealthChecklist().add(1);
+                }
+                else
+                {
+                    logBook.getHealthChecklist().remove(Integer.valueOf(1));
+                }
+            }
+        });
+        healthCheck3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (healthCheck3.isChecked())
+                {
+                    logBook.getHealthChecklist().add(2);
+                }
+                else
+                {
+                    logBook.getHealthChecklist().remove(Integer.valueOf(2));
+                }
+            }
+        });
              //On Clicking Submit
         covidSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) { 
+            public void onClick(View v) {
+                logBook.setSurveyDate(surveydate);
                 logBook.setUserId(userId);
                logBookService.saveData(logBook);
                 Toast.makeText(CovidSymptomSurvey.this, "Survey Data is submitted successfully",Toast.LENGTH_SHORT).show();

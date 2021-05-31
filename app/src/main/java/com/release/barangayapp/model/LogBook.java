@@ -8,6 +8,16 @@ public class LogBook {
     private ArrayList<Integer> otherSymptoms;
     private ArrayList<Integer> healthChecklist;
     private String userId;
+    private String surveyDate;
+
+    public String getSurveyDate() {
+        return surveyDate;
+    }
+
+    public void setSurveyDate(String surveyDate) {
+        this.surveyDate = surveyDate;
+    }
+
 
 
     public LogBook(){
