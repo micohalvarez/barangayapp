@@ -9,10 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.release.barangayapp.model.SummaryReport;
 import com.release.barangayapp.service.SummaryReportService;
 import com.release.barangayapp.view.BarangayCreateSummary;
+
+import java.util.ArrayList;
 
 
 /**
@@ -23,7 +26,7 @@ import com.release.barangayapp.view.BarangayCreateSummary;
 public class Fragment_BarangayReportSummary extends Fragment {
 
     private SummaryReportService summaryReportService;
-    private SummaryReport summaryReport;
+    ArrayList<SummaryReport> reportHolder;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -70,6 +73,22 @@ public class Fragment_BarangayReportSummary extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment__barangay_report_summary, container, false);
+        reportHolder = new ArrayList<>();
+        summaryReportService = new SummaryReportService();
+        summaryReportService.getData(value -> {
+            reportHolder = value;
+            TextView Probable = v.findViewById(R.id.barangay_summary_probable);
+            TextView Confirmed = v.findViewById(R.id.barangay_summary_confirmed);
+            TextView Suspect = v.findViewById(R.id.barangay_summary_suspect);
+            TextView Date = v.findViewById(R.id.barangay_summary_date_layout);
+
+            Probable.setText(reportHolder.get(0).getProbable());
+            Confirmed.setText(reportHolder.get(0).getConfirmed());
+            Suspect.setText(reportHolder.get(0).getSuspect());
+            Date.setText(reportHolder.get(0).getSummaryDateView());
+
+
+        });
 
 
         Button_update = v.findViewById(R.id.Summary_button);

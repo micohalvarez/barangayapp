@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.release.barangayapp.model.SummaryReport;
 import com.release.barangayapp.service.SummaryReportService;
@@ -65,13 +66,25 @@ public class Fragment_CovidResidentSummary extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment__covid_resident_summary, container, false);
         // Inflate the layout for this fragment
         reportHolder = new ArrayList<>();
         summaryReportService = new SummaryReportService();
         summaryReportService.getData(value -> {
             reportHolder = value;
+            TextView Probable = v.findViewById(R.id.resident_summary_probable);
+            TextView Confirmed = v.findViewById(R.id.resident_summary_confirmed);
+            TextView Suspect = v.findViewById(R.id.resident_summary_suspect);
+            TextView Date = v.findViewById(R.id.resident_summary_date_layout);
+
+            Probable.setText(reportHolder.get(0).getProbable());
+            Confirmed.setText(reportHolder.get(0).getConfirmed());
+            Suspect.setText(reportHolder.get(0).getSuspect());
+            Date.setText(reportHolder.get(0).getSummaryDateView());
+
+
         });
-        return inflater.inflate(R.layout.fragment__covid_resident_summary, container, false);
+        return v;
 
         }
 }
