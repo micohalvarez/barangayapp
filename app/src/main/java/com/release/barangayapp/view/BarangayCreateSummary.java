@@ -4,32 +4,32 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.content.Intent;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.release.barangayapp.R;
-import com.release.barangayapp.model.Announcement;
 import com.release.barangayapp.model.SummaryReport;
-import com.release.barangayapp.service.AnnouncementService;
 import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.service.SummaryReportService;
 
-public class CreateSummary extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
+
+public class BarangayCreateSummary extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout AdmindrawerLayout;
     NavigationView AdminnavigationView;
@@ -41,19 +41,20 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
     SummaryReportService summaryReportService;
     SummaryReport summaryReport;
     DatabaseReference reference;
+    TextView summaryDateView;
 
     String probable, confirmed, suspect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_summary);
+        setContentView(R.layout.activity_barangay_create_summary);
 
 
         authService = new AuthService();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
-                Intent homeIntent = new Intent(CreateSummary.this, MainMenu.class);
+                Intent homeIntent = new Intent(BarangayCreateSummary.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
@@ -66,16 +67,21 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
         summaryReportService = new SummaryReportService();
         summaryReport = new SummaryReport();
 
-        Probable = findViewById(R.id.summary_probable);
-        Suspected = findViewById(R.id.summary_suspected);
-        Confirmed = findViewById(R.id.summary_confirmed);
-        save = findViewById(R.id.Summary_button);
+        Probable = findViewById(R.id.barangay_create_summary_probable);
+        Suspected = findViewById(R.id.barangay_create_summary_suspected);
+        Confirmed = findViewById(R.id.barangay_create_summary_confirmed);
+        save = findViewById(R.id.barangay_Summary_button);
 
 
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.summary_view);
         Admintoolbar = findViewById(R.id.summary_bar);
+
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
+        summaryDateView = findViewById(R.id.barangay_create_summary_date_layout);
+        String currentdate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        summaryDateView.setText(currentdate);
 
         AdminnavigationView.bringToFront();
         setSupportActionBar(Admintoolbar);
@@ -111,7 +117,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
                 else
                 {
                     createSummary(authService.getAuthUser().getUid());
-                    Toast.makeText(CreateSummary.this, "Announcement Created Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BarangayCreateSummary.this, "Announcement Created Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),Reports.class));
                 }
             }
@@ -126,6 +132,7 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
         summaryReport.setProbable(Probable.getText().toString().trim());
         summaryReport.setSuspect(Suspected.getText().toString().trim());
         summaryReport.setConfirmed(Confirmed.getText().toString().trim());
+        summaryReport.setSummaryDateView(summaryDateView.getText().toString().trim());
         summaryReportService.saveData(summaryReport,getApplicationContext());
     }
 
@@ -179,20 +186,20 @@ public class CreateSummary extends AppCompatActivity implements NavigationView.O
 
         switch (item.getItemId()){
             case R.id.admin_home:
-                Intent home = new Intent(CreateSummary.this, AdminMainMenu.class);
+                Intent home = new Intent(BarangayCreateSummary.this, AdminMainMenu.class);
                 startActivity(home);
                 finish();
                 break;
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
-                Intent registerIntent = new Intent(CreateSummary.this, Register.class);
+                Intent registerIntent = new Intent(BarangayCreateSummary.this, Register.class);
                 startActivity(registerIntent);
                 finish();
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-                Intent LogoutIntent = new Intent(CreateSummary.this, MainMenu.class);
+                Intent LogoutIntent = new Intent(BarangayCreateSummary.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
                 authService.signOut();

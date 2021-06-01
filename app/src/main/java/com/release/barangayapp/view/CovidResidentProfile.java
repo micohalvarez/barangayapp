@@ -8,15 +8,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.R;
 import com.release.barangayapp.adapter.FragmentCovidUserProfileAdapter;
-import com.release.barangayapp.adapter.FragmentReportAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-public class CovidUserProfile extends AppCompatActivity {
+public class CovidResidentProfile extends AppCompatActivity {
 
     ViewPager2 pager2;
     TabLayout tabLayout;
@@ -27,7 +25,7 @@ public class CovidUserProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_covid_user_profile);
+        setContentView(R.layout.activity_covid_resident_profile);
 
 
         button_update= findViewById(R.id.Covid_updatebutton);
@@ -43,7 +41,7 @@ public class CovidUserProfile extends AppCompatActivity {
         back = findViewById(R.id.Back);
         back.setOnClickListener(v -> {
             //Go to CreateAnnouncementActivity
-            Intent back=new Intent(CovidUserProfile.this, UserMainMenu.class);
+            Intent back=new Intent(CovidResidentProfile.this, UserMainMenu.class);
             startActivity(back);
         });
 

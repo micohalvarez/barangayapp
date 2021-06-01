@@ -4,20 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
-public class CreateUpdates extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class BarangayCreateUpdates extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout AdmindrawerLayout;
     NavigationView AdminnavigationView;
@@ -27,12 +25,12 @@ public class CreateUpdates extends AppCompatActivity implements NavigationView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_updates);
+        setContentView(R.layout.activity_barangay_create_updates);
 
         authService = new AuthService();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
-                Intent homeIntent = new Intent(CreateUpdates.this, MainMenu.class);
+                Intent homeIntent = new Intent(BarangayCreateUpdates.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
@@ -78,20 +76,20 @@ public class CreateUpdates extends AppCompatActivity implements NavigationView.O
 
         switch (item.getItemId()){
             case R.id.admin_home:
-                Intent home = new Intent(CreateUpdates.this, AdminMainMenu.class);
+                Intent home = new Intent(BarangayCreateUpdates.this, AdminMainMenu.class);
                 startActivity(home);
                 finish();
                 break;
             case R.id.admin_profile:
                 break;
             case R.id.admin_register:
-                Intent registerIntent = new Intent(CreateUpdates.this, Register.class);
+                Intent registerIntent = new Intent(BarangayCreateUpdates.this, Register.class);
                 startActivity(registerIntent);
                 finish();
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-                Intent LogoutIntent = new Intent(CreateUpdates.this, MainMenu.class);
+                Intent LogoutIntent = new Intent(BarangayCreateUpdates.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
                 authService.signOut();

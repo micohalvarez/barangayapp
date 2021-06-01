@@ -1,6 +1,5 @@
 package com.release.barangayapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,18 +7,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 
-import com.release.barangayapp.view.CreateSummary;
-import com.release.barangayapp.view.CreateUpdates;
+import com.release.barangayapp.model.SummaryReport;
+import com.release.barangayapp.service.SummaryReportService;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_ReportUpdates#newInstance} factory method to
+ * Use the {@link Fragment_CovidResidentSummary#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_ReportUpdates extends Fragment {
+public class Fragment_CovidResidentSummary extends Fragment {
 
+    SummaryReportService summaryReportService;
+    ArrayList<SummaryReport> reportHolder;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,9 +31,8 @@ public class Fragment_ReportUpdates extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button Button_update;
 
-    public Fragment_ReportUpdates() {
+    public Fragment_CovidResidentSummary() {
         // Required empty public constructor
     }
 
@@ -40,11 +42,11 @@ public class Fragment_ReportUpdates extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_ReportUpdates.
+     * @return A new instance of fragment Fragment_CovidUserSummary.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_ReportUpdates newInstance(String param1, String param2) {
-        Fragment_ReportUpdates fragment = new Fragment_ReportUpdates();
+    public static Fragment_CovidResidentSummary newInstance(String param1, String param2) {
+        Fragment_CovidResidentSummary fragment = new Fragment_CovidResidentSummary();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,22 +66,25 @@ public class Fragment_ReportUpdates extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment__covid_resident_summary, container, false);
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment__report_updates, container, false);
+        reportHolder = new ArrayList<>();
+        summaryReportService = new SummaryReportService();
+        summaryReportService.getData(value -> {
+            reportHolder = value;
+            TextView Probable = v.findViewById(R.id.resident_summary_probable);
+            TextView Confirmed = v.findViewById(R.id.resident_summary_confirmed);
+            TextView Suspect = v.findViewById(R.id.resident_summary_suspect);
+            TextView Date = v.findViewById(R.id.resident_summary_date_layout);
+
+            Probable.setText(reportHolder.get(0).getProbable());
+            Confirmed.setText(reportHolder.get(0).getConfirmed());
+            Suspect.setText(reportHolder.get(0).getSuspect());
+            Date.setText(reportHolder.get(0).getSummaryDateView());
 
 
-        //Error if this part is included
-        //Comment for now. its causing an error. 
-        View u= inflater.inflate(R.layout.fragment__report_updates, container, false);
-        Button_update = u.findViewById(R.id.Updates_button);
-
-        Button_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View u) {
-
-                startActivity(new Intent(getActivity(), CreateUpdates.class));
-            }
         });
-        return u;
-    }
+        return v;
+
+        }
 }
