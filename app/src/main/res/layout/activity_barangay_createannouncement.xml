@@ -90,7 +90,7 @@
         tools:inputType="textMultiLine"
         tools:maxLength="150" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/CAnnouncementSend"
         android:layout_width="104dp"
         android:layout_height="80dp"
@@ -107,7 +107,21 @@
         app:layout_constraintVertical_bias="0.884"
         app:maxImageSize="20dp"
         app:srcCompat="@android:drawable/ic_menu_send"
-        tools:maxImageSize="80dp" />
+        tools:maxImageSize="80dp" />-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/CAnnouncementSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884"
+        app:srcCompat="@android:drawable/ic_menu_send" />
 
     <TextView
         android:id="@+id/ACurrentDate"
@@ -121,5 +135,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.054" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
