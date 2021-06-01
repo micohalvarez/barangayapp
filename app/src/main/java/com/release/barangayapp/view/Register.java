@@ -82,10 +82,28 @@ public class Register extends AppCompatActivity {
                 String compCPass = AConfPassword.getText().toString().trim();
                 String BUsername = AUsername.getText().toString().trim();
                 String BPassword = AConfPassword.getText().toString().trim();
+                String BFullname = AFullname.getText().toString().trim();
+                String BAddress = AAddress.getText().toString().trim();
+                String BPhone = APhone.getText().toString().trim();
 
                 if (!compPass.equals(compCPass))
                 {
                     AConfPassword.setError("Confirmed Password is not the same");
+                    return;
+                }
+                else if (TextUtils.isEmpty(BFullname))
+                {
+                    AFullname.setError("Full Name is Required");
+                    return;
+                }
+                else if (TextUtils.isEmpty(BPhone))
+                {
+                    APhone.setError("Phone Number Field is required");
+                    return;
+                }
+                else if (TextUtils.isEmpty(BAddress))
+                {
+                    AAddress.setError("Address Field is Required");
                     return;
                 }
 
