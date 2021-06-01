@@ -6,10 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.release.barangayapp.Fragment_CovidUserSummary;
-import com.release.barangayapp.Fragment_CovidUserUpdate;
-import com.release.barangayapp.Fragment_ReportSummary;
-import com.release.barangayapp.Fragment_ReportUpdates;
+import com.release.barangayapp.Fragment_CovidResidentSummary;
+import com.release.barangayapp.Fragment_CovidResidentUpdate;
 
 public class FragmentCovidUserProfileAdapter extends FragmentStateAdapter {
 
@@ -23,9 +21,9 @@ public class FragmentCovidUserProfileAdapter extends FragmentStateAdapter {
         switch (position)
         {
             case 0:
-                return new Fragment_CovidUserSummary();
+                return new Fragment_CovidResidentSummary();
             case 1:
-                return new Fragment_CovidUserUpdate();
+                return new Fragment_CovidResidentUpdate();
             default: return null;
         }
     }

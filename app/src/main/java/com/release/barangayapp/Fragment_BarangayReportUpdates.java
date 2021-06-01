@@ -10,15 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.release.barangayapp.view.CreateSummary;
-import com.release.barangayapp.view.CreateUpdates;
+import com.release.barangayapp.view.BarangayCreateUpdates;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_ReportUpdates#newInstance} factory method to
+ * Use the {@link Fragment_BarangayReportUpdates#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_ReportUpdates extends Fragment {
+public class Fragment_BarangayReportUpdates extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +29,7 @@ public class Fragment_ReportUpdates extends Fragment {
     private String mParam2;
     private Button Button_update;
 
-    public Fragment_ReportUpdates() {
+    public Fragment_BarangayReportUpdates() {
         // Required empty public constructor
     }
 
@@ -43,8 +42,8 @@ public class Fragment_ReportUpdates extends Fragment {
      * @return A new instance of fragment Fragment_ReportUpdates.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_ReportUpdates newInstance(String param1, String param2) {
-        Fragment_ReportUpdates fragment = new Fragment_ReportUpdates();
+    public static Fragment_BarangayReportUpdates newInstance(String param1, String param2) {
+        Fragment_BarangayReportUpdates fragment = new Fragment_BarangayReportUpdates();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -70,14 +69,14 @@ public class Fragment_ReportUpdates extends Fragment {
 
         //Error if this part is included
         //Comment for now. its causing an error. 
-        View u= inflater.inflate(R.layout.fragment__report_updates, container, false);
+        View u= inflater.inflate(R.layout.fragment__barangay_report_updates, container, false);
         Button_update = u.findViewById(R.id.Updates_button);
 
         Button_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View u) {
 
-                startActivity(new Intent(getActivity(), CreateUpdates.class));
+                startActivity(new Intent(getActivity(), BarangayCreateUpdates.class));
             }
         });
         return u;

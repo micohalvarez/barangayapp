@@ -1,5 +1,6 @@
 package com.release.barangayapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,22 +8,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.release.barangayapp.model.Announcement;
 import com.release.barangayapp.model.SummaryReport;
 import com.release.barangayapp.service.SummaryReportService;
+import com.release.barangayapp.view.BarangayCreateSummary;
 
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fragment_CovidUserSummary#newInstance} factory method to
+ * Use the {@link Fragment_BarangayReportSummary#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_CovidUserSummary extends Fragment {
+public class Fragment_BarangayReportSummary extends Fragment {
 
-    SummaryReportService summaryReportService;
-    ArrayList<SummaryReport> reportHolder;
+    private SummaryReportService summaryReportService;
+    private SummaryReport summaryReport;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,8 +32,9 @@ public class Fragment_CovidUserSummary extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button Button_update;
 
-    public Fragment_CovidUserSummary() {
+    public Fragment_BarangayReportSummary() {
         // Required empty public constructor
     }
 
@@ -42,11 +44,11 @@ public class Fragment_CovidUserSummary extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_CovidUserSummary.
+     * @return A new instance of fragment Fragment_ReportSummary.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_CovidUserSummary newInstance(String param1, String param2) {
-        Fragment_CovidUserSummary fragment = new Fragment_CovidUserSummary();
+    public static Fragment_BarangayReportSummary newInstance(String param1, String param2) {
+        Fragment_BarangayReportSummary fragment = new Fragment_BarangayReportSummary();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,12 +69,20 @@ public class Fragment_CovidUserSummary extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        reportHolder = new ArrayList<>();
-        summaryReportService = new SummaryReportService();
-        summaryReportService.getData(value -> {
-            reportHolder = value;
-        });
-        return inflater.inflate(R.layout.fragment__covid_user_summary, container, false);
+        View v= inflater.inflate(R.layout.fragment__barangay_report_summary, container, false);
 
-        }
+
+        Button_update = v.findViewById(R.id.Summary_button);
+
+        Button_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(), BarangayCreateSummary.class));
+            }
+        });
+        return v;
+    }
+
+
 }

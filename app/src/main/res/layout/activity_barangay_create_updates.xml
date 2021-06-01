@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.CreateUpdates"
+    tools:context=".view.BarangayCreateUpdates"
     android:fitsSystemWindows="true"
     android:id="@+id/Admindrawer_layout"
     android:background="@drawable/covback"
@@ -104,7 +104,7 @@
             app:layout_constraintVertical_bias="0.584" />
 
         <EditText
-            android:id="@+id/updates_deaths"
+            android:id="@+id/barangay_updates_deaths"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:clickable="true"
@@ -119,7 +119,7 @@
             app:layout_constraintVertical_bias="0.564" />
 
         <EditText
-            android:id="@+id/updates_confirmed"
+            android:id="@+id/barangay_updates_confirmed"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:clickable="true"
@@ -134,7 +134,7 @@
             app:layout_constraintVertical_bias="0.564" />
 
         <EditText
-            android:id="@+id/updates_recovered"
+            android:id="@+id/barangay_updates_recovered"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:clickable="true"
@@ -198,7 +198,7 @@
 
 
         <Button
-            android:id="@+id/Updates_button"
+            android:id="@+id/barangay_Updates_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SAVE"
@@ -212,7 +212,7 @@
             app:layout_constraintVertical_bias="0.891" />
 
         <TextView
-            android:id="@+id/createUpdateDateView"
+            android:id="@+id/barangaycreateUpdateDateView"
             android:layout_width="90dp"
             android:layout_height="40dp"
             android:text="TextView"

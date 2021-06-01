@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_CovidUserSummary">
+    tools:context=".Fragment_CovidResidentSummary">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -14,7 +14,7 @@
 
 
         <TextView
-            android:id="@+id/create_summary_date_layout"
+            android:id="@+id/resident_summary_date_layout"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:clickable="false"
@@ -44,7 +44,7 @@
 
 
         <TextView
-            android:id="@+id/summary_probable"
+            android:id="@+id/resident_summary_probable"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:clickable="false"
@@ -86,7 +86,7 @@
             app:layout_constraintVertical_bias="0.536" />
 
         <TextView
-            android:id="@+id/summary_suspect"
+            android:id="@+id/resident_summary_suspect"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:clickable="false"
@@ -116,7 +116,7 @@
             app:layout_constraintVertical_bias="0.536" />
 
         <TextView
-            android:id="@+id/summary_confirmed"
+            android:id="@+id/resident_summary_confirmed"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:clickable="false"

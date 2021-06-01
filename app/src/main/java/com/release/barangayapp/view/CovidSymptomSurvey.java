@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -245,7 +243,7 @@ public class CovidSymptomSurvey extends AppCompatActivity {
                 logBook.setUserId(userId);
                logBookService.saveData(logBook);
                 Toast.makeText(CovidSymptomSurvey.this, "Survey Data is submitted successfully",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),CovidUserProfile.class));
+                startActivity(new Intent(getApplicationContext(), CovidResidentProfile.class));
             }
         });
 

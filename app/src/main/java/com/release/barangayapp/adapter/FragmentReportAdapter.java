@@ -6,10 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.release.barangayapp.Fragment_Announcement;
-import com.release.barangayapp.Fragment_Notification;
-import com.release.barangayapp.Fragment_ReportSummary;
-import com.release.barangayapp.Fragment_ReportUpdates;
+import com.release.barangayapp.Fragment_BarangayReportSummary;
+import com.release.barangayapp.Fragment_BarangayReportUpdates;
 
 public class FragmentReportAdapter extends FragmentStateAdapter {
 
@@ -24,9 +22,9 @@ public class FragmentReportAdapter extends FragmentStateAdapter {
         switch (position)
         {
             case 0:
-                return new Fragment_ReportSummary();
+                return new Fragment_BarangayReportSummary();
             case 1:
-                return new Fragment_ReportUpdates();
+                return new Fragment_BarangayReportUpdates();
             default: return null;
         }
     }
