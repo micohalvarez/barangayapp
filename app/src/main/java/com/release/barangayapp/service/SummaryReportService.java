@@ -58,7 +58,10 @@ public class SummaryReportService {
                 if(!dataSnapshot.exists())
                     summaryRef.push().setValue(summary);
                 else
-                    Toast.makeText( context,"Data Already exists", Toast.LENGTH_SHORT).show();
+                { for (DataSnapshot ds : dataSnapshot.getChildren())
+                    summaryRef.child(ds.getKey()).setValue(summary);
+                    Toast.makeText(context, "Data Updated", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

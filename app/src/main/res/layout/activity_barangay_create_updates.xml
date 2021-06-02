@@ -212,16 +212,16 @@
             app:layout_constraintVertical_bias="0.891" />
 
         <TextView
-            android:id="@+id/barangaycreateUpdateDateView"
-            android:layout_width="90dp"
-            android:layout_height="40dp"
+            android:id="@+id/barangay_create_update_date_layout"
+            android:layout_width="180dp"
+            android:layout_height="50dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.903"
+            app:layout_constraintHorizontal_bias="0.152"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.138" />
+            app:layout_constraintVertical_bias="0.164" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

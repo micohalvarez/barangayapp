@@ -9,7 +9,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.release.barangayapp.callback.SummaryReportCallback;
+import com.release.barangayapp.callback.UpdateReportCallback;
 import com.release.barangayapp.model.SummaryReport;
+import com.release.barangayapp.model.UpdateReport;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,8 +27,8 @@ public class UpdateReportService {
     }
 
     //function for getting the data from update_report tree
-    public ArrayList<SummaryReport> getData(SummaryReportCallback myCallBack){
-        ArrayList<SummaryReport> reportList = new ArrayList<>();
+    public ArrayList<UpdateReport> getData(UpdateReportCallback myCallBack){
+        ArrayList<UpdateReport> reportList = new ArrayList<>();
 
         updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -34,12 +36,12 @@ public class UpdateReportService {
                 Map<String, Object> td = (HashMap<String,Object>) dataSnapshot.getValue();
                 if(dataSnapshot.exists()) {
                     for (DataSnapshot dsp : dataSnapshot.getChildren()) {
-                        reportList.add(dsp.getValue(SummaryReport.class));
+                        reportList.add(dsp.getValue(UpdateReport.class));
                     }
-                    myCallBack.summaryCallBack(reportList);
+                    myCallBack.updateCallBack(reportList);
                 }
                 else
-                    myCallBack.summaryCallBack(null);
+                    myCallBack.updateCallBack(null);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -51,14 +53,17 @@ public class UpdateReportService {
 
 
     //function for saving data to the update_report tree
-    public void saveData(SummaryReport summary, Context context){
+    public void saveData(UpdateReport update, Context context){
         updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.exists())
-                    updateRef.push().setValue(summary);
+                    updateRef.push().setValue(update);
                 else
-                    Toast.makeText( context,"Data Already exists", Toast.LENGTH_SHORT).show();
+                { for (DataSnapshot ds : dataSnapshot.getChildren())
+                    updateRef.child(ds.getKey()).setValue(update);
+                    Toast.makeText(context, "Data Updated", Toast.LENGTH_SHORT).show();
+                }
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

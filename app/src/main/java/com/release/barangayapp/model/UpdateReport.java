@@ -3,31 +3,41 @@ package com.release.barangayapp.model;
 public class UpdateReport {
 
 
-    private int deaths;
-    private int recovered;
-    private int confirmed;
+    private String deaths;
+    private String recovered;
+    private String confirmed;
 
-    public int getDeaths() {
+    public String getUpdateDateView() {
+        return updateDateView;
+    }
+
+    public void setUpdateDateView(String updateDateView) {
+        this.updateDateView = updateDateView;
+    }
+
+    private String updateDateView;
+
+    public String getDeaths() {
         return deaths;
     }
 
-    public void setDeaths(int deaths) {
+    public void setDeaths(String deaths) {
         this.deaths = deaths;
     }
 
-    public int getRecovered() {
+    public String getRecovered() {
         return recovered;
     }
 
-    public void setRecovered(int recovered) {
+    public void setRecovered(String recovered) {
         this.recovered = recovered;
     }
 
-    public int getConfirmed() {
+    public String getConfirmed() {
         return confirmed;
     }
 
-    public void setConfirmed(int confirmed) {
+    public void setConfirmed(String confirmed) {
         this.confirmed = confirmed;
     }
 

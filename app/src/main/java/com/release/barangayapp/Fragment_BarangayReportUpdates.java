@@ -9,8 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.release.barangayapp.model.SummaryReport;
+import com.release.barangayapp.model.UpdateReport;
+import com.release.barangayapp.service.SummaryReportService;
+import com.release.barangayapp.service.UpdateReportService;
 import com.release.barangayapp.view.BarangayCreateUpdates;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +26,8 @@ import com.release.barangayapp.view.BarangayCreateUpdates;
  */
 public class Fragment_BarangayReportUpdates extends Fragment {
 
+    private UpdateReportService updateReportService;
+    ArrayList<UpdateReport> reportHolder;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -70,6 +79,23 @@ public class Fragment_BarangayReportUpdates extends Fragment {
         //Error if this part is included
         //Comment for now. its causing an error. 
         View u= inflater.inflate(R.layout.fragment__barangay_report_updates, container, false);
+        reportHolder = new ArrayList<>();
+        updateReportService = new UpdateReportService();
+        updateReportService.getData(value -> {
+            reportHolder = value;
+            TextView Confirmed = u.findViewById(R.id.barangay_updates_confirmed);
+            TextView Recovered = u.findViewById(R.id.barangay_updates_recovered);
+            TextView Death = u.findViewById(R.id.barangay_updates_deaths);
+            TextView Date = u.findViewById(R.id.barangay_update_date_layout);
+
+           Recovered.setText(reportHolder.get(0).getRecovered());
+            Confirmed.setText(reportHolder.get(0).getConfirmed());
+            Death.setText(reportHolder.get(0).getDeaths());
+            Date.setText(reportHolder.get(0).getUpdateDateView());
+
+
+        });
+
         Button_update = u.findViewById(R.id.Updates_button);
 
         Button_update.setOnClickListener(new View.OnClickListener() {
