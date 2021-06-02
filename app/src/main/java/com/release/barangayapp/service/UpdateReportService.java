@@ -10,6 +10,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.release.barangayapp.callback.SummaryReportCallback;
 import com.release.barangayapp.model.SummaryReport;
+import com.release.barangayapp.model.UpdateReport;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,12 +52,12 @@ public class UpdateReportService {
 
 
     //function for saving data to the update_report tree
-    public void saveData(SummaryReport summary, Context context){
+    public void saveData(UpdateReport update, Context context){
         updateRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.exists())
-                    updateRef.push().setValue(summary);
+                    updateRef.push().setValue(update);
                 else
                     Toast.makeText( context,"Data Already exists", Toast.LENGTH_SHORT).show();
             }
