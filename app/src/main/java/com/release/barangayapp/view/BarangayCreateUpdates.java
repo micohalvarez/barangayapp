@@ -123,6 +123,7 @@ public class BarangayCreateUpdates extends AppCompatActivity implements Navigati
         updateReport.setConfirmed(confirmedUpdate.getText().toString().trim());
         updateReport.setRecovered(recoveredUpdate.getText().toString().trim());
         updateReport.setDeaths(deathUpdate.getText().toString().trim());
+        updateReport.setUpdateDateView(createUpdateDateView.getText().toString().trim());
         updateReportService.saveData(updateReport,getApplicationContext());
     }
 
