@@ -51,17 +51,14 @@ public class SummaryReportService {
     }
 
     // function for saving data to the summary_report tree
-    public void saveData(SummaryReport summaryReport, Context context){
+    public void saveData(SummaryReport summary, Context context){
         summaryRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(!dataSnapshot.exists())
-                    summaryRef.push().setValue(summaryReport);
+                    summaryRef.push().setValue(summary);
                 else
-                { for (DataSnapshot ds : dataSnapshot.getChildren())
-                    summaryRef.child(ds.getKey()).setValue(summaryReport);
-                    Toast.makeText(context, "Data Updated", Toast.LENGTH_SHORT).show();
-                }
+                    Toast.makeText( context,"Data Already exists", Toast.LENGTH_SHORT).show();
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
