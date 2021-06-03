@@ -157,8 +157,8 @@ public class Reports extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(home);
                 finish();
                 break;
-            case R.id.admin_profile:
-                break;
+            /*case R.id.admin_profile:
+                break;*/
             case R.id.admin_register:
                 Intent registerIntent = new Intent(Reports.this, Register.class);
                 startActivity(registerIntent);

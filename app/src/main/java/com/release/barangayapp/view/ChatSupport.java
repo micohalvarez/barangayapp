@@ -77,8 +77,8 @@ public class ChatSupport extends AppCompatActivity implements NavigationView.OnN
                 startActivity(home);
                 finish();
                 break;
-            case R.id.user_profile:
-                break;
+            /*case R.id.user_profile:
+                break;*/
             case R.id.user_logout:
                 //For Signout in Firebase
                 Intent LogoutIntent = new Intent(ChatSupport.this, MainMenu.class);

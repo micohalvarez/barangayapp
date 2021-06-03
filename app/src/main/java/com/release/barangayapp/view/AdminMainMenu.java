@@ -124,8 +124,8 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 startActivity(home);
                 finish();
                 break;
-            case R.id.admin_profile:
-                break;
+            /*case R.id.admin_profile:
+                break;*/
             case R.id.admin_register:
                 Intent registerIntent = new Intent(AdminMainMenu.this, Register.class);
                 startActivity(registerIntent);

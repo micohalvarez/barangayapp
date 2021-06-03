@@ -112,8 +112,8 @@ public class NotificationsActivity extends AppCompatActivity
                 startActivity(home);
                 finish();
                 break;
-            case R.id.admin_profile:
-                break;
+            /*case R.id.admin_profile:
+                break;*/
             case R.id.admin_register:
                 Intent registerIntent = new Intent(NotificationsActivity.this, Register.class);
                 startActivity(registerIntent);

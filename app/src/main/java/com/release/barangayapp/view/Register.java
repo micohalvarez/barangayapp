@@ -138,7 +138,7 @@ public class Register extends AppCompatActivity {
                                 FirebaseUser user = FAuth.getCurrentUser();
                                 register(user.getUid());
                                 Toast.makeText(Register.this,"Account Created Successfully",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),UserLogin.class));
+                                startActivity(new Intent(getApplicationContext(),AdminMainMenu.class));
                             }
                             else
                             {
