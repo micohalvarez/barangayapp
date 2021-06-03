@@ -8,58 +8,6 @@
     android:textAlignment="center">
 
 
-    <EditText
-        android:id="@+id/RegPersonnelCPass"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:background="@drawable/editround"
-        android:clickable="true"
-        android:ems="5"
-        android:fontFamily="@font/helvetica_bold"
-        android:gravity="center|left"
-        android:hint="Subject"
-        android:inputType="textLongMessage"
-        android:padding="10dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.891"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
-
-    <FrameLayout
-        android:layout_width="168dp"
-        android:layout_height="172dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.028">
-
-        <ImageView
-            android:id="@+id/CAnnounceIconType"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            app:srcCompat="@drawable/defaulticon" />
-    </FrameLayout>
-
-    <Spinner
-        android:id="@+id/spinnerEditIcon"
-        android:layout_width="80dp"
-        android:layout_height="30dp"
-        android:background="@drawable/editround"
-        android:hint="Select Icon"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256"
-        tools:visibility="visible" />
-
     <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/CAnnouncementSend"
         android:layout_width="104dp"
@@ -79,16 +27,68 @@
         app:srcCompat="@android:drawable/ic_menu_send"
         tools:maxImageSize="80dp" />-->
 
+    <EditText
+        android:id="@+id/RegPersonnelCPass"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:background="@drawable/editround"
+        android:clickable="true"
+        android:ems="5"
+        android:fontFamily="@font/helvetica_bold"
+        android:gravity="bottom"
+        android:hint="Subject"
+        android:inputType="textLongMessage"
+        android:padding="10dp"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316" />
+
+    <FrameLayout
+        android:layout_width="168dp"
+        android:layout_height="172dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059">
+
+        <ImageView
+            android:id="@+id/CAnnounceIconType"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:srcCompat="@drawable/defaulticon" />
+    </FrameLayout>
+
+    <Spinner
+        android:id="@+id/spinnerEditIcon"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:background="@drawable/editround"
+        android:hint="Select Icon"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.152"
+        tools:visibility="visible" />
+
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="38dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.255"
+        app:layout_constraintVertical_bias="0.152"
         app:srcCompat="@drawable/notif_editicon" />
 
     <EditText
