@@ -190,7 +190,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
     private void initializeDropdown(){
         this.icons = new ArrayList<>();
         //icon labels
-        this.icons.add("Edit Icon");
+        this.icons.add("Select Icon");
         this.icons.add("Fire");
         this.icons.add("Weather");
         this.icons.add("Covid");
