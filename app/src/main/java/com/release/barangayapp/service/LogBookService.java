@@ -57,31 +57,32 @@ public class LogBookService {
 
 
     //function for saving data to the logbook tree
-    public void saveData(LogBook logbookData, String userID){
-        Query query = logbookRef.orderByChild("userID").equalTo(userID);
-
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists())
-                {
-                    if ( dataSnapshot.getKey().isEmpty()) {
-                        logbookRef.push().setValue(logbookData);
-                    }
-                    else
-                    {
-                        logbookRef.child(dataSnapshot.getKey()).setValue(logbookData);
-                    }
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+    public void saveData(LogBook logbookData/*String userID*/){
+        logbookRef.push().setValue(logbookData);
+//        Query query = logbookRef.orderByChild("userID").equalTo(userID);
+//
+//        query.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                if (dataSnapshot.exists())
+//                {
+//                    if ( dataSnapshot.getKey().isEmpty()) {
+//                        logbookRef.push().setValue(logbookData);
+//                    }
+//                    else
+//                    {
+//                        logbookRef.child(dataSnapshot.getKey()).setValue(logbookData);
+//                    }
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
 
     }

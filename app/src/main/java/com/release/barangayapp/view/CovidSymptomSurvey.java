@@ -241,7 +241,7 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 logBook.setSurveyDate(surveydate);
                 logBook.setUserId(userId);
-               logBookService.saveData(logBook,userId);
+               logBookService.saveData(logBook);
                 Toast.makeText(CovidSymptomSurvey.this, "Survey Data is submitted successfully",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), CovidResidentProfile.class));
             }
