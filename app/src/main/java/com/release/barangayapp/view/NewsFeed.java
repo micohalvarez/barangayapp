@@ -126,8 +126,8 @@ public class NewsFeed extends AppCompatActivity implements NavigationView.OnNavi
                 startActivity(home);
                 finish();
                 break;
-            case R.id.user_profile:
-                break;
+            /*case R.id.user_profile:
+                break;*/
             case R.id.user_logout:
                 //For Signout in Firebase
                 Intent LogoutIntent = new Intent(NewsFeed.this, MainMenu.class);

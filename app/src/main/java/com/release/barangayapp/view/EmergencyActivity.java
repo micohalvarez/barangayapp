@@ -150,8 +150,8 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
                 startActivity(home);
                 finish();
                 break;
-            case R.id.user_profile:
-                break;
+            /*case R.id.user_profile:
+                break;*/
             case R.id.user_logout:
                 //For Signout in Firebase
                 Intent LogoutIntent = new Intent(EmergencyActivity.this, MainMenu.class);

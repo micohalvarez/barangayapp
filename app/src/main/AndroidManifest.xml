@@ -4,8 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <permission android:name="com.name.name.permission.C2D_MESSAGE"
+    <permission
+        android:name="com.name.name.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.name.name.permission.C2D_MESSAGE" />
 
     <supports-screens
@@ -21,7 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".view.CovidResidentProfile"></activity>
+        <activity android:name=".view.CovidResidentProfile" />
         <activity android:name=".view.BarangayCreateUpdates" />
         <activity android:name=".view.BarangayCreateSummary" />
         <activity android:name=".view.AboutUs" />
@@ -56,19 +58,19 @@
 
         <service
             android:name=".service.NotificationService"
-            android:exported="false"
-            android:directBootAware="true">
+            android:directBootAware="true"
+            android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
-     See README(https://goo.gl/l4GJaQ) for more. -->
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/announcement_bg" />
-
     </application>
 
 </manifest>
