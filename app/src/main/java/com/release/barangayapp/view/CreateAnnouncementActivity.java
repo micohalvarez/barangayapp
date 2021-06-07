@@ -22,8 +22,10 @@ import com.release.barangayapp.service.AnnouncementService;
 import com.release.barangayapp.service.AuthService;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
 
 public class CreateAnnouncementActivity extends AppCompatActivity {
@@ -62,7 +64,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
         Dateview = findViewById(R.id.ACurrentDate);
-        String currentdate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        String currentdate = DateFormat.getDateInstance().format(calendar.getTime());
         Dateview.setText(currentdate);
 
         announcementService = new AnnouncementService();
