@@ -64,7 +64,7 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
 
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
         Dateview = findViewById(R.id.ACurrentDate);
-        String currentdate = DateFormat.getDateInstance().format(calendar.getTime());
+        String currentdate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
         Dateview.setText(currentdate);
 
         announcementService = new AnnouncementService();

@@ -84,7 +84,10 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
 
         View view = inflater.inflate(R.layout.fragment__announcement_recyclerview, container, false);
         recyclerView = view.findViewById(R.id.announcement_recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity().getApplicationContext(),DividerItemDecoration.VERTICAL));
         announcementholder = new ArrayList<>();
         announcementService = new AnnouncementService();

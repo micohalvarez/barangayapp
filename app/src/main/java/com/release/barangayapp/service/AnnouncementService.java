@@ -5,10 +5,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.release.barangayapp.adapter.AnnouncementRecyclerViewAdapter;
 import com.release.barangayapp.callback.AnnouncementCallback;
 import com.release.barangayapp.model.Announcement;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -66,6 +69,7 @@ public class AnnouncementService {
                         announcementList.add(announcement);
                     }
 
+                    /*Collections.reverse(announcementList);*/
                     finalKey = announcementList.get(announcementList.size() - 1).getKey();
                     myCallBack.announcementCallBack(announcementList);
                 }
@@ -97,6 +101,7 @@ public class AnnouncementService {
                             announcementList.add(announcement);
                         }
                     }
+                    /*Collections.reverse(announcementList);*/
                     finalKey = announcementList.get(announcementList.size() - 1).getKey();
                     myCallBack.announcementCallBack(announcementList);
                 }
