@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.122">
 
         <ImageView
-            android:id="@+id/CAnnounceIconType"
+            android:id="@+id/CNotifIconType"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -142,6 +142,14 @@
             android:text="Emergency:"
             android:textSize="18dp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Emergency_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="TextView"
+            android:textSize="18dp" />
 
 
     </LinearLayout>

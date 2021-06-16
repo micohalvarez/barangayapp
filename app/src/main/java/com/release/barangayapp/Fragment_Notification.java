@@ -1,14 +1,21 @@
 package com.release.barangayapp;
 
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +25,7 @@ import com.release.barangayapp.model.Emergency;
 import com.release.barangayapp.service.EmergencyService;
 
 import java.util.ArrayList;
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -164,9 +172,79 @@ public class Fragment_Notification extends Fragment implements EmergencyRecycler
     }
 
 
-
+    private ImageView imageView;
     @Override
     public void onEmergencyClick(int position) {
+        AlertDialog.Builder imageDialog = new AlertDialog.Builder(getContext());
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+        final AlertDialog dialog = imageDialog.create();
+
+        View layout = inflater.inflate(R.layout.notification_detail,
+                getView().findViewById(R.id.layout_notifroot));
+
+        Button mStart = layout.findViewById(R.id.confirm_notif_button);
+
+        imageView = layout.findViewById(R.id.CNotifIconType);
+
+
+        mStart.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View view) {
+                recyclerViewAdapter.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+        });
+
+        setAnnouncementDetails(layout,position);
+        dialog.setView(layout);
+        dialog.show();
+    }
+
+    private void setAnnouncementDetails(View mView,int position){
+        TextView date = mView.findViewById(R.id.Resident_date);
+        TextView message = mView.findViewById(R.id.emergency_details);
+        TextView title = mView.findViewById(R.id.Emergency_title);
+        TextView phone = mView.findViewById(R.id.Resident_phonenumber);
+
+
+        date.setText(emergencyList.get(position).getCurrentDate());
+        setDetailImage(emergencyList.get(position).getType());
+        title.setText(emergencyList.get(position).getTitle());
+        message.setText(emergencyList.get(position).getMessage());
+        phone.setText(emergencyList.get(position).getPhonenumber());
+
+    }
+    private void setDetailImage(int iconType){
+        String fileName = "fire";
+
+        //add additional conditions based on file name
+        if(iconType == 1){
+            fileName = "fire";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 2){
+            fileName = "medical";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 3){
+            fileName = "crime";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+        if(iconType == 4){
+            fileName = "accident";
+            int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
+            Drawable res = getResources().getDrawable(imageResource);
+            imageView.setImageDrawable(res);
+        }
+
+
 
     }
 }
