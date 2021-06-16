@@ -3,6 +3,13 @@ package com.release.barangayapp;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -11,14 +18,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.release.barangayapp.adapter.AnnouncementRecyclerViewAdapter;
 import com.release.barangayapp.model.Announcement;
@@ -43,9 +42,9 @@ public class Fragment_Announcement extends Fragment implements AnnouncementRecyc
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private AnnouncementRecyclerViewAdapter recyclerViewAdapter;
-    ArrayList<Announcement> announcementholder;
+    private ArrayList<Announcement> announcementholder;
     private AnnouncementService announcementService;
 
     public Fragment_Announcement() {

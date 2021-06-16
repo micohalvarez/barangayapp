@@ -27,7 +27,7 @@ public class EmergencyService {
     public ArrayList<Emergency> getData(EmergencyCalllback myCallBack, int limit){
         ArrayList<Emergency> emergencyList = new ArrayList<>();
 
-        emergencyRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        emergencyRef.limitToFirst(limit).orderByKey().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Emergency emergency;
@@ -50,6 +50,38 @@ public class EmergencyService {
         });
 
         return emergencyList;
+    }
+
+
+    public ArrayList<Emergency> loadMoreData(EmergencyCalllback myCallBack, int limit, ArrayList<Emergency> emergencyArrayList){
+        emergencyRef.limitToFirst(limit).orderByKey().startAt(finalKey).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Emergency emergency;
+                if(dataSnapshot.exists()) {
+                    for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+
+                        if(!dsp.getKey().equals(finalKey)) {
+                            emergency = dsp.getValue(Emergency.class);
+                            emergency.setKey(dsp.getKey());
+                            emergencyArrayList.add(emergency);
+                        }
+                    }
+                    /*Collections.reverse(announcementList);*/
+                    finalKey = emergencyArrayList.get(emergencyArrayList.size() - 1).getKey();
+                    myCallBack.emergencyCallback(emergencyArrayList);
+                }
+                else
+                    myCallBack.emergencyCallback(null);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        return emergencyArrayList;
     }
 
     //function for saving data to the emergency tree
