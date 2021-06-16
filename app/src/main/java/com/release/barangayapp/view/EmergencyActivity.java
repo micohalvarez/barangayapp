@@ -119,7 +119,22 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
         emergency.setFinished(false);
         emergency.setUserId(curUser.getUserId());
         emergency.setType(emergencyType);
-        emergency.setTitle("Please send help!");
+        if(emergencyType==1)
+        {
+            emergency.setTitle("Fire Emergency");
+        }
+        else if(emergencyType==2)
+        {
+            emergency.setTitle("Medical Emergency");
+        }
+        else if(emergencyType==3)
+        {
+            emergency.setTitle("Crime Emergency");
+        }
+        else if(emergencyType==4)
+        {
+            emergency.setTitle("Accident Emergency");
+        }
         emergency.setPhonenumber(curUser.getPhonenumber());
         emergency.setCurrentDate(DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime()));
         emergency.setMessage(message);
