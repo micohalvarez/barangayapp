@@ -7,5 +7,4 @@ import java.util.ArrayList;
 
 public interface AnnouncementCallback {
     void announcementCallBack(ArrayList<Announcement> value);
-
 }

@@ -2,7 +2,6 @@
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,33 +22,28 @@ import com.release.barangayapp.service.NotificationService;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        authService.getUserDetails(value -> new Handler().postDelayed(() -> {
-            if(authService.getAuthUser() == null) {
+        authService.getUserDetails(value -> {
+            if (authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
-            }
-            else{
-                if ( value == null) {
+            } else {
+                if (value == null) {
                     Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
                     startActivity(homeIntent);
                     finish();
-                }
-                else if(value.getRole() == 2) {
+                } else if (value.getRole() == 2) {
 
                     Intent homeIntent = new Intent(MainActivity.this, UserMainMenu.class);
                     startActivity(homeIntent);
                     finish();
-                }
-                else {
-
+                } else {
                     Intent homeIntent = new Intent(MainActivity.this, AdminMainMenu.class);
                     startActivity(homeIntent);
                     finish();
                 }
             }
-        }, SPLASH_TIME_OUT));
-
+        });
 
     }
 }

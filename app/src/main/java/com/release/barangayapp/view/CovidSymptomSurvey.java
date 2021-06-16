@@ -1,7 +1,5 @@
 package com.release.barangayapp.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +8,10 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.R;
+import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.service.LogBookService;
 
@@ -241,7 +240,7 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
                 logBook.setSurveyDate(surveydate);
                 logBook.setUserId(userId);
-               logBookService.saveData(logBook);
+                logBookService.saveData(logBook);
                 Toast.makeText(CovidSymptomSurvey.this, "Survey Data is submitted successfully",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), CovidResidentProfile.class));
             }

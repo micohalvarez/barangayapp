@@ -5,9 +5,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import com.google.firebase.database.ValueEventListener;
-import com.release.barangayapp.model.Announcement;
 import com.release.barangayapp.model.LogBook;
 
 import java.util.ArrayList;
@@ -50,10 +48,15 @@ public class LogBookService {
     }
 
 
+    String key;
 
     //function for saving data to the logbook tree
     public void saveData(LogBook logbookData){
-        logbookRef.push().setValue(logbookData);
+        String userid = "dRHBvU8XTFgzKdvL3xi4tOaUOSl1";
+
+
+
+
     }
 
     //function for deleting data to the logbook tree
