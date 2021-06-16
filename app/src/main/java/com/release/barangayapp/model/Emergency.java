@@ -7,6 +7,7 @@ public class Emergency {
     private String userId;
     private String key;
     private String Phonenumber;
+    private String currentDate;
     private int type;
     private boolean isFinished;
 
@@ -60,6 +61,10 @@ public class Emergency {
     }
 
     public String getPhonenumber() { return Phonenumber; }
+
+    public String getCurrentDate() { return currentDate; }
+
+    public void setCurrentDate(String currentDate) { this.currentDate = currentDate; }
 
     public void setPhonenumber(String phonenumber) { this.Phonenumber = phonenumber; }
 }

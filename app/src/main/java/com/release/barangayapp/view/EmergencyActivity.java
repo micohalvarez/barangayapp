@@ -22,6 +22,10 @@ import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.service.EmergencyService;
 import com.release.barangayapp.service.NotificationService;
 
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.TimeZone;
+
 public class EmergencyActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout emergencyDrawyerLayout;
     private GridLayout emergencyMainGrid;
@@ -33,6 +37,7 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
     private Emergency emergency;
     private String message;
     private String address;
+    private String date;
     private UserObject curUser;
 
     @Override
@@ -53,6 +58,7 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
                     curUser = value;
             }
         });
+
 
         emergencyDrawyerLayout = findViewById(R.id.Emergencydrawer_layout);
         emergencyNavigationView = findViewById(R.id.Emergencynav_view);
@@ -85,7 +91,6 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
 
                 generateEmergency(1,"Help! " + curUser.getFullName() + " has a fire emergency at " + curUser.getAddress() + curUser.getPhonenumber() + ". Please send help!");
 
-
                 }
                 else if (finalI == 1)
                 {
@@ -108,7 +113,7 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
     private void generateEmergency(int emergencyType, String message){
         notificationService = new NotificationService();
         emergencyService = new EmergencyService();
-
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("GMT-8"));
 
         emergency = new Emergency();
         emergency.setFinished(false);
@@ -116,6 +121,7 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
         emergency.setType(emergencyType);
         emergency.setTitle("Please send help!");
         emergency.setPhonenumber(curUser.getPhonenumber());
+        emergency.setCurrentDate(DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime()));
         emergency.setMessage(message);
 
         emergencyService.saveData(emergency);
