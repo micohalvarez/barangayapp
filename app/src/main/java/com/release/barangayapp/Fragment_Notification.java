@@ -215,30 +215,30 @@ public class Fragment_Notification extends Fragment implements EmergencyRecycler
         phone.setText(emergencyList.get(position).getPhonenumber());
 
     }
-    private void setDetailImage(int iconType){
+    private void setDetailImage(int emergencyType){
         String fileName = "fire";
 
         //add additional conditions based on file name
-        if(iconType == 1){
-            fileName = "fire";
+        if(emergencyType == 1){
+            fileName = "ann_fire";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
-        if(iconType == 2){
-            fileName = "medical";
+        if(emergencyType == 2){
+            fileName = "ann_health_b";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
-        if(iconType == 3){
-            fileName = "crime";
+        if(emergencyType == 3){
+            fileName = "ann_crime";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
         }
-        if(iconType == 4){
-            fileName = "accident";
+        if(emergencyType == 4){
+            fileName = "ann_accident_a";
             int imageResource = getResources().getIdentifier(fileName,"drawable", getActivity().getPackageName());
             Drawable res = getResources().getDrawable(imageResource);
             imageView.setImageDrawable(res);
