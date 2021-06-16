@@ -51,10 +51,6 @@
     </FrameLayout>
 
 
-
-
-
-
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="0dp"
@@ -69,7 +65,7 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.945">
+        app:layout_constraintVertical_bias="0.648">
 
         <TextView
             android:layout_width="wrap_content"
@@ -103,52 +99,19 @@
 
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
+        app:layout_constraintVertical_bias="0.15">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:text="Emergency:"
+            android:text="Phone Number:"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/Resident_emergencytype"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="TextView"
-            android:textSize="18dp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/fnLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="252dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:text="Resident:"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/Resident_name"
+            android:id="@+id/Resident_phonenumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -169,24 +132,39 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintTop_toBottomOf="@+id/fnLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.092">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:text="Location:"
+            android:text="Emergency:"
             android:textSize="18dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/Resident_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="TextView"
-            android:textSize="18dp" />
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/emergency_details"
+        android:layout_width="285dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/box"
+        android:gravity="center|center_vertical"
+        android:inputType="textMultiLine"
+        android:maxLength="150"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_constraintTop_toBottomOf="@+id/fnLayout4"
+        app:layout_constraintVertical_bias="0.714" />
 
     <LinearLayout
         android:id="@+id/buttonLayout2"
@@ -194,7 +172,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="50dp"
 
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -202,7 +180,8 @@
         app:layout_constraintHorizontal_bias="0.0"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fnLayout4">
+        app:layout_constraintTop_toBottomOf="@+id/fnLayout4"
+        app:layout_constraintVertical_bias="1.0">
 
         <Button
             android:id="@+id/confirm_notif_button"
