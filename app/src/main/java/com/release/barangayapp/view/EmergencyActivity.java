@@ -88,15 +88,15 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
                 }
                 else if (finalI == 1)
                 {
-                    generateEmergency(2,"Help! " + curUser.getFullName() + "has a medical emergency at " +  curUser.getAddress() + ". Please send help!");
+                    generateEmergency(2,"Help! " + curUser.getFullName() + " has a medical emergency at " +  curUser.getAddress() + ". Please send help!");
                 }
                 else if (finalI == 2)
                 {
-                    generateEmergency(3,"Help! " + curUser.getFullName() + "has a crime emergency at " +  curUser.getAddress() + ". Please send help!");
+                    generateEmergency(3,"Help! " + curUser.getFullName() + " has a crime emergency at " +  curUser.getAddress() + ". Please send help!");
                 }
                 else if (finalI == 3)
                 {
-                    generateEmergency(4,"Help! " + curUser.getFullName() + "has an accident emergency at " +  curUser.getAddress() + ". Please send help!");
+                    generateEmergency(4,"Help! " + curUser.getFullName() + " has an accident emergency at " +  curUser.getAddress() + ". Please send help!");
                 }
 
             });
@@ -150,8 +150,8 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
                 startActivity(home);
                 finish();
                 break;
-            case R.id.user_profile:
-                break;
+            /*case R.id.user_profile:
+                break;*/
             case R.id.user_logout:
                 //For Signout in Firebase
                 Intent LogoutIntent = new Intent(EmergencyActivity.this, MainMenu.class);

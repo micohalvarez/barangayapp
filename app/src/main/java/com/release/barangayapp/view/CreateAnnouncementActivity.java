@@ -22,8 +22,10 @@ import com.release.barangayapp.service.AnnouncementService;
 import com.release.barangayapp.service.AuthService;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
 
 public class CreateAnnouncementActivity extends AppCompatActivity {
@@ -190,14 +192,14 @@ public class CreateAnnouncementActivity extends AppCompatActivity {
     private void initializeDropdown(){
         this.icons = new ArrayList<>();
         //icon labels
-        this.icons.add("Edit Icon");
-        this.icons.add("Fire");
-        this.icons.add("Weather");
-        this.icons.add("Covid");
-        this.icons.add("Crime");
-        this.icons.add("News");
-        this.icons.add("Health");
-        this.icons.add("Accident");
+        this.icons.add(" -----Select Icon-----");
+        this.icons.add("       Fire Report");
+        this.icons.add("  Weather Report");
+        this.icons.add("     Covid Report");
+        this.icons.add("     Crime Report");
+        this.icons.add("     News Report");
+        this.icons.add("    Health Report");
+        this.icons.add("  Accident Report");
 
     }
 }

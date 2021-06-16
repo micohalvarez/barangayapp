@@ -7,6 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.release.barangayapp.model.UpdateReport;
+import com.release.barangayapp.service.UpdateReportService;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +29,8 @@ public class Fragment_CovidResidentUpdate extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private UpdateReportService updateReportService;
+    ArrayList<UpdateReport> reportHolder;
 
     public Fragment_CovidResidentUpdate() {
         // Required empty public constructor
@@ -59,6 +67,25 @@ public class Fragment_CovidResidentUpdate extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__covid_resident_update, container, false);
+        View u= inflater.inflate(R.layout.fragment__covid_resident_update, container, false);
+
+        reportHolder = new ArrayList<>();
+        updateReportService = new UpdateReportService();
+        updateReportService.getData(value -> {
+            reportHolder = value;
+            TextView Confirmed = u.findViewById(R.id.resident_updates_confirmed);
+            TextView Recovered = u.findViewById(R.id.resident_updates_recovered);
+            TextView Death = u.findViewById(R.id.resident_updates_deaths);
+            TextView Date = u.findViewById(R.id.resident_update_date_layout);
+
+            Recovered.setText(reportHolder.get(0).getRecovered());
+            Confirmed.setText(reportHolder.get(0).getConfirmed());
+            Death.setText(reportHolder.get(0).getDeaths());
+            Date.setText(reportHolder.get(0).getUpdateDateView());
+
+
+        });
+
+        return u;
     }
 }

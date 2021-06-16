@@ -34,7 +34,7 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
     DrawerLayout AdmindrawerLayout;
     NavigationView AdminnavigationView;
     Toolbar Admintoolbar;
-    private AuthService authService;
+    private AuthService summaryAuthService;
 
     EditText Probable, Suspected, Confirmed;
     Button save;
@@ -43,7 +43,6 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
     DatabaseReference reference;
     TextView summaryDateView;
 
-    String probable, confirmed, suspect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +50,9 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
         setContentView(R.layout.activity_barangay_create_summary);
 
 
-        authService = new AuthService();
-        authService.getUserDetails(value ->  {
-            if(authService.getAuthUser() == null) {
+        summaryAuthService = new AuthService();
+        summaryAuthService.getUserDetails(value ->  {
+            if(summaryAuthService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(BarangayCreateSummary.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
@@ -116,7 +115,7 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
                 }
                 else
                 {
-                    createSummary(authService.getAuthUser().getUid());
+                    createSummary(summaryAuthService.getAuthUser().getUid());
                     Toast.makeText(BarangayCreateSummary.this, "Announcement Created Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),Reports.class));
                 }
@@ -135,35 +134,7 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
         summaryReport.setSummaryDateView(summaryDateView.getText().toString().trim());
         summaryReportService.saveData(summaryReport,getApplicationContext());
     }
-
-   /* public void update(View view){
-        if(probableChanged() || suspectedChanged() || confirmedChanged()){
-            Toast.makeText(this, "Data Has beed Updated", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private boolean confirmedChanged() {
-        if(!probable.equals(Probable.getText().toString().trim())){
-            reference.child(probable).child("probable").setValue(Probable.getText().toString().trim());
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    private boolean suspectedChanged() {
-        if(!confirmed.equals(Confirmed.getText().toString().trim())){
-            reference.child(confirmed).child("confirmed").setValue(Confirmed.getText().toString().trim());
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-    private boolean probableChanged() {
-    }*/
+    
 
 
     @Override
@@ -190,8 +161,8 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
                 startActivity(home);
                 finish();
                 break;
-            case R.id.admin_profile:
-                break;
+            /*case R.id.admin_profile:
+                break;*/
             case R.id.admin_register:
                 Intent registerIntent = new Intent(BarangayCreateSummary.this, Register.class);
                 startActivity(registerIntent);
@@ -202,7 +173,7 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
                 Intent LogoutIntent = new Intent(BarangayCreateSummary.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
-                authService.signOut();
+                summaryAuthService.signOut();
                 break;
 
         }

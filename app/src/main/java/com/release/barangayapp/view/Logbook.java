@@ -88,8 +88,8 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(home);
                 finish();
                 break;
-            case R.id.admin_profile:
-                break;
+            /*case R.id.admin_profile:
+                break;*/
             case R.id.admin_register:
                 Intent registerIntent = new Intent(Logbook.this, Register.class);
                 startActivity(registerIntent);
