@@ -6,6 +6,7 @@ public class Emergency {
     private String message;
     private String userId;
     private String key;
+    private String Phonenumber;
     private int type;
     private boolean isFinished;
 
@@ -57,4 +58,8 @@ public class Emergency {
     public void setKey(String key) {
         this.key = key;
     }
+
+    public String getPhonenumber() { return Phonenumber; }
+
+    public void setPhonenumber(String phonenumber) { this.Phonenumber = phonenumber; }
 }
