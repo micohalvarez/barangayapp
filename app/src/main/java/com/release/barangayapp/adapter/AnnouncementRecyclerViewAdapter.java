@@ -1,21 +1,29 @@
 package com.release.barangayapp.adapter;
 
+import android.content.ComponentName;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.release.barangayapp.R;
 import com.release.barangayapp.model.Announcement;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         implements View.OnClickListener, Filterable {
@@ -82,20 +90,22 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
         return null;
     }
 
+    private ImageView imageView;
     private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView announcementItem;
-        TextView announcementPref;
+        ImageView announcementPref;
 
         OnAnnouncementListener onAnnouncementListener;
 
         public ItemViewHolder(@NonNull View itemView, OnAnnouncementListener onAnnouncementListener) {
             super(itemView);
 
+
             this.onAnnouncementListener = onAnnouncementListener;
 
             announcementItem = itemView.findViewById(R.id.announcementItem);
-            announcementPref = itemView.findViewById(R.id.announcementPref);
+            imageView = itemView.findViewById(R.id.announcementPref);
             itemView.setOnClickListener(this);
 
         }
@@ -123,9 +133,45 @@ public class AnnouncementRecyclerViewAdapter extends RecyclerView.Adapter<Recycl
 
     private void populateItemRows(ItemViewHolder viewHolder, int position) {
 
+
         Announcement item = mItemList.get(position);
         viewHolder.announcementItem.setText(item.getTitle());
+        setDetailImage(mItemList.get(position).getIconValue());
+
+        
     }
+
+    private void setDetailImage(int iconType){
+        String fileName = "fire";
+
+        //add additional conditions based on file name
+        if(iconType == 0){
+            imageView.setImageResource(R.drawable.ann_fire);
+        }
+        if(iconType == 1){
+            imageView.setImageResource(R.drawable.ann_weather);
+        }
+        if(iconType == 2){
+            imageView.setImageResource(R.drawable.ann_covid);
+        }
+        if(iconType == 3){
+            imageView.setImageResource(R.drawable.ann_crime);
+        }
+        if(iconType == 4){
+            imageView.setImageResource(R.drawable.ann_news_a);
+        }
+        if(iconType == 5){
+            imageView.setImageResource(R.drawable.ann_health_b);
+        }
+        if(iconType == 6){
+            imageView.setImageResource(R.drawable.ann_accident_a);
+        }
+
+
+    }
+
+
+
 
     public interface OnAnnouncementListener {
         void onAnnouncementClick(int position);

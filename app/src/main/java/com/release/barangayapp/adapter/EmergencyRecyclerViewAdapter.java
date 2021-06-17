@@ -1,10 +1,12 @@
 package com.release.barangayapp.adapter;
 
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -82,10 +84,11 @@ public class EmergencyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         return null;
     }
 
+
+    private ImageView imageView;
     private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvItem;
-        TextView studentPref;
 
         OnEmergencyListener onEmergencyListener;
 
@@ -95,7 +98,7 @@ public class EmergencyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
             this.onEmergencyListener = onEmergencyListener;
 
             tvItem = itemView.findViewById(R.id.notifItem);
-            studentPref = itemView.findViewById(R.id.notifPref);
+            imageView = itemView.findViewById(R.id.notifPref);
             itemView.setOnClickListener(this);
 
         }
@@ -126,11 +129,31 @@ public class EmergencyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         Emergency item = mItemList.get(position);
 
         viewHolder.tvItem.setText(item.getTitle());
-
+        setDetailImage(mItemList.get(position). getType());
     }
+
+    private void setDetailImage(int emergencyType) {
+
+        //add additional conditions based on file name
+        if (emergencyType == 1) {
+            imageView.setImageResource(R.drawable.ann_fire);
+        }
+        if (emergencyType == 2) {
+            imageView.setImageResource(R.drawable.ann_health_b);
+        }
+        if (emergencyType == 3) {
+            imageView.setImageResource(R.drawable.ann_crime);
+        }
+        if (emergencyType == 4) {
+            imageView.setImageResource(R.drawable.ann_accident_a);
+        }
+    }
+
 
     public interface OnEmergencyListener {
         void onEmergencyClick(int position);
     }
+
+
 
 }
