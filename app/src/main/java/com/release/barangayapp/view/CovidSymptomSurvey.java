@@ -256,6 +256,7 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             public void onClick(View v) {
 
                 logBook.setFullName(curUser.getFullName());
+                logBook.setPhonenumber(curUser.getPhonenumber());
                 logBook.setAddress(curUser.getAddress());
                 logBook.setEmail(curUser.getEmail());
                 logBook.setSurveyDate(surveydate);

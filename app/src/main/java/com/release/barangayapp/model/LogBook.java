@@ -7,11 +7,26 @@ public class LogBook {
     private ArrayList<Integer> symptoms;
     private ArrayList<Integer> otherSymptoms;
     private ArrayList<Integer> healthChecklist;
+
     private String userId;
     private String surveyDate;
     private String fullName;
     private String address;
     private String email;
+    private String key;
+    private String Phonenumber;
+
+    public String getPhonenumber() { return Phonenumber; }
+
+    public void setPhonenumber(String phonenumber) { this.Phonenumber = phonenumber; }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getEmail() {
         return email;
