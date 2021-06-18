@@ -9,6 +9,33 @@ public class LogBook {
     private ArrayList<Integer> healthChecklist;
     private String userId;
     private String surveyDate;
+    private String fullName;
+    private String address;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
     public String getSurveyDate() {
         return surveyDate;

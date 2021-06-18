@@ -158,6 +158,7 @@ public class Register extends AppCompatActivity {
         UserObject user = new UserObject();
         //Set Objects
         user.setRole(Role);
+        user.setEmail(AUsername.getText().toString().trim());
         user.setFullName(AFullname.getText().toString().trim());
         user.setAddress(AAddress.getText().toString().trim());
         user.setPhonenumber(APhone.getText().toString().trim());

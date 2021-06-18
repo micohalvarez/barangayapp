@@ -6,6 +6,7 @@ public class UserObject {
     private int role;
     private String address;
     private String userId;
+    private String email;
 
     public String getPhonenumber() { return Phonenumber; }
 
@@ -43,5 +44,13 @@ public class UserObject {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

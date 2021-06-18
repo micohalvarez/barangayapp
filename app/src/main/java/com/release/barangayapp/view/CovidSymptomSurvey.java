@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.release.barangayapp.R;
 import com.release.barangayapp.model.LogBook;
+import com.release.barangayapp.model.UserObject;
 import com.release.barangayapp.service.AuthService;
 import com.release.barangayapp.service.LogBookService;
 
@@ -33,6 +34,7 @@ public class CovidSymptomSurvey extends AppCompatActivity {
     private AuthService authService;
     private String userId;
     private String surveydate;
+    private UserObject curUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,20 @@ public class CovidSymptomSurvey extends AppCompatActivity {
             }
             else
                 userId = authService.getAuthUser().getUid();
+
+
+        });
+
+        authService.getUserDetails(value ->  {
+            if(authService.getAuthUser() == null) {
+                Intent homeIntent = new Intent(CovidSymptomSurvey.this, MainMenu.class);
+                startActivity(homeIntent);
+                finish();
+            }
+            else{
+                if(value != null)
+                    curUser = value;
+            }
         });
 
 
@@ -238,6 +254,10 @@ public class CovidSymptomSurvey extends AppCompatActivity {
         covidSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                logBook.setFullName(curUser.getFullName());
+                logBook.setAddress(curUser.getAddress());
+                logBook.setEmail(curUser.getEmail());
                 logBook.setSurveyDate(surveydate);
                 logBook.setUserId(userId);
                 logBookService.saveData(logBook);
