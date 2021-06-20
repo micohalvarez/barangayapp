@@ -8,11 +8,15 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.R;
 import com.release.barangayapp.adapter.FragmentCovidUserProfileAdapter;
+import com.release.barangayapp.model.UserObject;
+import com.release.barangayapp.service.AuthService;
+
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class CovidResidentProfile extends AppCompatActivity {
 
@@ -21,11 +25,27 @@ public class CovidResidentProfile extends AppCompatActivity {
     FragmentCovidUserProfileAdapter adapter;
     FloatingActionButton back;
     Button button_update;
+    private AuthService authService;
+    private UserObject curUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_covid_resident_profile);
+
+
+        authService = new AuthService();
+
+        authService.getUserDetails(value -> {
+            curUser = value;
+            TextView Name = findViewById(R.id.CovidUser_name);
+
+
+            Name.setText(curUser.getFullName());
+
+
+        });
+
 
 
         button_update= findViewById(R.id.Covid_updatebutton);
