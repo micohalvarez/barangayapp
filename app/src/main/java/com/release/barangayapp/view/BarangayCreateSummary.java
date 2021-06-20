@@ -161,8 +161,11 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
                 startActivity(home);
                 finish();
                 break;
-            /*case R.id.admin_profile:
-                break;*/
+            case R.id.admin_profile:
+                Intent profile = new Intent(BarangayCreateSummary.this, BarangayProfile.class);
+                startActivity(profile);
+                finish();
+                break;
             case R.id.admin_register:
                 Intent registerIntent = new Intent(BarangayCreateSummary.this, Register.class);
                 startActivity(registerIntent);

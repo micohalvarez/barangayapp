@@ -6,6 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +20,11 @@ import android.view.MenuItem;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
+
+import java.util.ArrayList;
 
 public class ChatSupport extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -44,6 +54,7 @@ public class ChatSupport extends AppCompatActivity implements NavigationView.OnN
         UserdrawerLayout = findViewById(R.id.chatdrawer_layout);
         UsernavigationView = findViewById(R.id.chatnav_view);
         Usertoolbar = findViewById(R.id.chat_bar);
+
 
         UsernavigationView.bringToFront();
         setSupportActionBar(Usertoolbar);
@@ -77,8 +88,11 @@ public class ChatSupport extends AppCompatActivity implements NavigationView.OnN
                 startActivity(home);
                 finish();
                 break;
-            /*case R.id.user_profile:
-                break;*/
+            case R.id.user_profile:
+                Intent profile = new Intent(ChatSupport.this, ResidentProfile.class);
+                startActivity(profile);
+                finish();
+                break;
             case R.id.user_logout:
                 //For Signout in Firebase
                 Intent LogoutIntent = new Intent(ChatSupport.this, MainMenu.class);

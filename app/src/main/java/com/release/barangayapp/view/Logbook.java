@@ -1,22 +1,43 @@
 package com.release.barangayapp.view;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
+
+import com.release.barangayapp.adapter.LogBookRecyclerViewAdapter;
+import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.service.AuthService;
+import com.release.barangayapp.service.EmergencyService;
+import com.release.barangayapp.service.LogBookService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Logbook extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -25,6 +46,11 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
     Toolbar Admintoolbar;
     private AuthService authService;
     private Button Button_summary;
+
+    private RecyclerView recyclerView;
+    private LogBookRecyclerViewAdapter Adapter;
+    private ArrayList<LogBook> logbookholder;
+    private LogBookService logBookService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +66,18 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
             }
         });
 
+
+        recyclerView = findViewById(R.id.logbook_recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(),DividerItemDecoration.VERTICAL));
+
+        logbookholder = new ArrayList<>();
+        logBookService = new LogBookService();
 
 
 
@@ -88,8 +126,11 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
                 startActivity(home);
                 finish();
                 break;
-            /*case R.id.admin_profile:
-                break;*/
+            case R.id.admin_profile:
+                Intent profile = new Intent(Logbook.this, BarangayProfile.class);
+                startActivity(profile);
+                finish();
+                break;
             case R.id.admin_register:
                 Intent registerIntent = new Intent(Logbook.this, Register.class);
                 startActivity(registerIntent);

@@ -79,8 +79,11 @@ public class AdminChatSupport extends AppCompatActivity implements NavigationVie
                 startActivity(home);
                 finish();
                 break;
-            /*case R.id.admin_profile:
-                break;*/
+            case R.id.admin_profile:
+                Intent profile = new Intent(AdminChatSupport.this, BarangayProfile.class);
+                startActivity(profile);
+                finish();
+                break;
             case R.id.admin_register:
                 Intent registerIntent = new Intent(AdminChatSupport.this, Register.class);
                 startActivity(registerIntent);

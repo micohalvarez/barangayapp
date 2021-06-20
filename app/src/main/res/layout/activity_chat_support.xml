@@ -33,13 +33,25 @@
             android:theme="?attr/actionBarTheme"
             app:navigationIcon="@drawable/trymenu"/>
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/chat_Tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chat_bar"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/chatviewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/chat_Tab"/>
+
+        <!--<androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatrecyclerView"
             android:layout_marginStart="3dp"
             android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            />-->
 
     </LinearLayout>
 
