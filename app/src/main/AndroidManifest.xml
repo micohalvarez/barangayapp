@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.release.barangayapp" >
+    package="com.release.barangayapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -22,9 +22,9 @@
         android:label=" "
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BarangayApp" >
-        <activity android:name=".view.BarangayProfile" >
-        </activity>
+        android:theme="@style/Theme.BarangayApp">
+        <activity android:name=".view.ResidentsChatUsersMessage"></activity>
+        <activity android:name=".view.BarangayProfile"></activity>
         <activity android:name=".view.ResidentProfile" />
         <activity android:name=".view.CovidResidentProfile" />
         <activity android:name=".view.BarangayCreateUpdates" />
@@ -47,7 +47,7 @@
         <activity
             android:name=".view.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.BarangayApp.NoActionBar" >
+            android:theme="@style/Theme.BarangayApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,7 +59,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <service android:name=".service.NotificationService" >
+        <service android:name=".service.NotificationService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
