@@ -30,10 +30,10 @@
         <activity android:name=".view.BarangayCreateUpdates" />
         <activity android:name=".view.BarangayCreateSummary" />
         <activity android:name=".view.AboutUs" />
-        <activity android:name=".view.AdminChatSupport" />
+        <activity android:name=".view.BarangayChatSupport" />
         <activity android:name=".view.Logbook" />
         <activity android:name=".view.Reports" />
-        <activity android:name=".view.ChatSupport" />
+        <activity android:name=".view.ResidentChatSupport" />
         <activity android:name=".view.CovidSymptomSurvey" />
         <activity android:name=".view.NewsFeed" />
         <activity android:name=".view.AdminMainMenu" />

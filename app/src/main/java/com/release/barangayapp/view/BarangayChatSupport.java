@@ -6,16 +6,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.R;
+import com.release.barangayapp.adapter.FragmentBarangayChatAdapter;
+import com.release.barangayapp.adapter.FragmentResidentChatAdapter;
 import com.release.barangayapp.service.AuthService;
 
-public class AdminChatSupport extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class BarangayChatSupport extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+    ViewPager2 pager2;
+    TabLayout tabLayout;
+    FragmentBarangayChatAdapter adapter;
 
     DrawerLayout AdmindrawerLayout;
     NavigationView AdminnavigationView;
@@ -25,14 +34,14 @@ public class AdminChatSupport extends AppCompatActivity implements NavigationVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_chat_support);
+        setContentView(R.layout.activity_barangay_chat_support);
 
 
 
         authService = new AuthService();
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
-                Intent homeIntent = new Intent(AdminChatSupport.this, MainMenu.class);
+                Intent homeIntent = new Intent(BarangayChatSupport.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
             }
@@ -40,6 +49,39 @@ public class AdminChatSupport extends AppCompatActivity implements NavigationVie
 
 
 
+        tabLayout = findViewById(R.id.barangaychat_Tab);
+        pager2= findViewById(R.id.barangaychatviewpager);
+
+        //ViewPager2
+        FragmentManager fm= getSupportFragmentManager();
+        adapter = new FragmentBarangayChatAdapter(fm, getLifecycle());
+        pager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Chats"));
+        tabLayout.addTab(tabLayout.newTab().setText("Users"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                pager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
 
         AdmindrawerLayout = findViewById(R.id.Admindrawer_layout);
         AdminnavigationView = findViewById(R.id.chat_view);
@@ -75,23 +117,23 @@ public class AdminChatSupport extends AppCompatActivity implements NavigationVie
 
         switch (item.getItemId()){
             case R.id.admin_home:
-                Intent home = new Intent(AdminChatSupport.this, AdminMainMenu.class);
+                Intent home = new Intent(BarangayChatSupport.this, AdminMainMenu.class);
                 startActivity(home);
                 finish();
                 break;
             case R.id.admin_profile:
-                Intent profile = new Intent(AdminChatSupport.this, BarangayProfile.class);
+                Intent profile = new Intent(BarangayChatSupport.this, BarangayProfile.class);
                 startActivity(profile);
                 finish();
                 break;
             case R.id.admin_register:
-                Intent registerIntent = new Intent(AdminChatSupport.this, Register.class);
+                Intent registerIntent = new Intent(BarangayChatSupport.this, Register.class);
                 startActivity(registerIntent);
                 finish();
                 break;
             case R.id.admin_logout:
                 //For Signout in Firebase
-                Intent LogoutIntent = new Intent(AdminChatSupport.this, MainMenu.class);
+                Intent LogoutIntent = new Intent(BarangayChatSupport.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
                 authService.signOut();

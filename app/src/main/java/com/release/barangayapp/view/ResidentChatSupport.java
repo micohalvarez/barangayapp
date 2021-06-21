@@ -6,46 +6,87 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.lifecycle.Lifecycle;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.release.barangayapp.R;
+import com.release.barangayapp.adapter.FragmentReportAdapter;
+import com.release.barangayapp.adapter.FragmentResidentChatAdapter;
+import com.release.barangayapp.model.UserObject;
 import com.release.barangayapp.service.AuthService;
 
-import java.util.ArrayList;
+public class ResidentChatSupport extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-public class ChatSupport extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+    ViewPager2 pager2;
+    TabLayout tabLayout;
 
     DrawerLayout UserdrawerLayout;
     NavigationView UsernavigationView;
     Toolbar Usertoolbar;
     private AuthService authService;
+    FragmentResidentChatAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_support);
-
+        setContentView(R.layout.activity_resident_chat_support);
 
         authService = new AuthService();
 
         authService.getUserDetails(value ->  {
             if(authService.getAuthUser() == null) {
-                Intent homeIntent = new Intent(ChatSupport.this, MainMenu.class);
+                Intent homeIntent = new Intent(ResidentChatSupport.this, MainMenu.class);
                 startActivity(homeIntent);
                 finish();
+            }
+        });
+
+
+        tabLayout = findViewById(R.id.residentchat_Tab);
+        pager2= findViewById(R.id.residentchatviewpager);
+        //ViewPager2
+        FragmentManager fm= getSupportFragmentManager();
+        adapter = new FragmentResidentChatAdapter(fm, getLifecycle());
+        pager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Chats"));
+        tabLayout.addTab(tabLayout.newTab().setText("Users"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                pager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+        pager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
 
@@ -84,18 +125,18 @@ public class ChatSupport extends AppCompatActivity implements NavigationView.OnN
 
         switch (item.getItemId()){
             case R.id.user_home:
-                Intent home = new Intent(ChatSupport.this, UserMainMenu.class);
+                Intent home = new Intent(ResidentChatSupport.this, UserMainMenu.class);
                 startActivity(home);
                 finish();
                 break;
             case R.id.user_profile:
-                Intent profile = new Intent(ChatSupport.this, ResidentProfile.class);
+                Intent profile = new Intent(ResidentChatSupport.this, ResidentProfile.class);
                 startActivity(profile);
                 finish();
                 break;
             case R.id.user_logout:
                 //For Signout in Firebase
-                Intent LogoutIntent = new Intent(ChatSupport.this, MainMenu.class);
+                Intent LogoutIntent = new Intent(ResidentChatSupport.this, MainMenu.class);
                 startActivity(LogoutIntent);
                 finish();
                 authService.signOut();
@@ -105,4 +146,6 @@ public class ChatSupport extends AppCompatActivity implements NavigationView.OnN
         UserdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

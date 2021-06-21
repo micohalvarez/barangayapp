@@ -91,7 +91,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
                 }
                 else if (finalI == 3)
                 {
-                    Intent chatsupport=new Intent(UserMainMenu.this, ChatSupport.class);
+                    Intent chatsupport=new Intent(UserMainMenu.this, ResidentChatSupport.class);
                     startActivity(chatsupport);
                 }
 

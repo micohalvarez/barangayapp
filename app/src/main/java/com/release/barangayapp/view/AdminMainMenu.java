@@ -10,12 +10,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
 
@@ -92,7 +90,7 @@ public class AdminMainMenu extends AppCompatActivity implements NavigationView.O
                 }
                 else if (finalI == 3)
                 {
-                    Intent adminchatsupport=new Intent(AdminMainMenu.this, AdminChatSupport.class);
+                    Intent adminchatsupport=new Intent(AdminMainMenu.this, BarangayChatSupport.class);
                     startActivity(adminchatsupport);
                 }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ChatSupport"
+    tools:context=".view.ResidentChatSupport"
     android:id="@+id/chatdrawer_layout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
@@ -34,16 +34,16 @@
             app:navigationIcon="@drawable/trymenu"/>
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/chat_Tab"
+            android:id="@+id/residentchat_Tab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/chat_bar"/>
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/chatviewpager"
+            android:id="@+id/residentchatviewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/chat_Tab"/>
+            android:layout_below="@id/residentchat_Tab"/>
 
         <!--<androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatrecyclerView"

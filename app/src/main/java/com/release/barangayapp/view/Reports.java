@@ -18,7 +18,6 @@ import android.widget.GridLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.R;
-import com.release.barangayapp.adapter.FragmentNotificationAdapter;
 import com.release.barangayapp.adapter.FragmentReportAdapter;
 import com.release.barangayapp.service.AuthService;
 
@@ -125,7 +124,7 @@ public class Reports extends AppCompatActivity implements NavigationView.OnNavig
                 }
                 else if (finalI == 3)
                 {
-                    Intent adminchatsupport=new Intent(Reports.this, AdminChatSupport.class);
+                    Intent adminchatsupport=new Intent(Reports.this, BarangayChatSupport.class);
                     startActivity(adminchatsupport);
                 }
 

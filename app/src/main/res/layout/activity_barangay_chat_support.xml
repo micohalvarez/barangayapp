@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.AdminChatSupport"
+    tools:context=".view.BarangayChatSupport"
     android:fitsSystemWindows="true"
     android:id="@+id/Admindrawer_layout"
     tools:openDrawer="start">
@@ -33,18 +33,26 @@
             android:paddingStart="20dp"
             android:theme="?attr/actionBarTheme"
             app:navigationIcon="@drawable/trymenu"/>
-        
-        <!--<androidx.viewpager.widget.ViewPager
-            android:layout_width=""
-            android:layout_height=""-->
 
-        <androidx.recyclerview.widget.RecyclerView
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/barangaychat_Tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chat_bar"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/barangaychatviewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/barangaychat_Tab"/>
+
+        <!--<androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatrecyclerView"
             android:layout_marginStart="3dp"
             android:layout_marginTop="3dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            />-->
 
     </LinearLayout>
 
