@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#81ecec"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,12 +48,15 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
+            android:paddingStart="10dp"
+            android:paddingEnd="@drawable/ic_send"
             android:layout_marginStart="4dp"
-            android:layout_marginRight="-4dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="9dp"
-            android:layout_toLeftOf="@+id/btn_send"
-            android:background="@android:color/transparent"
-            android:hint="Type Message" />
+            android:layout_toStartOf="@+id/btn_send"
+            android:background="@drawable/box2"
+            android:hint="Type Message"
+            tools:inputType="textMultiLine"/>
 
         <ImageButton
             android:id="@+id/btn_send"
