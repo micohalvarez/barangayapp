@@ -80,7 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="TextView"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="#2f3640"/>
     </LinearLayout>
 
     <LinearLayout
@@ -114,7 +115,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="TextView"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="#2f3640"/>
     </LinearLayout>
 
     <LinearLayout
@@ -147,7 +149,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:text="TextView"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="#2f3640"/>
 
 
     </LinearLayout>

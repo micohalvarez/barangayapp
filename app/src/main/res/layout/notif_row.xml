@@ -30,7 +30,9 @@
             android:layout_centerVertical="true"
             android:padding="16dp"
             android:text="Item X"
-            android:textColor="@color/white"/>
+            android:fontFamily="@font/helvetica_bold"
+            android:textColor="#2f3640"
+            />
     </RelativeLayout>
 
 </LinearLayout>

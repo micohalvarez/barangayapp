@@ -89,20 +89,20 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
                 if(finalI == 0)
                 {
 
-                generateEmergency(1,"Help! " + curUser.getFullName() + " has a fire emergency at " + curUser.getAddress() + curUser.getPhonenumber() + ". Please send help!");
+                generateEmergency(1,"Help! " + curUser.getFullName() + " has a fire emergency at " + curUser.getAddress() + ". Please send help!");
 
                 }
                 else if (finalI == 1)
                 {
-                    generateEmergency(2,"Help! " + curUser.getFullName() + " has a medical emergency at " +  curUser.getAddress() + curUser.getPhonenumber() + ". Please send help!");
+                    generateEmergency(2,"Help! " + curUser.getFullName() + " has a medical emergency at " +  curUser.getAddress() + ". Please send help!");
                 }
                 else if (finalI == 2)
                 {
-                    generateEmergency(3,"Help! " + curUser.getFullName() + " has a crime emergency at " +  curUser.getAddress() + curUser.getPhonenumber() + ". Please send help!");
+                    generateEmergency(3,"Help! " + curUser.getFullName() + " has a crime emergency at " +  curUser.getAddress() + ". Please send help!");
                 }
                 else if (finalI == 3)
                 {
-                    generateEmergency(4,"Help! " + curUser.getFullName() + " has an accident emergency at " +  curUser.getAddress() + curUser.getPhonenumber() + ". Please send help!");
+                    generateEmergency(4,"Help! " + curUser.getFullName() + " has an accident emergency at " +  curUser.getAddress() + ". Please send help!");
                 }
 
             });
