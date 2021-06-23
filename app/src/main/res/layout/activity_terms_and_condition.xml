@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    android:padding="16dp"
+    tools:context=".view.Terms_and_condition">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81ecec"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Terms and Condition"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#2f3640"
+                android:text="BEA is an application that can perform simple task as sending emergency notification, announcement viewer, symptom survey and chat feature. BEA application software is developed and owned by ELproyekto, computer engineering students of Asia Pacific College." />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="1.	This is a legal agreement" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Please take the time to read these Terms carefully. They form a legal agreement between you and the BEA application. If you do not agree to these Terms, you may not use the software application. These Terms are accepted by using the BEA application." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="2.	The BEA symptom survey form does not give content." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="BEA does not investigate, monitor, or confirm the completeness or accuracy of the information supplied by all registered end users or parties providing the Content. You acknowledge and accept that BEA is not liable or responsible for the Content." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="3.	You must follow the law and respect other people's rights." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="You must not use the BEA application to breach or infringe on the rights of others, including other users' rights and BEA's application rights. When using the BEA application, you must not break any laws or regulations, or attempt to disrupt or interfere with the application's security or performance." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="4. Your privacy is important to us." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="BEA is committed to protecting and securing the information of its users. BEA will handle any and all such data in accordance with its privacy statement. The Privacy Statement only applies to the data gathered by BEA through its symptom survey form." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="5. BEA may modify these Terms." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="BEA reserves the right to change these Terms, including the Privacy Policy Statement, at any moment without notice. Because you are bound by the most recent version of these Terms, it is your obligation to stay informed of any modifications." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="6.	BEA gathers and analyses information for objectively justified reasons." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="BEA will only use your data for the purposes described in this Privacy Statement and that are objectively justified by the BEA application. We process this information in accordance with your right to privacy, including the requirement to protect your personal integrity and privacy, as well as to guarantee that your personal information is appropriately protected against loss, misuse, and unintended modification. BEA gathers information to manage your content/apps access and submission permissions, provide survey status, updates, and access control, track activity with content applications provided through our service, and comply with legal requirements" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="7.	BEA and its developer reserve the right to disable access to the Application." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="ELproyekto, as BEA developer and owner, reserves the right to modify or terminate delivering the application, or any portion of it, at any time and without warning in its sole discretion. It may, at any time and without warning, terminate or suspend your access to the Application. You acknowledge that neither ELproyekto nor BEA will be responsible or accountable to you or any third person if the Application is modified, terminated, or suspended." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="8.	The Application is provided without warranties or assurances of any kind." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="THE APPLICATION IS PROVIDED 'AS IS' WITHOUT ANY WARRANTY. BEA AND ITS DEVELOPER DISCLAIMS ALL WARRANTIES IN CONNECTION WITH THE SERVICE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. BEA MAKES NO REPRESENTATION OR WARRANTY THAT THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SERVICE OR THE SERVERS THAT MAKE IT AVAILABLE WILL BE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. BEA DOES NOT WARRANT OR REPRESENT THAT THE SERVICE OR THE MATERIALS MADE AVAILABLE ON OR ACCESSIBLE THROUGH THE APPLICATION (INCLUDING CONTENT) WILL BE CORRECT, ACCURATE, TIMELY, OR OTHERWISE RELIABLE IN ANY WAY. YOUR SOLE AND EXCLUSIVE REMEDY IF YOU ARE DISSATISFIED WITH ANY PART OF THE APPLICATION OR ANY OF THESE TERMS OF USE IS TO STOP USING THE APPLICATION" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="9. BEA accepts no liability for any damages you may suffer as a result of using the Services." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="This Agreement will be governed by Philippine law, without regard to any principles of conflict of laws that could require the application of laws from another nation. If any provision of this Agreement is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, the remaining terms of this Agreement will not be affected or impaired" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#2f3640"
+                android:textSize="20dp"
+                android:text="10.	Notice to the owners of the rights." />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="If you believe that the Content available through the application infringes on your rights, please send an email to ELproyekto BEA@gmail.com with the following information: (a) identification of the infringed rights/works; (b) identification of the infringing Content (including URL(s) for the Content); (c) your name, address, phone number, and e-mail address; (d) a statement that you have a good faith conviction that the rights holder, its agent, or the law do not authorize use of the Content in the manner complained of; (e) a statement under penalty of perjury that the information in the notice is correct and that you are authorized to act on behalf of the owner of an allegedly infringed exclusive right." />
+        </RelativeLayout>
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/close"
+            android:text="ClOSE" />
+
+    </LinearLayout>
+
+
+</ScrollView>

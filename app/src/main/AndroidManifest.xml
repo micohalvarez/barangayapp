@@ -23,8 +23,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".view.ResidentsChatUsersMessage"></activity>
-        <activity android:name=".view.BarangayProfile"></activity>
+        <activity android:name=".view.Terms_and_condition"></activity>
+        <activity android:name=".view.ResidentsChatUsersMessage" />
+        <activity android:name=".view.BarangayProfile" />
         <activity android:name=".view.ResidentProfile" />
         <activity android:name=".view.CovidResidentProfile" />
         <activity android:name=".view.BarangayCreateUpdates" />
