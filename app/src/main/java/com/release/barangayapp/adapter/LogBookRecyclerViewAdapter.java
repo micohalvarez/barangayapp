@@ -19,7 +19,8 @@ import java.util.List;
 
 public class LogBookRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         implements View.OnClickListener, Filterable {
-
+=
+    
 private final int VIEW_TYPE_ITEM = 0;
 private final int VIEW_TYPE_LOADING = 1;
 public List<LogBook> mItemList;
