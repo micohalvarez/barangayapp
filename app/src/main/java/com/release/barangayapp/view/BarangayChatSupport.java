@@ -17,7 +17,6 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.release.barangayapp.R;
 import com.release.barangayapp.adapter.FragmentBarangayChatAdapter;
-import com.release.barangayapp.adapter.FragmentResidentChatAdapter;
 import com.release.barangayapp.service.AuthService;
 
 public class BarangayChatSupport extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{

@@ -241,16 +241,18 @@ public class Logbook extends AppCompatActivity implements NavigationView.OnNavig
     }
 
     private void setLogBookDetails(View mView,int position){
-        TextView fullName = mView.findViewById(R.id.CovidUser_name);
+        TextView date = mView.findViewById(R.id.date);
+        TextView name = mView.findViewById(R.id.CovidUser_name);
+        TextView address = mView.findViewById(R.id.address);
         TextView phone = mView.findViewById(R.id.mobilenumber);
+        TextView email = mView.findViewById(R.id.email);
 
 
-        fullName.setText(logbookholder.get(position).getFullName());
+        date.setText(logbookholder.get(position).getSurveyDate());
+        address.setText(logbookholder.get(position).getAddress());
+        name.setText(logbookholder.get(position).getFullName());
         phone.setText(logbookholder.get(position).getPhonenumber());
-
-
-
-
+        email.setText(logbookholder.get(position).getEmail());
 
     }
 

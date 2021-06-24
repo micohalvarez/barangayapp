@@ -88,17 +88,11 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
 
                 if(finalI == 0)
                 {
-
-<<<<<<< Updated upstream
                 generateEmergency(1,"Help! " + curUser.getFullName() + " has a fire emergency at " + curUser.getAddress() + ". Please send help!");
-=======
-                generateEmergency(1,"Help! " + curUser.getFullName() + " has a fire emergency at " + curUser.getAddress() + ". Having a Phone Number " + curUser.getPhonenumber() + ". Please send help!");
->>>>>>> Stashed changes
-
                 }
                 else if (finalI == 1)
                 {
-<<<<<<< Updated upstream
+
                     generateEmergency(2,"Help! " + curUser.getFullName() + " has a medical emergency at " +  curUser.getAddress() + ". Please send help!");
                 }
                 else if (finalI == 2)
@@ -108,17 +102,6 @@ public class EmergencyActivity extends AppCompatActivity implements NavigationVi
                 else if (finalI == 3)
                 {
                     generateEmergency(4,"Help! " + curUser.getFullName() + " has an accident emergency at " +  curUser.getAddress() + ". Please send help!");
-=======
-                    generateEmergency(2,"Help! " + curUser.getFullName() + " has a medical emergency at " +  curUser.getAddress() + ". Having a Phone Number "+ curUser.getPhonenumber() + ". Please send help!");
-                }
-                else if (finalI == 2)
-                {
-                    generateEmergency(3,"Help! " + curUser.getFullName() + " has a crime emergency at " +  curUser.getAddress() + ". Having a Phone Number " + curUser.getPhonenumber() + ". Please send help!");
-                }
-                else if (finalI == 3)
-                {
-                    generateEmergency(4,"Help! " + curUser.getFullName() + " has an accident emergency at " +  curUser.getAddress() + ". Having a Phone Number "  + curUser.getPhonenumber() + ". Please send help!");
->>>>>>> Stashed changes
                 }
 
             });
