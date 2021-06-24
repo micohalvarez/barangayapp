@@ -111,7 +111,7 @@ public class BarangayCreateUpdates extends AppCompatActivity implements Navigati
                 else
                 {
                     createUpdate(updateAuthService.getAuthUser().getUid());
-                    Toast.makeText(BarangayCreateUpdates.this, "Announcement Created Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BarangayCreateUpdates.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),Reports.class));
                 }
             }

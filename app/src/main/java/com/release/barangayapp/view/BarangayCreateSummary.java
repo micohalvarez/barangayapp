@@ -116,7 +116,7 @@ public class BarangayCreateSummary extends AppCompatActivity implements Navigati
                 else
                 {
                     createSummary(summaryAuthService.getAuthUser().getUid());
-                    Toast.makeText(BarangayCreateSummary.this, "Announcement Created Successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(BarangayCreateSummary.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),Reports.class));
                 }
             }
