@@ -1,14 +1,14 @@
 package com.release.barangayapp.service;
 
-import androidx.annotation.NonNull;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.release.barangayapp.callback.EmergencyCalllback;
+import com.release.barangayapp.callback.LogBookCallback;
+import com.release.barangayapp.model.Emergency;
 import com.release.barangayapp.model.LogBook;
 
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class LogBookService {
 
     private DatabaseReference logbookRef;
     private FirebaseDatabase firebaseDatabase;
-    private String key;
+    private String finalKey;
 
     public LogBookService() {
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -27,25 +27,32 @@ public class LogBookService {
     }
 
     // function for getting the data from logbook tree
-    public ArrayList<LogBook> getData() {
+    public ArrayList<LogBook> getData(LogBookCallback myCallBack, int limit){
 
         ArrayList<LogBook> logBookList = new ArrayList<>();
 
-        logbookRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        logbookRef.limitToFirst(limit).orderByKey().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Map<String, Object> td = (HashMap<String, Object>) dataSnapshot.getValue();
-
-                for (DataSnapshot dsp : dataSnapshot.getChildren()) {
-                    logBookList.add(dsp.getValue(LogBook.class));
+                LogBook logBook;
+                Map<String, Object> td = (HashMap<String,Object>) dataSnapshot.getValue();
+                if(dataSnapshot.exists()) {
+                    for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+                        logBook = dsp.getValue(LogBook.class);
+                        logBook.setKey(dsp.getKey());
+                        logBookList.add(logBook);
+                    }
+                    finalKey = logBookList.get(logBookList.size() - 1).getKey();
+                    myCallBack.logBookCallback(logBookList);
                 }
-
+                else
+                    myCallBack.logBookCallback(null);
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
 
         return logBookList;
     }
@@ -84,5 +91,36 @@ public class LogBookService {
     public void deleteData() {
 
     }
+    public ArrayList<LogBook> loadMoreData(LogBookCallback myCallBack, int limit, ArrayList<LogBook> logBookArrayList){
+        logbookRef.limitToFirst(limit).orderByKey().startAt(finalKey).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                LogBook logBook;
+                if(dataSnapshot.exists()) {
+                    for (DataSnapshot dsp : dataSnapshot.getChildren()) {
+
+                        if(!dsp.getKey().equals(finalKey)) {
+                            logBook = dsp.getValue(LogBook.class);
+                            logBook.setKey(dsp.getKey());
+                            logBookArrayList.add(logBook);
+                        }
+                    }
+                    /*Collections.reverse(announcementList);*/
+                    finalKey = logBookArrayList.get(logBookArrayList.size() - 1).getKey();
+                    myCallBack.logBookCallback(logBookArrayList);
+                }
+                else
+                    myCallBack.logBookCallback(null);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+
+        return logBookArrayList;
+    }
+
 
 }

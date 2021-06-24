@@ -1,7 +1,6 @@
 package com.release.barangayapp.model;
 
 public class Emergency {
-
     private String title;
     private String message;
     private String userId;
@@ -68,3 +67,4 @@ public class Emergency {
 
     public void setPhonenumber(String phonenumber) { this.Phonenumber = phonenumber; }
 }
+

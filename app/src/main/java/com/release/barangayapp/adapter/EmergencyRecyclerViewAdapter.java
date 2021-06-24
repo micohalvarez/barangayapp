@@ -1,6 +1,5 @@
 package com.release.barangayapp.adapter;
 
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,7 +85,7 @@ public class EmergencyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
 
 
     private ImageView imageView;
-    private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView tvItem;
 
@@ -109,7 +108,7 @@ public class EmergencyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         }
     }
 
-    private class LoadingViewHolder extends RecyclerView.ViewHolder {
+    class LoadingViewHolder extends RecyclerView.ViewHolder {
 
         ProgressBar progressBar;
 
