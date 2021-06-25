@@ -5,12 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.release.barangayapp.R;
 
-public class ResidentsChatUsersMessage extends AppCompatActivity {
-
+public class BarangayChatUsersMessage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chat_activity_residents_chat_users_message);
+        setContentView(R.layout.chat_activity_barangay_chat_users_message);
     }
 }

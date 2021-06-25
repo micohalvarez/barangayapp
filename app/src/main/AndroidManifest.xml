@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".view.Terms_and_condition"></activity>
+        <activity android:name=".view.BarangayChatUsersMessage"></activity>
+        <activity android:name=".view.Terms_and_condition" />
         <activity android:name=".view.ResidentsChatUsersMessage" />
         <activity android:name=".view.BarangayProfile" />
         <activity android:name=".view.ResidentProfile" />
