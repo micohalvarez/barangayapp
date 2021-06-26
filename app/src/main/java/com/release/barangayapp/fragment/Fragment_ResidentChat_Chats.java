@@ -86,7 +86,7 @@ public class Fragment_ResidentChat_Chats extends Fragment  implements UsersAdapt
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment__barangay_chat__chats, container, false);
+        View view = inflater.inflate(R.layout.chat_fragment__barangay_chat__chats, container, false);
 
         authService = new AuthService();
         authService.getUserDetails(value ->  {
