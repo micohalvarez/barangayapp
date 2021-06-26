@@ -33,7 +33,7 @@ public class ResidentChatSupport extends AppCompatActivity implements Navigation
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resident_chat_support);
+        setContentView(R.layout.chat_activity_resident_chat_support);
 
         authService = new AuthService();
 

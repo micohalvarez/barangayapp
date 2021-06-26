@@ -36,11 +36,11 @@ public LogBookRecyclerViewAdapter(List<LogBook> itemList, OnLogBookListener onLo
 @Override
 public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == VIEW_TYPE_ITEM) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notif_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.logbook_row, parent, false);
         view.setOnClickListener(this);
         return new ItemViewHolder(view, this.onLogBookListener);
         } else {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notif_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.logbook_row, parent, false);
         view.setOnClickListener(this);
         return new LoadingViewHolder(view);
         }
@@ -95,7 +95,7 @@ private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
         this.onLogBookListener = onLogBookListener;
 
-        tvItem = itemView.findViewById(R.id.notifItem);
+        tvItem = itemView.findViewById(R.id.Logbook_username);
 
         itemView.setOnClickListener(this);
 

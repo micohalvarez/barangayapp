@@ -67,7 +67,7 @@ public class Fragment_ResidentChat_Users extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment__resident_chat__users, container, false);
+        View view = inflater.inflate(R.layout.chat_fragment__resident_chat__users, container, false);
 
         recyclerView = view.findViewById(R.id.residentchatmsg_recyclerview);
         recyclerView.setHasFixedSize(true);

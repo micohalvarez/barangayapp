@@ -33,7 +33,7 @@ public class BarangayChatSupportActivity extends AppCompatActivity implements Na
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_barangay_chat_support);
+        setContentView(R.layout.chat_activity_barangay_chat_support);
 
 
 
