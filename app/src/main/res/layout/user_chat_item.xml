@@ -35,7 +35,8 @@
             android:layout_centerVertical="true"
             android:padding="16dp"
             android:hint="User"
-            android:textColor="@color/white"/>
+            android:textColor="#2f3640"
+            />
     </RelativeLayout>
 
 </LinearLayout>

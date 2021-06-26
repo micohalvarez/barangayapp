@@ -7,22 +7,32 @@
     android:layout_height="wrap_content"
     >
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/profile_image"
-        app:srcCompat="@drawable/users"/>
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:background="@drawable/sender_icon_bg"
+        android:id="@+id/sender_layout">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/sender_image"
+            app:srcCompat="@drawable/profile"/>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/profile_image"
-        android:layout_marginLeft="5dp"
-        android:padding="8dp"
-        android:text="Sample Message "
+        android:background="@drawable/backgroundleft"
+        android:text="Sample message"
+        android:layout_toRightOf="@id/sender_layout"
         android:id="@+id/show_message"
         android:textSize="18sp"
-        android:background="@drawable/backgroundleft"/>
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        />
 
 
 

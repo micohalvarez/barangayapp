@@ -28,7 +28,7 @@
             android:id="@+id/chat_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#e74c3c"
+            android:background="#00b894"
             android:minHeight="?attr/actionBarSize"
             android:paddingStart="20dp"
             android:theme="?attr/actionBarTheme"
