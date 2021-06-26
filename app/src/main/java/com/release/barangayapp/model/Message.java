@@ -2,10 +2,10 @@ package com.release.barangayapp.model;
 
 public class Message {
 
-    String message;
-    String sender;
-    String receiver;
-
+    private String message;
+    private String sender;
+    private String receiver;
+    private String key;
     public String getMessage() {
         return message;
     }
@@ -28,5 +28,13 @@ public class Message {
 
     public void setReceiver(String receiver) {
         this.receiver = receiver;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

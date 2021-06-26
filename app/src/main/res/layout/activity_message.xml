@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MessageActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bar_layout">
+  <androidx.appcompat.widget.Toolbar
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:id="@+id/message_toolbar"
+      >
+
+      <RelativeLayout
+          android:layout_width="50dp"
+          android:layout_height="50dp"
+          android:padding="5dp">
+          <ImageView
+              android:id="@+id/message_icon"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_centerInParent="true"
+              app:srcCompat="@drawable/profile"
+              />
+      </RelativeLayout>
+          <TextView
+              android:id="@+id/username"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/helvetica_bold"
+              android:text="Item X"
+              android:layout_marginLeft="25dp"
+              android:layout_marginStart="25dp"
+              android:textColor="#fff"
+              android:textSize="16sp" />
+
+
+
+  </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chat_recycler_view"
+        android:layout_below="@+id/bar_layout"
+        android:layout_above="@id/bottom_chat"/>
+
+        <RelativeLayout
+            android:id="@+id/bottom_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/send_chat"
+                android:layout_centerVertical="true"
+                android:hint="Enter message here."
+                android:id="@+id/message_text"
+                android:background="@android:color/transparent"/>
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/chat_send_icon"
+                android:id="@+id/send_chat"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+
+
+</RelativeLayout>

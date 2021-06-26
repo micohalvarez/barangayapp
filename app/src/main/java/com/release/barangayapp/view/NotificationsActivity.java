@@ -108,12 +108,12 @@ public class NotificationsActivity extends AppCompatActivity
 
         switch (item.getItemId()) {
             case R.id.admin_home:
-                Intent home = new Intent(NotificationsActivity.this, AdminMainMenu.class);
+                Intent home = new Intent(NotificationsActivity.this, AdminMainMenuActivity.class);
                 startActivity(home);
                 finish();
                 break;
             case R.id.admin_profile:
-                Intent profile = new Intent(NotificationsActivity.this, BarangayProfile.class);
+                Intent profile = new Intent(NotificationsActivity.this, BarangayProfileActivity.class);
                 startActivity(profile);
                 finish();
                 break;

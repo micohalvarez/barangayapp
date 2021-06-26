@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.release.barangayapp.Fragment_CovidResidentSummary;
-import com.release.barangayapp.Fragment_CovidResidentUpdate;
+import com.release.barangayapp.fragment.Fragment_CovidResidentSummary;
+import com.release.barangayapp.fragment.Fragment_CovidResidentUpdate;
 
 public class FragmentCovidUserProfileAdapter extends FragmentStateAdapter {
 

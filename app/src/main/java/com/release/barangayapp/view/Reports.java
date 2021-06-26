@@ -119,12 +119,12 @@ public class Reports extends AppCompatActivity implements NavigationView.OnNavig
                 }
                 else if (finalI == 2)
                 {
-                    Intent loogbook=new Intent(Reports.this, Logbook.class);
+                    Intent loogbook=new Intent(Reports.this, LogbookActivity.class);
                     startActivity(loogbook);
                 }
                 else if (finalI == 3)
                 {
-                    Intent adminchatsupport=new Intent(Reports.this, BarangayChatSupport.class);
+                    Intent adminchatsupport=new Intent(Reports.this, BarangayChatSupportActivity.class);
                     startActivity(adminchatsupport);
                 }
 
@@ -152,12 +152,12 @@ public class Reports extends AppCompatActivity implements NavigationView.OnNavig
 
         switch (item.getItemId()){
             case R.id.admin_home:
-                Intent home = new Intent(Reports.this, AdminMainMenu.class);
+                Intent home = new Intent(Reports.this, AdminMainMenuActivity.class);
                 startActivity(home);
                 finish();
                 break;
             case R.id.admin_profile:
-                Intent profile = new Intent(Reports.this, BarangayProfile.class);
+                Intent profile = new Intent(Reports.this, BarangayProfileActivity.class);
                 startActivity(profile);
                 finish();
                 break;

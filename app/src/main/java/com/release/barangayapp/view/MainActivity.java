@@ -38,7 +38,7 @@ import com.release.barangayapp.service.NotificationService;
                     startActivity(homeIntent);
                     finish();
                 } else {
-                    Intent homeIntent = new Intent(MainActivity.this, AdminMainMenu.class);
+                    Intent homeIntent = new Intent(MainActivity.this, AdminMainMenuActivity.class);
                     startActivity(homeIntent);
                     finish();
                 }

@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.release.barangayapp.Fragment_ResidentChat_Chats;
-import com.release.barangayapp.Fragment_ResidentChat_Users;
+import com.release.barangayapp.fragment.Fragment_ResidentChat_Chats;
+import com.release.barangayapp.fragment.Fragment_ResidentChat_Users;
 
 public class FragmentResidentChatAdapter extends FragmentStateAdapter {
 

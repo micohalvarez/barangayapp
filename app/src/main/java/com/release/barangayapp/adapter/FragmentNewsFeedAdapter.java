@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.release.barangayapp.Fragment_Announcement;
+import com.release.barangayapp.fragment.Fragment_Announcement;
 
 
 public class FragmentNewsFeedAdapter extends FragmentStateAdapter {

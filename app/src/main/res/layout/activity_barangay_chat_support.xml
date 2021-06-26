@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.BarangayChatSupport"
+    tools:context=".view.BarangayChatSupportActivity"
     android:fitsSystemWindows="true"
     android:id="@+id/Admindrawer_layout"
     tools:openDrawer="start">

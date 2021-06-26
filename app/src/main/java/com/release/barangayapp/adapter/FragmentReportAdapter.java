@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.release.barangayapp.Fragment_BarangayReportSummary;
-import com.release.barangayapp.Fragment_BarangayReportUpdates;
+import com.release.barangayapp.fragment.Fragment_BarangayReportSummary;
+import com.release.barangayapp.fragment.Fragment_BarangayReportUpdates;
 
 public class FragmentReportAdapter extends FragmentStateAdapter {
 

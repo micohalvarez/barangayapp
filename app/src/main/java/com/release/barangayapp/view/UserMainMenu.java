@@ -1,18 +1,17 @@
 package com.release.barangayapp.view;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
@@ -60,8 +59,6 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         UsernavigationView.setNavigationItemSelectedListener(this);
 
-//        //For Signout in Firebase
-//        LogoutAuth.signOut();
     }
 
 
@@ -86,7 +83,7 @@ public class UserMainMenu extends AppCompatActivity implements NavigationView.On
                 }
                 else if (finalI == 2)
                 {
-                    Intent covidsymptom=new Intent(UserMainMenu.this, CovidSymptomSurvey.class);
+                    Intent covidsymptom=new Intent(UserMainMenu.this, CovidSymptomSurveyActivity.class);
                     startActivity(covidsymptom);
                 }
                 else if (finalI == 3)

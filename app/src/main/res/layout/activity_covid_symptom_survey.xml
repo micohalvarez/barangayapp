@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#dfe6e9"
-    tools:context=".view.CovidSymptomSurvey">
+    tools:context=".view.CovidSymptomSurveyActivity">
 
 
     <TextView

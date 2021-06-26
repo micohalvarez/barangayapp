@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.Logbook"
+    tools:context=".view.LogbookActivity"
     android:fitsSystemWindows="true"
     android:id="@+id/Admindrawer_layout"
     tools:openDrawer="start">

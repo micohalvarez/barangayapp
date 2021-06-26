@@ -138,7 +138,7 @@ public class Register extends AppCompatActivity {
                                 FirebaseUser user = FAuth.getCurrentUser();
                                 register(user.getUid());
                                 Toast.makeText(Register.this,"Account Created Successfully",Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),AdminMainMenu.class));
+                                startActivity(new Intent(getApplicationContext(), AdminMainMenuActivity.class));
                             }
                             else
                             {
@@ -180,6 +180,6 @@ public class Register extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(),AdminMainMenu.class));
+        startActivity(new Intent(getApplicationContext(), AdminMainMenuActivity.class));
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".Fragment_Announcement">
+    tools:context=".fragment.Fragment_Announcement">
 
     <!-- TODO: Update blank fragment layout -->
 

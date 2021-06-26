@@ -4,11 +4,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import com.google.firebase.database.ValueEventListener;
-import com.release.barangayapp.callback.EmergencyCalllback;
 import com.release.barangayapp.callback.LogBookCallback;
-import com.release.barangayapp.model.Emergency;
 import com.release.barangayapp.model.LogBook;
 
 import java.util.ArrayList;
@@ -104,6 +101,7 @@ public class LogBookService {
                             logBook.setKey(dsp.getKey());
                             logBookArrayList.add(logBook);
                         }
+                        else break;
                     }
                     /*Collections.reverse(announcementList);*/
                     finalKey = logBookArrayList.get(logBookArrayList.size() - 1).getKey();
