@@ -1,5 +1,15 @@
 package com.release.barangayapp.view;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,19 +22,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
 import com.google.android.material.navigation.NavigationView;
 import com.release.barangayapp.R;
-
 import com.release.barangayapp.adapter.LogBookRecyclerViewAdapter;
 import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.service.AuthService;
@@ -211,12 +210,12 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
 
     @Override
     public void onLogBookClick(int position) {
-        AlertDialog.Builder imageDialog = new AlertDialog.Builder(this);
+        AlertDialog.Builder imageDialog = new AlertDialog.Builder(LogbookActivity.this);
         LayoutInflater inflater = (LayoutInflater) LogbookActivity.this.getSystemService(LAYOUT_INFLATER_SERVICE);
         final AlertDialog dialog = imageDialog.create();
 
         View layout = inflater.inflate(R.layout.logbook_details,
-               this.findViewById(R.id.layout_logroot));
+               LogbookActivity.this.findViewById(R.id.layout_logroot));
 
         Button mStart = layout.findViewById(R.id.button_close);
 
@@ -231,7 +230,7 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
         });
 
         setLogBookDetails(layout,position);
-        dialog.setView(layout);
+        dialog.setView(layout); 
         dialog.show();
     }
 
