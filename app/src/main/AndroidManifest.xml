@@ -23,13 +23,10 @@
         android:roundIcon="@drawable/logo5"
         android:supportsRtl="true"
         android:theme="@style/Theme.BarangayApp">
-        <activity android:name=".view.MessageActivity"></activity>
+        <activity android:name=".view.MessageActivity" />
         <activity android:name=".view.Terms_and_condition" />
         <activity android:name=".view.BarangayProfileActivity" />
-        <activity android:name=".view.BarangayChatUsersMessage"></activity>
-        <activity android:name=".view.Terms_and_condition" />
-        <activity android:name=".view.ResidentsChatUsersMessage" />
-        <activity android:name=".view.BarangayProfile" />
+        <activity android:name=".view.BarangayChatUsersMessage" />
         <activity android:name=".view.ResidentProfile" />
         <activity android:name=".view.CovidResidentProfileActivity" />
         <activity android:name=".view.BarangayCreateUpdatesActivity" />

@@ -2,6 +2,7 @@
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +23,7 @@ import com.release.barangayapp.service.NotificationService;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        authService.getUserDetails(value -> {
+        authService.getUserDetails(value -> new Handler().postDelayed(() ->{
             if (authService.getAuthUser() == null) {
                 Intent homeIntent = new Intent(MainActivity.this, MainMenu.class);
                 startActivity(homeIntent);
@@ -43,7 +44,7 @@ import com.release.barangayapp.service.NotificationService;
                     finish();
                 }
             }
-        });
+        }, SPLASH_TIME_OUT));
 
     }
 }
