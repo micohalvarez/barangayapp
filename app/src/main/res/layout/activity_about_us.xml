@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.AboutUsActivity"
-    android:background="@drawable/background_bea"
+    android:background="#f1f2f6"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -63,10 +63,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:fontFamily="@font/helvetica"
             android:gravity="center"
+            android:text="BEA application software is developed and owned by ELproyekto, computer engineering students of Asia Pacific College."
             android:textColor="#2f3640"
-            android:text="BEA application software is developed and owned by ELproyekto, computer engineering students of Asia Pacific College." />
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -77,10 +78,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textColor="#2f3640"
+            android:fontFamily="@font/helvetica_bold"
             android:gravity="center"
-            android:text="Chistian P. Almasa" />
+            android:text="Chistian P. Almasa"
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -91,10 +93,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textColor="#2f3640"
+            android:fontFamily="@font/helvetica_bold"
             android:gravity="center"
-            android:text="Vincent Matheo Esguerra" />
+            android:text="Vincent Matheo Esguerra"
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -105,10 +108,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:fontFamily="@font/helvetica_bold"
             android:gravity="center"
+            android:text="Kean Coria"
             android:textColor="#2f3640"
-            android:text="Kean Coria" />
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -119,17 +123,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
+            android:fontFamily="@font/helvetica_bold"
             android:gravity="center"
+            android:text="Mary Emmanuelle Toding"
             android:textColor="#2f3640"
-            android:text="Mary Emmanuelle Toding" />
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <Button
+        android:id="@+id/close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/close"
+        android:background="@drawable/buttonround"
+        android:fontFamily="@font/helvetica_bold"
         android:text="ClOSE" />
 
 </LinearLayout>

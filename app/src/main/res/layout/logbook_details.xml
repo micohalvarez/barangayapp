@@ -11,15 +11,15 @@
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="128dp"
+        android:layout_height="127dp"
         android:src="@drawable/prof_user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <TextView
         android:id="@+id/CovidUser_name"
@@ -29,8 +29,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="4dp"
         android:layout_marginStart="15dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/helvetica_bold"
         android:hint="Name"
         android:text="Textview"
         android:textColor="@color/teal_200"
