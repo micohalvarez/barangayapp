@@ -199,7 +199,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
 
@@ -208,7 +207,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
 
@@ -217,7 +215,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
 
@@ -226,7 +223,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
     </LinearLayout>
@@ -262,23 +258,6 @@
             android:textColor="#2f3640"
             android:textSize="18dp" />
 
-        <TextView
-            android:id="@+id/healthchecklist1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="Text"
-            android:textColor="#2f3640"
-            android:textSize="18dp" />
-
-        <TextView
-            android:id="@+id/healthchecklist2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="Text"
-            android:textColor="#2f3640"
-            android:textSize="18dp" />
     </LinearLayout>
 
 

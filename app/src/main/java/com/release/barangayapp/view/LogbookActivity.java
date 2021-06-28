@@ -25,7 +25,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.release.barangayapp.R;
 import com.release.barangayapp.adapter.LogBookRecyclerViewAdapter;
 import com.release.barangayapp.model.LogBook;
@@ -50,6 +49,7 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
 
     private DatabaseReference logbookRef;
     private FirebaseDatabase firebaseDatabase;
+    private String fever,dryCough,soreThroat,shortBreath,fatigue,aches,runnyNose,headAche,diarrhea,h0,h1,h2;
 
 
     @Override
@@ -260,9 +260,6 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
         TextView othersymptoms3 = mView.findViewById(R.id.Othersymptoms3);
         TextView othersymptoms4 = mView.findViewById(R.id.Othersymptoms4);
         TextView health0 = mView.findViewById(R.id.healthchecklist0);
-        TextView health1 = mView.findViewById(R.id.healthchecklist1);
-        TextView health2 = mView.findViewById(R.id.healthchecklist2);
-
 
 
         symptoms0.setText(logbookholder.get(position).getSymptoms());
@@ -271,8 +268,6 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
         symptoms3.setText(logbookholder.get(position).getSymptoms3());
 
         health0.setText(logbookholder.get(position).getHealthChecklist());
-        health1.setText(logbookholder.get(position).getHealthChecklist1());
-        health2.setText(logbookholder.get(position).getHealthChecklist2());
 
         othersymptoms0.setText(logbookholder.get(position).getOtherSymptoms());
         othersymptoms1.setText(logbookholder.get(position).getOtherSymptoms1());

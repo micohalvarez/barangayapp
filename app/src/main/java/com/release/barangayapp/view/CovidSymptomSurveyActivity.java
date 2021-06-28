@@ -30,6 +30,9 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
     LogBookService logBookService;
     LogBook logBook;
     TextView surveyDateView;
+    int hc = 0,a = 0,b = 0,c = 0;
+    private String condition;
+
 
     private AuthService authService;
     private String userId;
@@ -93,20 +96,24 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
         logBookService = new LogBookService();
         logBook = new LogBook();
 
-        String cs0 = "0";
-        String cs1 = "1";
-        String cs2 = "2";
-        String cs3 = "3";
+        String cs0 = "F";
+        String cs1 = "DC";
+        String cs2 = "ST";
+        String cs3 = "SB";
 
-        String os0 = "0";
-        String os1 = "1";
-        String os2 = "2";
-        String os3 = "3";
-        String os4 = "4";
+        String os0 = "FT";
+        String os1 = "A";
+        String os2 = "RN";
+        String os3 = "HA";
+        String os4 = "D";
 
-        String hc0 = "0";
-        String hc1 = "1";
-        String hc2 = "2";
+       String h = "Low Possibility";
+       String h0 = "Possible";
+       String h1 = "High Possibility";
+       String h2 = "Warning";
+
+
+
 
              //On Clicking Submit
         covidSubmit.setOnClickListener(new View.OnClickListener() {
@@ -156,19 +163,46 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
                 }
                 if (healthCheck1.isChecked())
                 {
-                    logBook.setHealthChecklist(hc0);
+                    a=1;
                 }
                 if (healthCheck2.isChecked())
                 {
-                    logBook.setHealthChecklist1(hc1);
+                   b=1;
                 }
                 if (healthCheck3.isChecked())
                 {
-                    logBook.setHealthChecklist2(hc2);
+                    c=1;
+                }
+                hc = a+b+c;
+
+                switch (hc)
+                {
+                    case 0:
+                    {
+                        condition = h;
+                        break;
+                    }
+                    case 1:
+                    {
+                        condition = h0;
+                        break;
+                    }
+                    case 2:
+                    {
+                        condition = h1;
+                        break;
+                    }
+                    case 3:
+                    {
+                        condition = h2;
+                        break;
+                    }
+                    default:
+                    {break; }
+
                 }
 
-
-
+                logBook.setHealthChecklist(condition);
                 logBook.setFullName(curUser.getFullName());
                 logBook.setPhonenumber(curUser.getPhonenumber());
                 logBook.setAddress(curUser.getAddress());

@@ -14,8 +14,6 @@ public class LogBook {
     private String otherSymptoms3;
     private String otherSymptoms4;
     private String healthChecklist;
-    private String healthChecklist1;
-    private String healthChecklist2;
 
     private String userId;
     private String surveyDate;
@@ -99,13 +97,7 @@ public class LogBook {
         this.userId = userId;
     }
 
-    public String getHealthChecklist() {
-        return healthChecklist;
-    }
 
-    public void setHealthChecklist(String healthChecklist) {
-        this.healthChecklist = healthChecklist;
-    }
 
     public String getSymptoms1() {
         return symptoms1;
@@ -164,20 +156,16 @@ public class LogBook {
         this.otherSymptoms4 = otherSymptoms4;
     }
 
-    public String getHealthChecklist1() {
-        return healthChecklist1;
+    public String getHealthChecklist() {
+        return healthChecklist;
     }
 
-    public void setHealthChecklist1(String healthChecklist1) {
-        this.healthChecklist1 = healthChecklist1;
+    public void setHealthChecklist(String healthChecklist) {
+        this.healthChecklist = healthChecklist;
     }
 
-    public String getHealthChecklist2() {
-        return healthChecklist2;
-    }
 
-    public void setHealthChecklist2(String healthChecklist2) {
-        this.healthChecklist2 = healthChecklist2;
-    }
+
+
 
 }
