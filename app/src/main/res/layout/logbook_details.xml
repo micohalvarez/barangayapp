@@ -9,26 +9,6 @@
     android:background="@drawable/box1">
 
 
-    <TextView
-        android:id="@+id/CovidUser_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="4dp"
-        android:hint="Name"
-        android:text="Textview"
-        android:textColor="@color/teal_200"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView15"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
-
     <ImageView
         android:id="@+id/imageView15"
         android:layout_width="100dp"
@@ -39,7 +19,28 @@
         app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
+        app:layout_constraintVertical_bias="0.09" />
+
+    <TextView
+        android:id="@+id/CovidUser_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="15dp"
+        android:hint="Name"
+        android:text="Textview"
+        android:textColor="@color/teal_200"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
 
     <LinearLayout
         android:id="@+id/fnLayout"
@@ -58,7 +59,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:text="Date:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -86,12 +87,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fnLayout"
-        app:layout_constraintVertical_bias="0.091">
+        app:layout_constraintVertical_bias="0.061">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:text="Address:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -118,12 +119,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.076">
+        app:layout_constraintVertical_bias="0.093">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:text="E-mail:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -155,7 +156,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:text="Mobile Number:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -183,12 +184,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.06">
+        app:layout_constraintVertical_bias="0.075">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:text="Symptoms:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -197,7 +198,7 @@
             android:id="@+id/symptoms0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="5dp"
             android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
@@ -206,26 +207,28 @@
             android:id="@+id/symptoms1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:textSize="18dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
+
         <TextView
             android:id="@+id/symptoms2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:textSize="18dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
+
         <TextView
             android:id="@+id/symptoms3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:textSize="18dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -240,12 +243,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.052">
+        app:layout_constraintVertical_bias="0.086">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:text="Health Checklist:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -264,18 +267,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:textSize="18dp"
             android:text="Text"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
+
         <TextView
             android:id="@+id/healthchecklist2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:textSize="18dp"
             android:text="Text"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/linearLayout6"
@@ -289,12 +294,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:layout_constraintVertical_bias="0.083">
+        app:layout_constraintVertical_bias="0.107">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="20dp"
             android:text="Other Symptoms:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -303,42 +308,46 @@
             android:id="@+id/Othersymptoms0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
+
         <TextView
             android:id="@+id/Othersymptoms1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
-            android:textSize="18dp"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
+
         <TextView
             android:id="@+id/Othersymptoms2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
-            android:textSize="18dp"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
+
         <TextView
             android:id="@+id/Othersymptoms3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
-            android:textSize="18dp"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
+
         <TextView
             android:id="@+id/Othersymptoms4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="7dp"
             android:text="Text"
-            android:textSize="18dp"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="18dp" />
     </LinearLayout>
 
     <Button
@@ -350,9 +359,23 @@
         android:text="CLOSE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.597" />
 
+    <Button
+        android:id="@+id/button_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/buttonround"
+        android:text="Set COONDITION"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.597" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

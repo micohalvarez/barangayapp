@@ -93,167 +93,81 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
         logBookService = new LogBookService();
         logBook = new LogBook();
 
-        
-        covidHeadAche.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidHeadAche.isChecked())
-                {
-                    logBook.getOtherSymptoms().add(3);
-                }
-                else
-                {
-                    logBook.getOtherSymptoms().remove(Integer.valueOf(3));
-                }
-            }
-        });
-        covidFatigue.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidFatigue.isChecked())
-                {
-                    logBook.getOtherSymptoms().add(0);
-                }
-                else
-                {
-                    logBook.getOtherSymptoms().remove(Integer.valueOf(0));
-                }
-            }
-        });
-        covidRunnyNose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidRunnyNose.isChecked())
-                {
-                    logBook.getOtherSymptoms().add(2);
-                }
-                else
-                {
-                    logBook.getOtherSymptoms().remove(Integer.valueOf(2));
-                }
-            }
-        });
-        covidShortBreath.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidShortBreath.isChecked())
-                {
-                    logBook.getSymptoms().add(3);
-                }
-                else
-                {
-                    logBook.getSymptoms().remove(Integer.valueOf(3));
-                }
-            }
-        });
-        covidSoreThroat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidSoreThroat.isChecked())
-                {
-                    logBook.getSymptoms().add(2);
-                }
-                else
-                {
-                    logBook.getSymptoms().remove(Integer.valueOf(2));
-                }
-            }
-        });
-        covidDryCough.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidDryCough.isChecked())
-                {
-                    logBook.getSymptoms().add(1);
-                }
-                else
-                {
-                    logBook.getSymptoms().remove(Integer.valueOf(1));
-                }
-            }
-        });
-        covidFever.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidFever.isChecked())
-                {
-                    logBook.getSymptoms().add(0);
-                }
-                else
-                {
-                    logBook.getSymptoms().remove(Integer.valueOf(0));
-                }
-            }
-        });
-        covidDiarrhea.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidDiarrhea.isChecked())
-                {
-                    logBook.getOtherSymptoms().add(4);
-                }
-                else
-                {
-                    logBook.getOtherSymptoms().remove(Integer.valueOf(4));
-                }
-            }
-        });
-        covidPain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (covidPain.isChecked())
-                {
-                    logBook.getOtherSymptoms().add(1);
-                }
-                else
-                {
-                    logBook.getOtherSymptoms().remove(Integer.valueOf(1));
-                }
-            }
-        });
-        healthCheck1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (healthCheck1.isChecked())
-                {
-                    logBook.getHealthChecklist().add(0);
-                }
-                else
-                {
-                    logBook.getHealthChecklist().remove(Integer.valueOf(0));
-                }
-            }
-        });
-        healthCheck2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (healthCheck2.isChecked())
-                {
-                    logBook.getHealthChecklist().add(1);
-                }
-                else
-                {
-                    logBook.getHealthChecklist().remove(Integer.valueOf(1));
-                }
-            }
-        });
-        healthCheck3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (healthCheck3.isChecked())
-                {
-                    logBook.getHealthChecklist().add(2);
-                }
-                else
-                {
-                    logBook.getHealthChecklist().remove(Integer.valueOf(2));
-                }
-            }
-        });
+        String cs0 = "0";
+        String cs1 = "1";
+        String cs2 = "2";
+        String cs3 = "3";
+
+        String os0 = "0";
+        String os1 = "1";
+        String os2 = "2";
+        String os3 = "3";
+        String os4 = "4";
+
+        String hc0 = "0";
+        String hc1 = "1";
+        String hc2 = "2";
+
              //On Clicking Submit
         covidSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                /*CheckBox covidHeadAche.isChecked(), covidFatigue.isChecked(), covidRunnyNose.isChecked();
+                CheckBox covidShortBreath.isChecked(), covidSoreThroat.isChecked(), covidDryCough.isChecked();
+                CheckBox covidFever.isChecked(), covidDiarrhea.isChecked(), covidPain.isChecked();
+                CheckBox healthCheck1.isChecked(), healthCheck2.isChecked(), healthCheck3.isChecked();*/
+
+                if (covidFever.isChecked())
+                {
+                    logBook.setSymptoms(cs0);
+                }
+                if (covidDryCough.isChecked())
+                {
+                    logBook.setSymptoms1(cs1);
+                }
+                if (covidSoreThroat.isChecked())
+                {
+                    logBook.setSymptoms2(cs2);
+                }
+                if (covidShortBreath.isChecked())
+                {
+                    logBook.setSymptoms3(cs3);
+                }
+                if (covidFatigue.isChecked())
+                {
+                    logBook.setOtherSymptoms(os0);
+                }
+                if (covidPain.isChecked())
+                {
+                    logBook.setOtherSymptoms1(os1);
+                }
+                if (covidRunnyNose.isChecked())
+                {
+                    logBook.setOtherSymptoms2(os2);
+                }
+                if (covidHeadAche.isChecked())
+                {
+                    logBook.setOtherSymptoms3(os3);
+                }
+                if (covidDiarrhea.isChecked())
+                {
+                    logBook.setOtherSymptoms4(os4);
+                }
+                if (healthCheck1.isChecked())
+                {
+                    logBook.setHealthChecklist(hc0);
+                }
+                if (healthCheck2.isChecked())
+                {
+                    logBook.setHealthChecklist1(hc1);
+                }
+                if (healthCheck3.isChecked())
+                {
+                    logBook.setHealthChecklist2(hc2);
+                }
+
+
 
                 logBook.setFullName(curUser.getFullName());
                 logBook.setPhonenumber(curUser.getPhonenumber());
