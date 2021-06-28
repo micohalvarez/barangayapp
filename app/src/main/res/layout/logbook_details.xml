@@ -302,6 +302,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:textColor="#2f3640"
+            android:text="Text"
             android:textSize="18dp" />
 
         <TextView
@@ -310,6 +311,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:textColor="#2f3640"
+            android:text="Text"
             android:textSize="18dp" />
 
         <TextView
@@ -318,6 +320,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:textColor="#2f3640"
+            android:text="Text"
             android:textSize="18dp" />
 
         <TextView
@@ -326,6 +329,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:textColor="#2f3640"
+            android:text="Text"
             android:textSize="18dp" />
     </LinearLayout>
 
