@@ -1,5 +1,15 @@
 package com.release.barangayapp.view;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -12,19 +22,11 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.release.barangayapp.R;
-
 import com.release.barangayapp.adapter.LogBookRecyclerViewAdapter;
 import com.release.barangayapp.model.LogBook;
 import com.release.barangayapp.service.AuthService;
@@ -44,6 +46,10 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
     private LogBookRecyclerViewAdapter Adapter;
     private ArrayList<LogBook> logbookholder;
     private LogBookService logBookService;
+    LogBook logBook;
+
+    private DatabaseReference logbookRef;
+    private FirebaseDatabase firebaseDatabase;
 
 
     @Override
@@ -72,6 +78,7 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
 
         logbookholder = new ArrayList<>();
         logBookService = new LogBookService();
+        logBook = new LogBook();
 
         initAdapter();
 
@@ -211,12 +218,12 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
 
     @Override
     public void onLogBookClick(int position) {
-        AlertDialog.Builder imageDialog = new AlertDialog.Builder(this);
+        AlertDialog.Builder imageDialog = new AlertDialog.Builder(LogbookActivity.this);
         LayoutInflater inflater = (LayoutInflater) LogbookActivity.this.getSystemService(LAYOUT_INFLATER_SERVICE);
         final AlertDialog dialog = imageDialog.create();
 
         View layout = inflater.inflate(R.layout.logbook_details,
-               this.findViewById(R.id.layout_logroot));
+               LogbookActivity.this.findViewById(R.id.layout_logroot));
 
         Button mStart = layout.findViewById(R.id.button_close);
 
@@ -231,7 +238,7 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
         });
 
         setLogBookDetails(layout,position);
-        dialog.setView(layout);
+        dialog.setView(layout); 
         dialog.show();
     }
 
@@ -241,6 +248,37 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
         TextView address = mView.findViewById(R.id.address);
         TextView phone = mView.findViewById(R.id.mobilenumber);
         TextView email = mView.findViewById(R.id.email);
+        TextView  symptoms0= mView.findViewById(R.id.symptoms0);
+        TextView  symptoms1= mView.findViewById(R.id.symptoms1);
+        TextView  symptoms2= mView.findViewById(R.id.symptoms2);
+        TextView  symptoms3= mView.findViewById(R.id.symptoms3);
+
+
+        TextView othersymptoms0 = mView.findViewById(R.id.Othersymptoms0);
+        TextView othersymptoms1 = mView.findViewById(R.id.Othersymptoms1);
+        TextView othersymptoms2 = mView.findViewById(R.id.Othersymptoms2);
+        TextView othersymptoms3 = mView.findViewById(R.id.Othersymptoms3);
+        TextView othersymptoms4 = mView.findViewById(R.id.Othersymptoms4);
+        TextView health0 = mView.findViewById(R.id.healthchecklist0);
+        TextView health1 = mView.findViewById(R.id.healthchecklist1);
+        TextView health2 = mView.findViewById(R.id.healthchecklist2);
+
+
+
+        symptoms0.setText(logbookholder.get(position).getSymptoms());
+        symptoms1.setText(logbookholder.get(position).getSymptoms1());
+        symptoms2.setText(logbookholder.get(position).getSymptoms2());
+        symptoms3.setText(logbookholder.get(position).getSymptoms3());
+
+        health0.setText(logbookholder.get(position).getHealthChecklist());
+        health1.setText(logbookholder.get(position).getHealthChecklist1());
+        health2.setText(logbookholder.get(position).getHealthChecklist2());
+
+        othersymptoms0.setText(logbookholder.get(position).getOtherSymptoms());
+        othersymptoms1.setText(logbookholder.get(position).getOtherSymptoms1());
+        othersymptoms2.setText(logbookholder.get(position).getOtherSymptoms2());
+        othersymptoms3.setText(logbookholder.get(position).getOtherSymptoms3());
+        othersymptoms4.setText(logbookholder.get(position).getOtherSymptoms4());
 
 
         date.setText(logbookholder.get(position).getSurveyDate());

@@ -86,6 +86,7 @@ public Filter getFilter() {
 private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     TextView tvItem;
+    TextView date;
 
     LogBookRecyclerViewAdapter.OnLogBookListener onLogBookListener;
 
@@ -95,6 +96,7 @@ private class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnC
         this.onLogBookListener = onLogBookListener;
 
         tvItem = itemView.findViewById(R.id.Logbook_username);
+        date = itemView.findViewById(R.id.logbook_row_date);
 
         itemView.setOnClickListener(this);
 
@@ -126,6 +128,7 @@ private class LoadingViewHolder extends RecyclerView.ViewHolder {
         LogBook item = mItemList.get(position);
 
         viewHolder.tvItem.setText(item.getFullName());
+        viewHolder.date.setText(item.getSurveyDate());
 
     }
 

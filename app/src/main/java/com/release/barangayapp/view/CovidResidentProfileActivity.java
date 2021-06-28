@@ -39,13 +39,10 @@ public class CovidResidentProfileActivity extends AppCompatActivity {
         authService.getUserDetails(value -> {
             curUser = value;
             TextView Name = findViewById(R.id.CovidUser_name);
-
-
             Name.setText(curUser.getFullName());
 
 
         });
-
 
 
         button_update= findViewById(R.id.Covid_updatebutton);
