@@ -19,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.049" />
+
 
     <TextView
         android:id="@+id/CovidUser_name"
@@ -38,11 +39,10 @@
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toEndOf="@+id/imageView15"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
-
+        app:layout_constraintVertical_bias="0.11" />
 
     <LinearLayout
         android:id="@+id/fnLayout"
@@ -56,12 +56,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:layout_constraintVertical_bias="0.094">
+        app:layout_constraintVertical_bias="0.033">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Date:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -71,9 +72,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -88,12 +90,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:layout_constraintVertical_bias="0.09">
+        app:layout_constraintVertical_bias="0.035">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Other Symptoms:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -103,45 +106,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
+            android:fontFamily="@font/helvetica"
             android:text="Text"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/Othersymptoms1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
+            android:fontFamily="@font/helvetica"
             android:text="Text"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/Othersymptoms2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
+            android:fontFamily="@font/helvetica"
             android:text="Text"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/Othersymptoms3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
+            android:fontFamily="@font/helvetica"
             android:text="Text"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/Othersymptoms4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
+            android:fontFamily="@font/helvetica"
             android:text="Text"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -156,12 +164,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:layout_constraintVertical_bias="0.28">
+        app:layout_constraintVertical_bias="0.217">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Condition:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -171,9 +180,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:fontFamily="@font/helvetica"
             android:text="Text"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
@@ -189,12 +199,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fnLayout"
-        app:layout_constraintVertical_bias="0.04">
+        app:layout_constraintVertical_bias="0.022">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Address:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -204,10 +215,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/linearLayout5"
@@ -221,12 +234,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.075">
+        app:layout_constraintVertical_bias="0.038">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Health Checklist:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -236,9 +250,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:fontFamily="@font/helvetica"
             android:text="Text"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
@@ -254,12 +269,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.093">
+        app:layout_constraintVertical_bias="0.033">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="E-mail:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -269,9 +285,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="15dp"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -286,12 +303,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.068">
+        app:layout_constraintVertical_bias="0.03">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Symptoms:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -341,12 +359,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fnLayout2"
-        app:layout_constraintVertical_bias="0.058">
+        app:layout_constraintVertical_bias="0.034">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Mobile Number:"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -356,11 +375,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
             android:textColor="#2f3640"
-            android:textSize="18dp" />
+            android:textSize="15dp" />
     </LinearLayout>
-
 
     <Button
         android:id="@+id/button_close"
@@ -374,7 +393,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.741" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
