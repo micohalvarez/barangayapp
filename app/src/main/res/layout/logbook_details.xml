@@ -194,13 +194,38 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/symptoms"
+            android:id="@+id/symptoms0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="TextView"
+            android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/symptoms1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="18dp"
+            android:text="Text"
+            android:textColor="#2f3640"/>
+        <TextView
+            android:id="@+id/symptoms2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="18dp"
+            android:text="Text"
+            android:textColor="#2f3640"/>
+        <TextView
+            android:id="@+id/symptoms3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="18dp"
+            android:text="Text"
+            android:textColor="#2f3640"/>
     </LinearLayout>
 
     <LinearLayout
@@ -226,13 +251,30 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/healthchecklist"
+            android:id="@+id/healthchecklist0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:text="TextView"
+            android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/healthchecklist1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="18dp"
+            android:text="Text"
+            android:textColor="#2f3640"/>
+        <TextView
+            android:id="@+id/healthchecklist2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="18dp"
+            android:text="Text"
+            android:textColor="#2f3640"/>
     </LinearLayout>
 
     <LinearLayout
@@ -253,18 +295,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
-            android:text="Condition:"
+            android:text="Other Symptoms:"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/condition"
+            android:id="@+id/Othersymptoms0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:text="TextView"
+            android:layout_marginStart="5dp"
+            android:text="Text"
             android:textColor="#2f3640"
             android:textSize="18dp" />
+        <TextView
+            android:id="@+id/Othersymptoms1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Text"
+            android:textSize="18dp"
+            android:textColor="#2f3640"/>
+        <TextView
+            android:id="@+id/Othersymptoms2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Text"
+            android:textSize="18dp"
+            android:textColor="#2f3640"/>
+        <TextView
+            android:id="@+id/Othersymptoms3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Text"
+            android:textSize="18dp"
+            android:textColor="#2f3640"/>
+        <TextView
+            android:id="@+id/Othersymptoms4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Text"
+            android:textSize="18dp"
+            android:textColor="#2f3640"/>
     </LinearLayout>
 
     <Button
