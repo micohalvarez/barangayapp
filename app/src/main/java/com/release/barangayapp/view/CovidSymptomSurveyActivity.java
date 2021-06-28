@@ -31,6 +31,7 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
     LogBook logBook;
     TextView surveyDateView;
     int hc = 0,a = 0,b = 0,c = 0;
+    int condi=0, ch1=0, ch2=0, ch3=0, ch4=0, ch5=0, ch6=0, ch7=0, ch8=0, ch9=0, ch10=0, ch11=0, ch12=0;
     private String condition;
 
 
@@ -113,6 +114,11 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
        String h2 = "Warning";
 
 
+        String c0 = "GOOD CONDITION";
+        String c1 = "MILD CONDITION";
+        String c2 = "SEVERE CONDITION";
+
+
 
 
              //On Clicking Submit
@@ -125,53 +131,68 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
                 CheckBox covidFever.isChecked(), covidDiarrhea.isChecked(), covidPain.isChecked();
                 CheckBox healthCheck1.isChecked(), healthCheck2.isChecked(), healthCheck3.isChecked();*/
 
+
+
+
                 if (covidFever.isChecked())
                 {
                     logBook.setSymptoms(cs0);
+                    ch1=1;
                 }
                 if (covidDryCough.isChecked())
                 {
                     logBook.setSymptoms1(cs1);
+                    ch2=1;
                 }
                 if (covidSoreThroat.isChecked())
                 {
                     logBook.setSymptoms2(cs2);
+                    ch3=1;
                 }
                 if (covidShortBreath.isChecked())
                 {
                     logBook.setSymptoms3(cs3);
+                    ch4=1;
                 }
                 if (covidFatigue.isChecked())
                 {
                     logBook.setOtherSymptoms(os0);
+                    ch5=1;
                 }
                 if (covidPain.isChecked())
                 {
                     logBook.setOtherSymptoms1(os1);
+                    ch6=1;
                 }
                 if (covidRunnyNose.isChecked())
                 {
                     logBook.setOtherSymptoms2(os2);
+                    ch7=1;
                 }
                 if (covidHeadAche.isChecked())
                 {
                     logBook.setOtherSymptoms3(os3);
+                    ch8=1;
                 }
                 if (covidDiarrhea.isChecked())
                 {
                     logBook.setOtherSymptoms4(os4);
+                    ch9=1;
                 }
                 if (healthCheck1.isChecked())
                 {
                     a=1;
+                    ch10=1;
                 }
                 if (healthCheck2.isChecked())
                 {
                    b=1;
+                    ch11=1;
                 }
                 if (healthCheck3.isChecked())
                 {
                     c=1;
+                    ch12=1;
                 }
                 hc = a+b+c;
 
@@ -201,6 +222,38 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
                     {break; }
 
                 }
+
+                condi= ch1+ch2+ch3+ch4+ch5+ch6+ch7+ch8+ch9+ch10+ch11+ch12;
+                switch (condi)
+                {
+                    case 0:
+                    {
+                        logBook.setCondition(c0);
+                        break;
+                    }
+                    case 1:
+                    case 2: {
+                        logBook.setCondition(c1);
+                        break;
+                    }
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                    case 11:
+                    case 12:
+                    {
+                        logBook.setCondition(c2);
+                        break;
+                    }
+                    default:
+                    {break; }
+                }
+
 
                 logBook.setHealthChecklist(condition);
                 logBook.setFullName(curUser.getFullName());

@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.release.barangayapp.R;
 import com.release.barangayapp.service.AuthService;
-import com.release.barangayapp.service.NotificationService;
+
 
     public class MainActivity extends AppCompatActivity {
     private static int SPLASH_TIME_OUT = 4000;
     private AuthService authService;
-    private NotificationService notificationService;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
