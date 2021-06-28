@@ -260,6 +260,7 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
         TextView othersymptoms3 = mView.findViewById(R.id.Othersymptoms3);
         TextView othersymptoms4 = mView.findViewById(R.id.Othersymptoms4);
         TextView health0 = mView.findViewById(R.id.healthchecklist0);
+        TextView condition = mView.findViewById(R.id.condition);
 
 
         symptoms0.setText(logbookholder.get(position).getSymptoms());
@@ -268,6 +269,7 @@ public class LogbookActivity extends AppCompatActivity implements NavigationView
         symptoms3.setText(logbookholder.get(position).getSymptoms3());
 
         health0.setText(logbookholder.get(position).getHealthChecklist());
+        condition.setText(logbookholder.get(position).getCondition());
 
         othersymptoms0.setText(logbookholder.get(position).getOtherSymptoms());
         othersymptoms1.setText(logbookholder.get(position).getOtherSymptoms1());
