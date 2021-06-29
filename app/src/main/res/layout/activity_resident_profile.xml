@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.ResidentProfile"
-    android:background="@drawable/background_bea">
+    android:background="@drawable/bg_about">
 
     <ImageView
         android:id="@+id/imageView12"
@@ -16,21 +16,21 @@
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049"
+        app:layout_constraintVertical_bias="0.09"
         app:srcCompat="@drawable/logo5" />
+
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="188dp"
-        android:layout_height="147dp"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
+        app:layout_constraintVertical_bias="0.09"
         app:srcCompat="@drawable/bea_name" />
-
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -50,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Name:"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -59,11 +60,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/helvetica_bold"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
-            android:textSize="25dp"
             android:textColor="#2f3640"
-            />
+            android:textSize="25dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -83,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Mobile Number:"
             android:textSize="22dp"
             android:textStyle="bold" />
@@ -92,10 +93,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/helvetica_bold"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
-            android:textSize="22dp"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="22dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -115,6 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Email:"
             android:textSize="22dp"
             android:textStyle="bold" />
@@ -124,10 +126,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/helvetica_bold"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
-            android:textSize="22dp"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="22dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -147,6 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
+            android:fontFamily="@font/helvetica_bold"
             android:text="Address:"
             android:textSize="22dp"
             android:textStyle="bold" />
@@ -156,18 +159,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
-            android:fontFamily="@font/helvetica_bold"
+            android:fontFamily="@font/helvetica"
             android:text="TextView"
-            android:textSize="22dp"
-            android:textColor="#2f3640"/>
+            android:textColor="#2f3640"
+            android:textSize="22dp" />
     </LinearLayout>
 
     <Button
         android:id="@+id/Resident_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:background="@drawable/buttonround"
-        android:text="OK"
+        android:text="BACK"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

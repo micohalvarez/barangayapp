@@ -283,7 +283,7 @@
         <TextView
             android:id="@+id/email"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:fontFamily="@font/helvetica"
             android:text="TextView"
@@ -319,36 +319,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:textColor="#2f3640"
             android:text="Text"
-            android:textSize="18dp" />
+            android:textColor="#2f3640"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/symptoms1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:textColor="#2f3640"
             android:text="Text"
-            android:textSize="18dp" />
+            android:textColor="#2f3640"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/symptoms2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:textColor="#2f3640"
             android:text="Text"
-            android:textSize="18dp" />
+            android:textColor="#2f3640"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/symptoms3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:textColor="#2f3640"
             android:text="Text"
-            android:textSize="18dp" />
+            android:textColor="#2f3640"
+            android:textSize="15dp" />
     </LinearLayout>
 
     <LinearLayout
