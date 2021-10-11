@@ -42,7 +42,7 @@
                 android:layout_marginRight="0dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
-                android:background="@color/teal_700"
+                android:background="#d63031"
                 android:minHeight="?attr/actionBarSize"
                 android:paddingLeft="20dp"
                 android:theme="?attr/actionBarTheme"

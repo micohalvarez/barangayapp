@@ -30,7 +30,7 @@
             android:theme="?attr/actionBarTheme"
             android:paddingLeft="20dp"
             android:minHeight="?attr/actionBarSize"
-            android:background="@color/teal_700"/>
+            android:background="#d63031"/>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/Notif_Announcement_Tab"

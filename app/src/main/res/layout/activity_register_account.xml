@@ -239,7 +239,7 @@
         android:layout_height="27dp"
         android:fontFamily="@font/helvetica"
         android:gravity="center|center_vertical"
-        android:text="BARANGAY USER"
+        android:text="POLICE OFFICIAL"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constrainedHeight="true"
@@ -267,15 +267,15 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049"
-        app:srcCompat="@drawable/logo5" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pnp" />
 
     <ImageView
         android:id="@+id/imageView13"
@@ -286,8 +286,8 @@
         app:layout_constraintHorizontal_bias="0.91"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        app:srcCompat="@drawable/bea_name" />
+        app:layout_constraintVertical_bias="0.044"
+        app:srcCompat="@drawable/name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
