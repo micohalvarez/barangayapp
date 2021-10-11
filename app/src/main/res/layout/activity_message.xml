@@ -12,7 +12,7 @@
         android:id="@+id/bar_layout">
 
   <androidx.appcompat.widget.Toolbar
-      android:background="#00b894"
+      android:background="#d63031"
       android:layout_height="match_parent"
       android:layout_width="match_parent"
       android:id="@+id/message_toolbar"

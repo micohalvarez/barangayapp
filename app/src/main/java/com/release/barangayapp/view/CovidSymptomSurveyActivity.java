@@ -97,16 +97,16 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
         logBookService = new LogBookService();
         logBook = new LogBook();
 
-        String cs0 = "F";
-        String cs1 = "DC";
-        String cs2 = "ST";
-        String cs3 = "SB";
+        String cs0 = "F";   //Fever
+        String cs1 = "DC";  //Dry Cough
+        String cs2 = "ST";  //Sore Throat
+        String cs3 = "SB";  //Short on Breath
 
-        String os0 = "FT";
-        String os1 = "A";
-        String os2 = "RN";
-        String os3 = "HA";
-        String os4 = "D";
+        String os0 = "FT";  //Fatigue
+        String os1 = "A";   //Aches/Pains
+        String os2 = "RN";  //Runny Nose
+        String os3 = "HA";  //Headache
+        String os4 = "D";   //Diarrhea
 
        String h = "Low Possibility";
        String h0 = "Possible";
@@ -114,9 +114,9 @@ public class CovidSymptomSurveyActivity extends AppCompatActivity {
        String h2 = "Warning";
 
 
-        String c0 = "GOOD CONDITION";
-        String c1 = "MILD CONDITION";
-        String c2 = "SEVERE CONDITION";
+        String c0 = "GOOD CONDITION"; // no common symptoms, other symptoms, and clear in health checklist.
+        String c1 = "MILD CONDITION"; // 1 checklist in the common symptoms, other symptoms, and health checklist.
+        String c2 = "SEVERE CONDITION"; // 2 or more checklist in the common symptoms, other symptoms, and health checklist.
 
 
 
