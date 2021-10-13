@@ -239,7 +239,7 @@
         android:layout_height="27dp"
         android:fontFamily="@font/helvetica"
         android:gravity="center|center_vertical"
-        android:text="Government OFFICIAL"
+        android:text="POLICE OFFICIAL"
         android:textColor="#000000"
         android:textSize="15sp"
         app:layout_constrainedHeight="true"

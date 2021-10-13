@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/heath_dec"
+                    android:src="@drawable/covidsymptom"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
