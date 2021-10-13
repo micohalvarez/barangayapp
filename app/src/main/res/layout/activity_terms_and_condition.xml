@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="PEA is an application that can perform simple task as sending emergency notification, announcement viewer, symptom survey and chat feature. PEA application software is developed and owned by ELproyekto, computer engineering students of Asia Pacific College."
+                android:text="BEA is an application that can perform simple task as sending emergency notification, announcement viewer, symptom survey and chat feature. BEA application software is developed and owned by ELproyekto, computer engineering students of Asia Pacific College."
                 android:textColor="#2f3640"
                 android:textSize="15dp" />
         </RelativeLayout>
@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="Please take the time to read these Terms carefully. They form a legal agreement between you and the PEA application. If you do not agree to these Terms, you may not use the software application. These Terms are accepted by using the PEA application."
+                android:text="Please take the time to read these Terms carefully. They form a legal agreement between you and the BEA application. If you do not agree to these Terms, you may not use the software application. These Terms are accepted by using the BEA application."
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica_bold"
-                android:text="2.	The PEA symptom survey form does not give content."
+                android:text="2.	The BEA symptom survey form does not give content."
                 android:textColor="#2f3640"
                 android:textSize="18dp" />
         </RelativeLayout>
@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="PEA does not investigate, monitor, or confirm the completeness or accuracy of the information supplied by all registered end users or parties providing the Content. You acknowledge and accept that PEA is not liable or responsible for the Content."
+                android:text="BEA does not investigate, monitor, or confirm the completeness or accuracy of the information supplied by all registered end users or parties providing the Content. You acknowledge and accept that BEA is not liable or responsible for the Content."
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -139,7 +139,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="You must not use the PEA application to breach or infringe on the rights of others, including other users' rights and PEA's application rights. When using the PEA application, you must not break any laws or regulations, or attempt to disrupt or interfere with the application's security or performance."
+                android:text="You must not use the BEA application to breach or infringe on the rights of others, including other users' rights and BEA's application rights. When using the BEA application, you must not break any laws or regulations, or attempt to disrupt or interfere with the application's security or performance."
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -166,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="PEA is committed to protecting and securing the information of its users. PEA will handle any and all such data in accordance with its privacy statement. The Privacy Statement only applies to the data gathered by PEA through its symptom survey form."
+                android:text="BEA is committed to protecting and securing the information of its users. BEA will handle any and all such data in accordance with its privacy statement. The Privacy Statement only applies to the data gathered by BEA through its symptom survey form."
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -179,7 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica_bold"
-                android:text="5. PEA may modify these Terms."
+                android:text="5. BEA may modify these Terms."
                 android:textColor="#2f3640"
                 android:textSize="18dp" />
         </RelativeLayout>
@@ -193,7 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="PEA reserves the right to change these Terms, including the Privacy Policy Statement, at any moment without notice. Because you are bound by the most recent version of these Terms, it is your obligation to stay informed of any modifications."
+                android:text="BEA reserves the right to change these Terms, including the Privacy Policy Statement, at any moment without notice. Because you are bound by the most recent version of these Terms, it is your obligation to stay informed of any modifications."
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -206,7 +206,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica_bold"
-                android:text="6.	PEA gathers and analyses information for objectively justified reasons."
+                android:text="6.	BEA gathers and analyses information for objectively justified reasons."
                 android:textColor="#2f3640"
                 android:textSize="18dp" />
         </RelativeLayout>
@@ -220,7 +220,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="PEA will only use your data for the purposes described in this Privacy Statement and that are objectively justified by the PEA application. We process this information in accordance with your right to privacy, including the requirement to protect your personal integrity and privacy, as well as to guarantee that your personal information is appropriately protected against loss, misuse, and unintended modification. PEA gathers information to manage your content/apps access and submission permissions, provide survey status, updates, and access control, track activity with content applications provided through our service, and comply with legal requirements"
+                android:text="BEA will only use your data for the purposes described in this Privacy Statement and that are objectively justified by the BEA application. We process this information in accordance with your right to privacy, including the requirement to protect your personal integrity and privacy, as well as to guarantee that your personal information is appropriately protected against loss, misuse, and unintended modification. BEA gathers information to manage your content/apps access and submission permissions, provide survey status, updates, and access control, track activity with content applications provided through our service, and comply with legal requirements"
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -233,7 +233,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica_bold"
-                android:text="7.	PEA and its developer reserve the right to disable access to the Application."
+                android:text="7.	BEA and its developer reserve the right to disable access to the Application."
                 android:textColor="#2f3640"
                 android:textSize="18dp" />
         </RelativeLayout>
@@ -247,7 +247,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="ELproyekto, as PEA developer and owner, reserves the right to modify or terminate delivering the application, or any portion of it, at any time and without warning in its sole discretion. It may, at any time and without warning, terminate or suspend your access to the Application. You acknowledge that neither ELproyekto nor PEA will be responsible or accountable to you or any third person if the Application is modified, terminated, or suspended."
+                android:text="ELproyekto, as BEA developer and owner, reserves the right to modify or terminate delivering the application, or any portion of it, at any time and without warning in its sole discretion. It may, at any time and without warning, terminate or suspend your access to the Application. You acknowledge that neither ELproyekto nor BEA will be responsible or accountable to you or any third person if the Application is modified, terminated, or suspended."
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -274,7 +274,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="THE APPLICATION IS PROVIDED 'AS IS' WITHOUT ANY WARRANTY. PEA AND ITS DEVELOPER DISCLAIMS ALL WARRANTIES IN CONNECTION WITH THE SERVICE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. PEA MAKES NO REPRESENTATION OR WARRANTY THAT THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SERVICE OR THE SERVERS THAT MAKE IT AVAILABLE WILL BE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. PEA DOES NOT WARRANT OR REPRESENT THAT THE SERVICE OR THE MATERIALS MADE AVAILABLE ON OR ACCESSIBLE THROUGH THE APPLICATION (INCLUDING CONTENT) WILL BE CORRECT, ACCURATE, TIMELY, OR OTHERWISE RELIABLE IN ANY WAY. YOUR SOLE AND EXCLUSIVE REMEDY IF YOU ARE DISSATISFIED WITH ANY PART OF THE APPLICATION OR ANY OF THESE TERMS OF USE IS TO STOP USING THE APPLICATION"
+                android:text="THE APPLICATION IS PROVIDED 'AS IS' WITHOUT ANY WARRANTY. BEA AND ITS DEVELOPER DISCLAIMS ALL WARRANTIES IN CONNECTION WITH THE SERVICE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. BEA MAKES NO REPRESENTATION OR WARRANTY THAT THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SERVICE OR THE SERVERS THAT MAKE IT AVAILABLE WILL BE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. BEA DOES NOT WARRANT OR REPRESENT THAT THE SERVICE OR THE MATERIALS MADE AVAILABLE ON OR ACCESSIBLE THROUGH THE APPLICATION (INCLUDING CONTENT) WILL BE CORRECT, ACCURATE, TIMELY, OR OTHERWISE RELIABLE IN ANY WAY. YOUR SOLE AND EXCLUSIVE REMEDY IF YOU ARE DISSATISFIED WITH ANY PART OF THE APPLICATION OR ANY OF THESE TERMS OF USE IS TO STOP USING THE APPLICATION"
                 android:textSize="15dp" />
         </RelativeLayout>
 
@@ -287,7 +287,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica_bold"
-                android:text="9. PEA accepts no liability for any damages you may suffer as a result of using the Services."
+                android:text="9. BEA accepts no liability for any damages you may suffer as a result of using the Services."
                 android:textColor="#2f3640"
                 android:textSize="18dp" />
         </RelativeLayout>
@@ -328,7 +328,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica"
-                android:text="If you believe that the Content available through the application infringes on your rights, please send an email to ELproyekto elproyekto4@gmail.com with the following information: (a) identification of the infringed rights/works; (b) identification of the infringing Content (including URL(s) for the Content); (c) your name, address, phone number, and e-mail address; (d) a statement that you have a good faith conviction that the rights holder, its agent, or the law do not authorize use of the Content in the manner complained of; (e) a statement under penalty of perjury that the information in the notice is correct and that you are authorized to act on behalf of the owner of an allegedly infringed exclusive right."
+                android:text="If you believe that the Content available through the application infringes on your rights, please send an email to ELproyekto BEA@gmail.com with the following information: (a) identification of the infringed rights/works; (b) identification of the infringing Content (including URL(s) for the Content); (c) your name, address, phone number, and e-mail address; (d) a statement that you have a good faith conviction that the rights holder, its agent, or the law do not authorize use of the Content in the manner complained of; (e) a statement under penalty of perjury that the information in the notice is correct and that you are authorized to act on behalf of the owner of an allegedly infringed exclusive right."
                 android:textSize="15dp" />
         </RelativeLayout>
 
