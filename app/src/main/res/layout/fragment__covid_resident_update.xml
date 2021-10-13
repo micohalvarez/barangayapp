@@ -62,7 +62,7 @@
             android:layout_height="50dp"
             android:clickable="false"
             android:fontFamily="@font/helvetica_bold"
-            android:text="Camp Crame Cases"
+            android:text="Barangay 9 Cases"
             android:textColor="#2f3542"
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
