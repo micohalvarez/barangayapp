@@ -15,8 +15,8 @@
 
         <TextView
             android:id="@+id/resident_summary_date_layout"
-            android:layout_width="289dp"
-            android:layout_height="46dp"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
             android:clickable="false"
             android:text="Date:"
             android:textColor="#2f3640"

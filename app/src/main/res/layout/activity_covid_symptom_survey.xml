@@ -338,8 +338,8 @@
 
     <TextView
         android:id="@+id/survey_dateview"
-        android:layout_width="243dp"
-        android:layout_height="34dp"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
         android:text="Date"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
