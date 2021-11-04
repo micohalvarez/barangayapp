@@ -46,7 +46,7 @@
                 android:layout_marginStart="138dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="6dp"
-                app:srcCompat="@drawable/name" />
+                app:srcCompat="@drawable/bea_name" />
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/Usertool_bar"
@@ -73,7 +73,7 @@
                 android:layout_marginStart="21dp"
                 android:layout_marginEnd="201dp"
                 android:layout_marginBottom="13dp"
-                android:src="@drawable/pnp" />
+                android:src="@drawable/logo5" />
 
 
         </RelativeLayout>
