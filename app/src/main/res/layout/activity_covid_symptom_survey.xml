@@ -14,7 +14,7 @@
         android:layout_height="76dp"
         android:fontFamily="@font/helvetica_bold"
         android:gravity="center"
-        android:text="Health Declaration"
+        android:text="COVID - 19 SYMPTOM SURVEY"
         android:textColor="#CA0011"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -338,8 +338,8 @@
 
     <TextView
         android:id="@+id/survey_dateview"
-        android:layout_width="160dp"
-        android:layout_height="30dp"
+        android:layout_width="221dp"
+        android:layout_height="28dp"
         android:text="Date"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
