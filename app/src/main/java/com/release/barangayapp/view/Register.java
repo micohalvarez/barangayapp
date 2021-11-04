@@ -66,10 +66,10 @@ public class Register extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (ADesignator.isChecked())
-                {ADesignatorDetail.setText("CITIZEN USER");
+                {ADesignatorDetail.setText("RESIDENT USER");
                 Role = 2;}
                 else
-                {ADesignatorDetail.setText("POLICE OFFICIAL USER");
+                {ADesignatorDetail.setText("BARANGAY USER");
                 Role = 1;}
             }
         });
