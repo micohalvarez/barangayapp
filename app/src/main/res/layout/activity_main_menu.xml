@@ -59,9 +59,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/pnp"
+        android:layout_width="219dp"
+        android:layout_height="202dp"
+        android:src="@drawable/logo5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -71,9 +71,9 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:background="@drawable/name"
+        android:layout_width="249dp"
+        android:layout_height="129dp"
+        android:background="@drawable/bea_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
